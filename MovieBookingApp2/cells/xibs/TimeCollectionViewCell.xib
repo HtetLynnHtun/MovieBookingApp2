@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="TimeCollectionViewCell" customModule="MovieBookingApp2" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="185" height="54"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="185" height="54"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Juu-NM-fLa">
+                        <rect key="frame" x="4" y="4" width="177" height="46"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="9:30 AM" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ojb-Rp-U64">
+                                <rect key="frame" x="56" y="12.5" width="65.5" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Ojb-Rp-U64" firstAttribute="centerX" secondItem="Juu-NM-fLa" secondAttribute="centerX" id="DZR-n5-Qxn"/>
+                            <constraint firstItem="Ojb-Rp-U64" firstAttribute="centerY" secondItem="Juu-NM-fLa" secondAttribute="centerY" id="elZ-xq-co0"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstItem="Juu-NM-fLa" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="4" id="5EC-pb-SHx"/>
+                <constraint firstAttribute="trailing" secondItem="Juu-NM-fLa" secondAttribute="trailing" constant="4" id="Z8t-ol-YZM"/>
+                <constraint firstItem="Juu-NM-fLa" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="4" id="j4F-6f-HZd"/>
+                <constraint firstAttribute="bottom" secondItem="Juu-NM-fLa" secondAttribute="bottom" constant="4" id="vlz-Es-ub0"/>
+            </constraints>
+            <size key="customSize" width="185" height="54"/>
+            <point key="canvasLocation" x="235.50724637681162" y="145.3125"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
