@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="qiM-s5-Ear">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
@@ -637,10 +637,10 @@
                                 <rect key="frame" x="0.0" y="104" width="414" height="862"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="djW-xq-Xjs">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="830.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="833"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="a3R-SO-ZEx">
-                                                <rect key="frame" x="0.0" y="0.0" width="414" height="830.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="833"/>
                                                 <subviews>
                                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="PYJ-qk-FpL">
                                                         <rect key="frame" x="0.0" y="0.0" width="414" height="120"/>
@@ -666,22 +666,22 @@
                                                         </cells>
                                                     </collectionView>
                                                     <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EiK-FB-cSU">
-                                                        <rect key="frame" x="0.0" y="120" width="414" height="710.5"/>
+                                                        <rect key="frame" x="0.0" y="120" width="414" height="713"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="Qrx-1Q-fnW">
-                                                                <rect key="frame" x="0.0" y="16" width="414" height="694.5"/>
+                                                                <rect key="frame" x="0.0" y="16" width="414" height="697"/>
                                                                 <subviews>
                                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="IxC-ea-Ejm">
-                                                                        <rect key="frame" x="16" y="0.0" width="382" height="186.5"/>
+                                                                        <rect key="frame" x="16" y="0.0" width="382" height="190"/>
                                                                         <subviews>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Available In" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="brt-lz-qUb">
-                                                                                <rect key="frame" x="0.0" y="0.0" width="382" height="20.5"/>
-                                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                                <rect key="frame" x="0.0" y="0.0" width="382" height="24"/>
+                                                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                                                                                 <nil key="textColor"/>
                                                                                 <nil key="highlightedColor"/>
                                                                             </label>
                                                                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="siB-Fd-r9n">
-                                                                                <rect key="frame" x="0.0" y="36.5" width="382" height="150"/>
+                                                                                <rect key="frame" x="0.0" y="40" width="382" height="150"/>
                                                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                                                 <constraints>
                                                                                     <constraint firstAttribute="height" constant="150" id="tXj-Vj-bTd"/>
@@ -706,16 +706,16 @@
                                                                         </subviews>
                                                                     </stackView>
                                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="5CH-zM-UBo">
-                                                                        <rect key="frame" x="16" y="210.5" width="382" height="186.5"/>
+                                                                        <rect key="frame" x="16" y="214" width="382" height="190"/>
                                                                         <subviews>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GC: Golden City" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ty3-if-Hk0">
-                                                                                <rect key="frame" x="0.0" y="0.0" width="382" height="20.5"/>
-                                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                                <rect key="frame" x="0.0" y="0.0" width="382" height="24"/>
+                                                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                                                                                 <nil key="textColor"/>
                                                                                 <nil key="highlightedColor"/>
                                                                             </label>
                                                                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="lJa-BT-kIY">
-                                                                                <rect key="frame" x="0.0" y="36.5" width="382" height="150"/>
+                                                                                <rect key="frame" x="0.0" y="40" width="382" height="150"/>
                                                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                                                 <constraints>
                                                                                     <constraint firstAttribute="height" constant="150" id="dmr-mf-Ldw"/>
@@ -740,16 +740,16 @@
                                                                         </subviews>
                                                                     </stackView>
                                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="Hn2-JG-au5">
-                                                                        <rect key="frame" x="16" y="421" width="382" height="186.5"/>
+                                                                        <rect key="frame" x="16" y="428" width="382" height="190"/>
                                                                         <subviews>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GC: West Point" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F40-fi-InB">
-                                                                                <rect key="frame" x="0.0" y="0.0" width="382" height="20.5"/>
-                                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                                <rect key="frame" x="0.0" y="0.0" width="382" height="24"/>
+                                                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                                                                                 <nil key="textColor"/>
                                                                                 <nil key="highlightedColor"/>
                                                                             </label>
                                                                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="PdE-B0-ckI">
-                                                                                <rect key="frame" x="0.0" y="36.5" width="382" height="150"/>
+                                                                                <rect key="frame" x="0.0" y="40" width="382" height="150"/>
                                                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                                                 <constraints>
                                                                                     <constraint firstAttribute="height" constant="150" id="hac-OH-LVv"/>
@@ -774,7 +774,7 @@
                                                                         </subviews>
                                                                     </stackView>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yw9-Bf-cDT">
-                                                                        <rect key="frame" x="16" y="631.5" width="382" height="39"/>
+                                                                        <rect key="frame" x="16" y="642" width="382" height="31"/>
                                                                         <color key="backgroundColor" name="primary_color"/>
                                                                         <state key="normal" title="Button"/>
                                                                         <buttonConfiguration key="configuration" style="plain" title="Next">

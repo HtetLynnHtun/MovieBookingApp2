@@ -79,8 +79,8 @@ extension MovieTimeViewController: UICollectionViewDataSource {
             return collectionViewDays.dequeCell(DayCollectionViewCell.identifier, indexPath)
         } else {
             let cell = collectionViewAvailableIn.dequeCell(TimeCollectionViewCell.identifier, indexPath)
-            cell.layer.borderWidth = 1
-            cell.layer.cornerRadius = 4
+//            cell.layer.borderWidth = 1
+//            cell.layer.cornerRadius = 4
             
             return cell
         }
