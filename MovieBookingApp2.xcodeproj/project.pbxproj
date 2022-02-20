@@ -25,6 +25,7 @@
 		4FDE886527C1FFFF00E43789 /* PaymentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FDE886427C1FFFF00E43789 /* PaymentViewController.swift */; };
 		4FDE886827C20C6000E43789 /* CardCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FDE886627C20C6000E43789 /* CardCollectionViewCell.swift */; };
 		4FDE886927C20C6000E43789 /* CardCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4FDE886727C20C6000E43789 /* CardCollectionViewCell.xib */; };
+		4FDE886B27C22E6B00E43789 /* TicketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FDE886A27C22E6B00E43789 /* TicketViewController.swift */; };
 		4FEE71A727BCEEF800C8829D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FEE71A627BCEEF800C8829D /* AppDelegate.swift */; };
 		4FEE71A927BCEEF800C8829D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FEE71A827BCEEF800C8829D /* SceneDelegate.swift */; };
 		4FEE71AB27BCEEF800C8829D /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FEE71AA27BCEEF800C8829D /* HomeViewController.swift */; };
@@ -54,6 +55,7 @@
 		4FDE886427C1FFFF00E43789 /* PaymentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentViewController.swift; sourceTree = "<group>"; };
 		4FDE886627C20C6000E43789 /* CardCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCollectionViewCell.swift; sourceTree = "<group>"; };
 		4FDE886727C20C6000E43789 /* CardCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardCollectionViewCell.xib; sourceTree = "<group>"; };
+		4FDE886A27C22E6B00E43789 /* TicketViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketViewController.swift; sourceTree = "<group>"; };
 		4FEE71A327BCEEF800C8829D /* MovieBookingApp2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MovieBookingApp2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4FEE71A627BCEEF800C8829D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4FEE71A827BCEEF800C8829D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -103,6 +105,7 @@
 				4F03DFD127C0D1C300177313 /* SnackViewController.swift */,
 				4FDE886227C1ED0E00E43789 /* MovieSeatViewController.swift */,
 				4FDE886427C1FFFF00E43789 /* PaymentViewController.swift */,
+				4FDE886A27C22E6B00E43789 /* TicketViewController.swift */,
 			);
 			path = "view controllers";
 			sourceTree = "<group>";
@@ -344,6 +347,7 @@
 				4FDE885727C1E5E000E43789 /* MovieSeatVO.swift in Sources */,
 				4FDE885A27C1E6E500E43789 /* AppConstants.swift in Sources */,
 				4FCB6ADD27BD0882004CC300 /* MovieCollectionViewCell.swift in Sources */,
+				4FDE886B27C22E6B00E43789 /* TicketViewController.swift in Sources */,
 				4FDE886527C1FFFF00E43789 /* PaymentViewController.swift in Sources */,
 				4FDE886827C20C6000E43789 /* CardCollectionViewCell.swift in Sources */,
 				4FCB6AD727BD0760004CC300 /* ViewExtensions.swift in Sources */,

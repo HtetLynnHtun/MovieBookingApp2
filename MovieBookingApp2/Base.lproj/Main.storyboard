@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="qiM-s5-Ear">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="zXE-Cz-mc4">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
@@ -1020,10 +1020,10 @@
             </objects>
             <point key="canvasLocation" x="3534.7826086956525" y="140.625"/>
         </scene>
-        <!--View Controller-->
+        <!--Ticket View Controller-->
         <scene sceneID="ic2-qJ-X06">
             <objects>
-                <viewController id="zXE-Cz-mc4" sceneMemberID="viewController">
+                <viewController id="zXE-Cz-mc4" customClass="TicketViewController" customModule="MovieBookingApp2" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="0zm-Fh-AIl">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1235,6 +1235,9 @@
                             <constraint firstItem="roa-4a-78e" firstAttribute="leading" secondItem="C1a-bM-m8Z" secondAttribute="leading" id="jzV-bS-gZv"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="imageViewPoster" destination="rj5-qM-8hu" id="Cdv-2e-qHp"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eKU-Tf-jO0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
