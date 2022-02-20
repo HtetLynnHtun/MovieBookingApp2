@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="iBc-qv-kch">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Jii-a5-oyv">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
@@ -191,10 +191,10 @@
             </objects>
             <point key="canvasLocation" x="48" y="129"/>
         </scene>
-        <!--View Controller-->
+        <!--Landing View Controller-->
         <scene sceneID="7ea-Zx-wPH">
             <objects>
-                <viewController id="Jii-a5-oyv" sceneMemberID="viewController">
+                <viewController id="Jii-a5-oyv" customClass="LandingViewController" customModule="MovieBookingApp2" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="pTW-mI-3mh">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -202,49 +202,50 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Obh-FG-ak2">
                                 <rect key="frame" x="0.0" y="44" width="414" height="852"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="landing_image" translatesAutoresizingMaskIntoConstraints="NO" id="dbi-n3-D4W">
-                                        <rect key="frame" x="63" y="53" width="289" height="276"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="landing_image" translatesAutoresizingMaskIntoConstraints="NO" id="dbi-n3-D4W">
+                                        <rect key="frame" x="0.0" y="50" width="414" height="341"/>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" fixedFrame="YES" text="Welcome" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yA5-zb-9Gh">
-                                        <rect key="frame" x="138" y="397" width="139" height="38.5"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="32"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Hello! Welcoe to Galaxy App." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mQe-x5-0Ja">
-                                        <rect key="frame" x="94" y="450" width="227.5" height="21.5"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="18"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="29I-wH-RJN">
+                                        <rect key="frame" x="0.0" y="439" width="414" height="68"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Welcome" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yA5-zb-9Gh">
+                                                <rect key="frame" x="137.5" y="0.0" width="139" height="38.5"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="32"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hello! Welcoe to Galaxy App." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mQe-x5-0Ja">
+                                                <rect key="frame" x="93.5" y="46.5" width="227.5" height="21.5"/>
+                                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="18"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V9T-f6-e3F">
-                                        <rect key="frame" x="12" y="766" width="390" height="38"/>
+                                        <rect key="frame" x="12" y="750" width="390" height="54"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="54" id="zF2-b5-OKw"/>
+                                        </constraints>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Get Started">
                                             <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="20"/>
                                             <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </buttonConfiguration>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
-                                                <integer key="value" value="1"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="layer.border.color">
-                                                <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                <integer key="value" value="8"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" name="primary_color"/>
                                 <constraints>
+                                    <constraint firstItem="dbi-n3-D4W" firstAttribute="top" secondItem="Obh-FG-ak2" secondAttribute="top" constant="50" id="AMZ-5r-hBJ"/>
+                                    <constraint firstItem="dbi-n3-D4W" firstAttribute="height" secondItem="Obh-FG-ak2" secondAttribute="height" multiplier="0.4" id="E33-WH-qak"/>
                                     <constraint firstAttribute="trailing" secondItem="V9T-f6-e3F" secondAttribute="trailing" constant="12" id="Ifj-8j-h8o"/>
                                     <constraint firstItem="V9T-f6-e3F" firstAttribute="leading" secondItem="Obh-FG-ak2" secondAttribute="leading" constant="12" id="Qml-dS-vzv"/>
+                                    <constraint firstItem="29I-wH-RJN" firstAttribute="leading" secondItem="Obh-FG-ak2" secondAttribute="leading" id="R4j-SI-cfJ"/>
+                                    <constraint firstAttribute="trailing" secondItem="29I-wH-RJN" secondAttribute="trailing" id="cFe-IK-rNG"/>
                                     <constraint firstAttribute="bottom" secondItem="V9T-f6-e3F" secondAttribute="bottom" constant="48" id="cpR-qH-h9p"/>
+                                    <constraint firstItem="dbi-n3-D4W" firstAttribute="leading" secondItem="Obh-FG-ak2" secondAttribute="leading" id="lJI-dY-bEo"/>
+                                    <constraint firstItem="29I-wH-RJN" firstAttribute="top" secondItem="dbi-n3-D4W" secondAttribute="bottom" constant="48" id="taV-rI-cvB"/>
+                                    <constraint firstAttribute="trailing" secondItem="dbi-n3-D4W" secondAttribute="trailing" id="x8R-i2-QKQ"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -257,6 +258,9 @@
                             <constraint firstAttribute="trailing" secondItem="Obh-FG-ak2" secondAttribute="trailing" id="nyS-Zc-sFG"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="buttonGetStarted" destination="V9T-f6-e3F" id="pnu-X2-WLQ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kna-9h-4oa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1951,7 +1955,7 @@
         <image name="chevron.left" catalog="system" width="96" height="128"/>
         <image name="creditcard" catalog="system" width="128" height="88"/>
         <image name="dummy_profile" width="75" height="75"/>
-        <image name="landing_image" width="145.33332824707031" height="145.33332824707031"/>
+        <image name="landing_image" width="189.66667175292969" height="146"/>
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>
         <image name="multiply" catalog="system" width="128" height="111"/>
         <image name="network" catalog="system" width="128" height="121"/>
