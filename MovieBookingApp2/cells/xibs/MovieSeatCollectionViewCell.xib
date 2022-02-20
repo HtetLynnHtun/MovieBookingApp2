@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="MovieSeatCollectionViewCell" customModule="MovieBookingApp2" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="187" height="127"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="187" height="127"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9eW-1R-HEE">
+                        <rect key="frame" x="8" y="8" width="171" height="111"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p0P-OB-P6T">
+                                <rect key="frame" x="64.5" y="45" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="p0P-OB-P6T" firstAttribute="centerX" secondItem="9eW-1R-HEE" secondAttribute="centerX" id="lFk-cM-cRJ"/>
+                            <constraint firstItem="p0P-OB-P6T" firstAttribute="centerY" secondItem="9eW-1R-HEE" secondAttribute="centerY" id="u2N-2T-Eve"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstItem="9eW-1R-HEE" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="8" id="4Na-we-MyO"/>
+                <constraint firstItem="9eW-1R-HEE" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="8" id="BeH-8V-y8e"/>
+                <constraint firstAttribute="bottom" secondItem="9eW-1R-HEE" secondAttribute="bottom" constant="8" id="H9A-8z-kMb"/>
+                <constraint firstAttribute="trailing" secondItem="9eW-1R-HEE" secondAttribute="trailing" constant="8" id="Ilb-C9-EM7"/>
+            </constraints>
+            <size key="customSize" width="187" height="127"/>
+            <connections>
+                <outlet property="lableMovieSeatTitle" destination="p0P-OB-P6T" id="9GZ-lV-n5O"/>
+                <outlet property="viewContainerMovieSeat" destination="9eW-1R-HEE" id="40w-A6-Ydr"/>
+            </connections>
+            <point key="canvasLocation" x="236.95652173913047" y="183.14732142857142"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

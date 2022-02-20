@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="zXE-Cz-mc4">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="WAR-Ze-fPg">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
@@ -1225,7 +1225,7 @@
         <!--Movie Seat View Controller-->
         <scene sceneID="y0Q-cI-bZY">
             <objects>
-                <viewController id="WAR-Ze-fPg" userLabel="Movie Seat View Controller" sceneMemberID="viewController">
+                <viewController id="WAR-Ze-fPg" userLabel="Movie Seat View Controller" customClass="MovieSeatViewController" customModule="MovieBookingApp2" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="nQ9-JB-e3R">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1252,7 +1252,7 @@
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="ED4-56-Dra">
-                                <rect key="frame" x="0.0" y="88" width="414" height="711.5"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="591.5"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="xJ4-dL-TgW">
                                         <rect key="frame" x="16" y="0.0" width="382" height="88.5"/>
@@ -1278,12 +1278,12 @@
                                         </subviews>
                                     </stackView>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="EqH-aT-gj9">
-                                        <rect key="frame" x="16" y="112.5" width="382" height="400"/>
+                                        <rect key="frame" x="16" y="112.5" width="382" height="280"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="400" id="flE-xT-JHm"/>
+                                            <constraint firstAttribute="height" constant="280" id="flE-xT-JHm"/>
                                         </constraints>
-                                        <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="CcK-6k-u6j">
+                                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="CcK-6k-u6j">
                                             <size key="itemSize" width="128" height="128"/>
                                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -1301,7 +1301,7 @@
                                         </cells>
                                     </collectionView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="PD1-JQ-EVj">
-                                        <rect key="frame" x="16" y="536.5" width="382" height="32"/>
+                                        <rect key="frame" x="16" y="416.5" width="382" height="32"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="dca-Yk-aee">
                                                 <rect key="frame" x="0.0" y="0.0" width="127.5" height="32"/>
@@ -1378,7 +1378,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="IKp-aT-EU9">
-                                        <rect key="frame" x="16" y="592.5" width="382" height="51"/>
+                                        <rect key="frame" x="16" y="472.5" width="382" height="51"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Uhy-Hn-CCJ">
                                                 <rect key="frame" x="0.0" y="0.0" width="382" height="21.5"/>
@@ -1417,7 +1417,7 @@
                                         </subviews>
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nGC-b7-db0">
-                                        <rect key="frame" x="16" y="667.5" width="382" height="44"/>
+                                        <rect key="frame" x="16" y="547.5" width="382" height="44"/>
                                         <color key="backgroundColor" name="primary_color"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="44" id="llK-fb-z22"/>
@@ -1448,6 +1448,9 @@
                             <constraint firstItem="tHD-WZ-MBO" firstAttribute="trailing" secondItem="zfc-17-hWY" secondAttribute="trailing" id="rNo-9B-ezo"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="collectionViewMovieSeats" destination="EqH-aT-gj9" id="Zj4-WQ-C10"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="t1r-b4-Txx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
