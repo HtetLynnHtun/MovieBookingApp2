@@ -7,4 +7,5 @@ target 'MovieBookingApp2' do
 
   # Pods for MovieBookingApp2
   pod 'SideMenu'
+  pod "UPCarouselFlowLayout"
 end

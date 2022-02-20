@@ -1,2 +1,3 @@
 ${PODS_ROOT}/Target Support Files/Pods-MovieBookingApp2/Pods-MovieBookingApp2-frameworks.sh
 ${BUILT_PRODUCTS_DIR}/SideMenu/SideMenu.framework
+${BUILT_PRODUCTS_DIR}/UPCarouselFlowLayout/UPCarouselFlowLayout.framework
