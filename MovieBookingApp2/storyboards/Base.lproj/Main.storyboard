@@ -1084,6 +1084,7 @@
                                         </constraints>
                                     </view>
                                 </subviews>
+                                <color key="backgroundColor" name="primary_color"/>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="djW-xq-Xjs" secondAttribute="bottom" id="IY8-xe-vpm"/>
                                     <constraint firstItem="djW-xq-Xjs" firstAttribute="centerX" secondItem="S0x-q2-7K9" secondAttribute="centerX" id="MVJ-eH-NYF"/>
@@ -1107,6 +1108,8 @@
                     </view>
                     <size key="freeformSize" width="414" height="1000"/>
                     <connections>
+                        <outlet property="buttonGoBack" destination="nfe-nI-XMi" id="Ans-Jl-Mtc"/>
+                        <outlet property="buttonNext" destination="yw9-Bf-cDT" id="Pur-AX-Htc"/>
                         <outlet property="collectionViewAvailableIn" destination="siB-Fd-r9n" id="AoW-Oq-Q20"/>
                         <outlet property="collectionViewDays" destination="PYJ-qk-FpL" id="2t9-xb-IN9"/>
                         <outlet property="collectionViewGCGoldenCity" destination="lJa-BT-kIY" id="8O8-dx-7on"/>

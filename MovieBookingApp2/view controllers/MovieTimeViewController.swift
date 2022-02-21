@@ -14,6 +14,8 @@ class MovieTimeViewController: UIViewController {
     @IBOutlet weak var collectionViewGCGoldenCity: UICollectionView!
     @IBOutlet weak var collectionViewGCWestPoint: UICollectionView!
     @IBOutlet weak var viewContainerTimes: UIView!
+    @IBOutlet weak var buttonGoBack: UIButton!
+    @IBOutlet weak var buttonNext: UIButton!
     
     @IBOutlet weak var collectionViewHeightAvailableIn: NSLayoutConstraint!
     @IBOutlet weak var collectionViewHeightGCGoldenCity: NSLayoutConstraint!
@@ -25,6 +27,7 @@ class MovieTimeViewController: UIViewController {
         regsierCells()
         setupDataSourcesAndDelegates()
         setupHeightsForCollectionViews()
+        setupGestureRecognizers()
         
         viewContainerTimes.clipsToBounds = true
         viewContainerTimes.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
@@ -58,6 +61,22 @@ class MovieTimeViewController: UIViewController {
         collectionViewHeightGCWestPoint.constant = 56 * 2
         
         self.view.layoutIfNeeded()
+    }
+    
+    private func setupGestureRecognizers() {
+        let buttonGoBackTapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(didTapGoBack))
+        buttonGoBack.addGestureRecognizer(buttonGoBackTapGestureRecognizer)
+        
+        let buttonNextTapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(didTapNext))
+        buttonNext.addGestureRecognizer(buttonNextTapGestureRecognizer)
+    }
+    
+    @objc func didTapGoBack() {
+        navigateToScreen(withIdentifier: MovieDetailViewController.identifier)
+    }
+    
+    @objc func didTapNext() {
+        navigateToScreen(withIdentifier: MovieSeatViewController.identifier)
     }
 
 }
