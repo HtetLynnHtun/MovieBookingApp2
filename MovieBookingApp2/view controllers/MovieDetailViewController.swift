@@ -12,6 +12,7 @@ class MovieDetailViewController: UIViewController {
     @IBOutlet weak var viewCornerOverlay: UIView!
     @IBOutlet weak var collectionViewGenres: UICollectionView!
     @IBOutlet weak var collectionViewCasts: UICollectionView!
+    @IBOutlet weak var buttonGoBack: UIButton!
     
     var genres = ["Mystery", "Adventure"]
     
@@ -23,6 +24,7 @@ class MovieDetailViewController: UIViewController {
         
         registerCells()
         setupDataSourcesAndDelegates()
+        setupGestureRecognizers()
     }
     
     private func registerCells() {
@@ -36,6 +38,15 @@ class MovieDetailViewController: UIViewController {
         
         collectionViewCasts.dataSource = self
         collectionViewCasts.delegate = self
+    }
+    
+    private func setupGestureRecognizers() {
+        let buttonGoBackTapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(didTapGoBack))
+        buttonGoBack.addGestureRecognizer(buttonGoBackTapGestureRecognizer)
+    }
+    
+    @objc func didTapGoBack() {
+        navigateToScreen(withIdentifier: HomeViewController.identifier)
     }
 
 }

@@ -863,6 +863,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="buttonGoBack" destination="VHk-BH-Vmo" id="TCX-Zb-r38"/>
                         <outlet property="collectionViewCasts" destination="a7h-ah-MTm" id="0tK-g1-bOx"/>
                         <outlet property="collectionViewGenres" destination="5r8-ke-jfz" id="a9k-iV-44B"/>
                         <outlet property="viewCornerOverlay" destination="Jv0-da-y8S" id="Lr5-lR-YW7"/>
