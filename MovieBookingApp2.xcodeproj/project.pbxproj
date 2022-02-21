@@ -30,6 +30,7 @@
 		4FDE886B27C22E6B00E43789 /* TicketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FDE886A27C22E6B00E43789 /* TicketViewController.swift */; };
 		4FDE886D27C266DC00E43789 /* LandingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FDE886C27C266DC00E43789 /* LandingViewController.swift */; };
 		4FDE886F27C2711900E43789 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FDE886E27C2711900E43789 /* Router.swift */; };
+		4FEC672F27C358F2009F1275 /* RatingControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FEC672E27C358F2009F1275 /* RatingControl.swift */; };
 		4FEE71A727BCEEF800C8829D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FEE71A627BCEEF800C8829D /* AppDelegate.swift */; };
 		4FEE71A927BCEEF800C8829D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FEE71A827BCEEF800C8829D /* SceneDelegate.swift */; };
 		4FEE71AB27BCEEF800C8829D /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FEE71AA27BCEEF800C8829D /* HomeViewController.swift */; };
@@ -64,6 +65,7 @@
 		4FDE886A27C22E6B00E43789 /* TicketViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketViewController.swift; sourceTree = "<group>"; };
 		4FDE886C27C266DC00E43789 /* LandingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingViewController.swift; sourceTree = "<group>"; };
 		4FDE886E27C2711900E43789 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		4FEC672E27C358F2009F1275 /* RatingControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingControl.swift; sourceTree = "<group>"; };
 		4FEE71A327BCEEF800C8829D /* MovieBookingApp2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MovieBookingApp2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4FEE71A627BCEEF800C8829D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4FEE71A827BCEEF800C8829D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -195,6 +197,14 @@
 			path = dummy;
 			sourceTree = "<group>";
 		};
+		4FEC672D27C358D3009F1275 /* components */ = {
+			isa = PBXGroup;
+			children = (
+				4FEC672E27C358F2009F1275 /* RatingControl.swift */,
+			);
+			path = components;
+			sourceTree = "<group>";
+		};
 		4FEE719A27BCEEF800C8829D = {
 			isa = PBXGroup;
 			children = (
@@ -217,6 +227,7 @@
 			isa = PBXGroup;
 			children = (
 				4FCB6AD827BD085E004CC300 /* cells */,
+				4FEC672D27C358D3009F1275 /* components */,
 				4FDE885427C1E5A300E43789 /* data */,
 				4FDE885B27C1E77E00E43789 /* dummy */,
 				4FCB6AD527BD074B004CC300 /* extensions */,
@@ -363,6 +374,7 @@
 				4FCB6ADD27BD0882004CC300 /* MovieCollectionViewCell.swift in Sources */,
 				4FDE886B27C22E6B00E43789 /* TicketViewController.swift in Sources */,
 				4FDE886527C1FFFF00E43789 /* PaymentViewController.swift in Sources */,
+				4FEC672F27C358F2009F1275 /* RatingControl.swift in Sources */,
 				4FDE886827C20C6000E43789 /* CardCollectionViewCell.swift in Sources */,
 				4FCB6AD727BD0760004CC300 /* ViewExtensions.swift in Sources */,
 				4FC3601E27C27ECF00296494 /* AuthenticationViewController.swift in Sources */,
