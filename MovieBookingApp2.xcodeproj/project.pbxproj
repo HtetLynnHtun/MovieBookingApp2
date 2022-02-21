@@ -17,6 +17,10 @@
 		4F41691027C36B570025C25D /* GenreCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F41690E27C36B570025C25D /* GenreCollectionViewCell.xib */; };
 		4F41691327C3725E0025C25D /* CastCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F41691127C3725E0025C25D /* CastCollectionViewCell.swift */; };
 		4F41691427C3725E0025C25D /* CastCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F41691227C3725E0025C25D /* CastCollectionViewCell.xib */; };
+		4F41691C27C39C4B0025C25D /* SnackCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F41691A27C39C4B0025C25D /* SnackCollectionViewCell.swift */; };
+		4F41691D27C39C4B0025C25D /* SnackCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F41691B27C39C4B0025C25D /* SnackCollectionViewCell.xib */; };
+		4F41692027C3CF130025C25D /* PaymentMethodCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F41691E27C3CF130025C25D /* PaymentMethodCollectionViewCell.swift */; };
+		4F41692127C3CF130025C25D /* PaymentMethodCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F41691F27C3CF130025C25D /* PaymentMethodCollectionViewCell.xib */; };
 		4F5E594D27C3461B00B0206B /* MovieDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F5E594C27C3461B00B0206B /* MovieDetailViewController.swift */; };
 		4FC3601E27C27ECF00296494 /* AuthenticationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FC3601D27C27ECF00296494 /* AuthenticationViewController.swift */; };
 		4FCB6AD727BD0760004CC300 /* ViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FCB6AD627BD0760004CC300 /* ViewExtensions.swift */; };
@@ -56,6 +60,10 @@
 		4F41690E27C36B570025C25D /* GenreCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GenreCollectionViewCell.xib; sourceTree = "<group>"; };
 		4F41691127C3725E0025C25D /* CastCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CastCollectionViewCell.swift; sourceTree = "<group>"; };
 		4F41691227C3725E0025C25D /* CastCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CastCollectionViewCell.xib; sourceTree = "<group>"; };
+		4F41691A27C39C4B0025C25D /* SnackCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnackCollectionViewCell.swift; sourceTree = "<group>"; };
+		4F41691B27C39C4B0025C25D /* SnackCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SnackCollectionViewCell.xib; sourceTree = "<group>"; };
+		4F41691E27C3CF130025C25D /* PaymentMethodCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentMethodCollectionViewCell.swift; sourceTree = "<group>"; };
+		4F41691F27C3CF130025C25D /* PaymentMethodCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PaymentMethodCollectionViewCell.xib; sourceTree = "<group>"; };
 		4F5E594C27C3461B00B0206B /* MovieDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailViewController.swift; sourceTree = "<group>"; };
 		4FC3601D27C27ECF00296494 /* AuthenticationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationViewController.swift; sourceTree = "<group>"; };
 		4FCB6AD627BD0760004CC300 /* ViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtensions.swift; sourceTree = "<group>"; };
@@ -176,6 +184,8 @@
 				4FDE886627C20C6000E43789 /* CardCollectionViewCell.swift */,
 				4F41690D27C36B570025C25D /* GenreCollectionViewCell.swift */,
 				4F41691127C3725E0025C25D /* CastCollectionViewCell.swift */,
+				4F41691A27C39C4B0025C25D /* SnackCollectionViewCell.swift */,
+				4F41691E27C3CF130025C25D /* PaymentMethodCollectionViewCell.swift */,
 			);
 			path = swifts;
 			sourceTree = "<group>";
@@ -190,6 +200,8 @@
 				4FDE886727C20C6000E43789 /* CardCollectionViewCell.xib */,
 				4F41690E27C36B570025C25D /* GenreCollectionViewCell.xib */,
 				4F41691227C3725E0025C25D /* CastCollectionViewCell.xib */,
+				4F41691B27C39C4B0025C25D /* SnackCollectionViewCell.xib */,
+				4F41691F27C3CF130025C25D /* PaymentMethodCollectionViewCell.xib */,
 			);
 			path = xibs;
 			sourceTree = "<group>";
@@ -338,8 +350,10 @@
 				4FDE886927C20C6000E43789 /* CardCollectionViewCell.xib in Resources */,
 				4F41691427C3725E0025C25D /* CastCollectionViewCell.xib in Resources */,
 				4F1127E527BD157700CBE96D /* DayCollectionViewCell.xib in Resources */,
+				4F41691D27C39C4B0025C25D /* SnackCollectionViewCell.xib in Resources */,
 				4FEE71AE27BCEEF800C8829D /* Main.storyboard in Resources */,
 				4F41691027C36B570025C25D /* GenreCollectionViewCell.xib in Resources */,
+				4F41692127C3CF130025C25D /* PaymentMethodCollectionViewCell.xib in Resources */,
 				4FCB6ADE27BD0882004CC300 /* MovieCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -400,12 +414,14 @@
 				4F5E594D27C3461B00B0206B /* MovieDetailViewController.swift in Sources */,
 				4FDE885727C1E5E000E43789 /* MovieSeatVO.swift in Sources */,
 				4FDE885A27C1E6E500E43789 /* AppConstants.swift in Sources */,
+				4F41691C27C39C4B0025C25D /* SnackCollectionViewCell.swift in Sources */,
 				4FDE886F27C2711900E43789 /* Router.swift in Sources */,
 				4F41690F27C36B570025C25D /* GenreCollectionViewCell.swift in Sources */,
 				4F41691327C3725E0025C25D /* CastCollectionViewCell.swift in Sources */,
 				4FCB6ADD27BD0882004CC300 /* MovieCollectionViewCell.swift in Sources */,
 				4FDE886B27C22E6B00E43789 /* TicketViewController.swift in Sources */,
 				4FDE886527C1FFFF00E43789 /* PaymentViewController.swift in Sources */,
+				4F41692027C3CF130025C25D /* PaymentMethodCollectionViewCell.swift in Sources */,
 				4FEC672F27C358F2009F1275 /* RatingControl.swift in Sources */,
 				4FDE886827C20C6000E43789 /* CardCollectionViewCell.swift in Sources */,
 				4FCB6AD727BD0760004CC300 /* ViewExtensions.swift in Sources */,
