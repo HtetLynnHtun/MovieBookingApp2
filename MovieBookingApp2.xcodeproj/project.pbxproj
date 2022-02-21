@@ -13,6 +13,7 @@
 		4F1127E527BD157700CBE96D /* DayCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F1127E327BD157700CBE96D /* DayCollectionViewCell.xib */; };
 		4F1127E827BD171900CBE96D /* TimeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F1127E627BD171900CBE96D /* TimeCollectionViewCell.swift */; };
 		4F1127E927BD171900CBE96D /* TimeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F1127E727BD171900CBE96D /* TimeCollectionViewCell.xib */; };
+		4F5E594D27C3461B00B0206B /* MovieDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F5E594C27C3461B00B0206B /* MovieDetailViewController.swift */; };
 		4FC3601E27C27ECF00296494 /* AuthenticationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FC3601D27C27ECF00296494 /* AuthenticationViewController.swift */; };
 		4FCB6AD727BD0760004CC300 /* ViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FCB6AD627BD0760004CC300 /* ViewExtensions.swift */; };
 		4FCB6ADD27BD0882004CC300 /* MovieCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FCB6ADB27BD0882004CC300 /* MovieCollectionViewCell.swift */; };
@@ -46,6 +47,7 @@
 		4F1127E327BD157700CBE96D /* DayCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DayCollectionViewCell.xib; sourceTree = "<group>"; };
 		4F1127E627BD171900CBE96D /* TimeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeCollectionViewCell.swift; sourceTree = "<group>"; };
 		4F1127E727BD171900CBE96D /* TimeCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TimeCollectionViewCell.xib; sourceTree = "<group>"; };
+		4F5E594C27C3461B00B0206B /* MovieDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailViewController.swift; sourceTree = "<group>"; };
 		4FC3601D27C27ECF00296494 /* AuthenticationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationViewController.swift; sourceTree = "<group>"; };
 		4FCB6AD627BD0760004CC300 /* ViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtensions.swift; sourceTree = "<group>"; };
 		4FCB6ADB27BD0882004CC300 /* MovieCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -114,6 +116,7 @@
 				4FDE886A27C22E6B00E43789 /* TicketViewController.swift */,
 				4FDE886C27C266DC00E43789 /* LandingViewController.swift */,
 				4FC3601D27C27ECF00296494 /* AuthenticationViewController.swift */,
+				4F5E594C27C3461B00B0206B /* MovieDetailViewController.swift */,
 			);
 			path = "view controllers";
 			sourceTree = "<group>";
@@ -353,6 +356,7 @@
 				4FEE71AB27BCEEF800C8829D /* HomeViewController.swift in Sources */,
 				4FEE71A727BCEEF800C8829D /* AppDelegate.swift in Sources */,
 				4FDE886027C1EBDE00E43789 /* MovieSeatCollectionViewCell.swift in Sources */,
+				4F5E594D27C3461B00B0206B /* MovieDetailViewController.swift in Sources */,
 				4FDE885727C1E5E000E43789 /* MovieSeatVO.swift in Sources */,
 				4FDE885A27C1E6E500E43789 /* AppConstants.swift in Sources */,
 				4FDE886F27C2711900E43789 /* Router.swift in Sources */,
