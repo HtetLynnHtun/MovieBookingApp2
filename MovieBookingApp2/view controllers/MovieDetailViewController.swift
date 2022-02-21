@@ -13,6 +13,7 @@ class MovieDetailViewController: UIViewController {
     @IBOutlet weak var collectionViewGenres: UICollectionView!
     @IBOutlet weak var collectionViewCasts: UICollectionView!
     @IBOutlet weak var buttonGoBack: UIButton!
+    @IBOutlet weak var buttonGetTicket: UIButton!
     
     var genres = ["Mystery", "Adventure"]
     
@@ -43,10 +44,17 @@ class MovieDetailViewController: UIViewController {
     private func setupGestureRecognizers() {
         let buttonGoBackTapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(didTapGoBack))
         buttonGoBack.addGestureRecognizer(buttonGoBackTapGestureRecognizer)
+        
+        let buttonGetTicketTapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(didTapGetTicket))
+        buttonGetTicket.addGestureRecognizer(buttonGetTicketTapGestureRecognizer)
     }
     
     @objc func didTapGoBack() {
         navigateToScreen(withIdentifier: HomeViewController.identifier)
+    }
+    
+    @objc func didTapGetTicket() {
+        navigateToScreen(withIdentifier: MovieTimeViewController.identifier)
     }
 
 }
