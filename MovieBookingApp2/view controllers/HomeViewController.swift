@@ -30,6 +30,10 @@ class HomeViewController: UIViewController {
         collectionViewComingSoon.dataSource = self
         collectionViewComingSoon.delegate = self
     }
+    
+    func onTapMovie() {
+        navigateToScreen(withIdentifier: MovieDetailViewController.identifier)
+    }
 }
 
 extension HomeViewController: UICollectionViewDataSource {
@@ -42,7 +46,9 @@ extension HomeViewController: UICollectionViewDataSource {
         return collectionViewNowShowing.dequeCell(MovieCollectionViewCell.identifier, indexPath)
     }
     
-    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        onTapMovie()
+    }
 }
 
 extension HomeViewController: UICollectionViewDelegateFlowLayout {

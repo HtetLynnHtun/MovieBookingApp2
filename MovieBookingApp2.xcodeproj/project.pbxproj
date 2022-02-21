@@ -115,6 +115,24 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		4F41691527C38DC40025C25D /* delegates */ = {
+			isa = PBXGroup;
+			children = (
+				4FEE71A627BCEEF800C8829D /* AppDelegate.swift */,
+				4FEE71A827BCEEF800C8829D /* SceneDelegate.swift */,
+			);
+			path = delegates;
+			sourceTree = "<group>";
+		};
+		4F41691927C38FE50025C25D /* storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				4FEE71AC27BCEEF800C8829D /* Main.storyboard */,
+				4FEE71B127BCEEF900C8829D /* LaunchScreen.storyboard */,
+			);
+			path = storyboards;
+			sourceTree = "<group>";
+		};
 		4FCB6AD427BCEFAC004CC300 /* view controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -242,14 +260,12 @@
 				4FEC672D27C358D3009F1275 /* components */,
 				4FDE885427C1E5A300E43789 /* data */,
 				4FDE885B27C1E77E00E43789 /* dummy */,
+				4F41691527C38DC40025C25D /* delegates */,
 				4FCB6AD527BD074B004CC300 /* extensions */,
+				4F41691927C38FE50025C25D /* storyboards */,
 				4FDE885827C1E6CC00E43789 /* utils */,
 				4FCB6AD427BCEFAC004CC300 /* view controllers */,
-				4FEE71A627BCEEF800C8829D /* AppDelegate.swift */,
-				4FEE71A827BCEEF800C8829D /* SceneDelegate.swift */,
-				4FEE71AC27BCEEF800C8829D /* Main.storyboard */,
 				4FEE71AF27BCEEF900C8829D /* Assets.xcassets */,
-				4FEE71B127BCEEF900C8829D /* LaunchScreen.storyboard */,
 				4FEE71B427BCEEF900C8829D /* Info.plist */,
 			);
 			path = MovieBookingApp2;
