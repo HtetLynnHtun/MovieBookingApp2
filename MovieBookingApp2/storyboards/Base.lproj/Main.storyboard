@@ -1351,6 +1351,8 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="buttonBuyTicket" destination="nGC-b7-db0" id="9Qh-Cc-ayY"/>
+                        <outlet property="buttonGoBack" destination="G5e-JQ-tTH" id="Tf2-gr-4di"/>
                         <outlet property="collectionViewMovieSeats" destination="EqH-aT-gj9" id="Zj4-WQ-C10"/>
                     </connections>
                 </viewController>

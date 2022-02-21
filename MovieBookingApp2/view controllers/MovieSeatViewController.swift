@@ -10,11 +10,14 @@ import UIKit
 class MovieSeatViewController: UIViewController {
 
     @IBOutlet weak var collectionViewMovieSeats: UICollectionView!
+    @IBOutlet weak var buttonGoBack: UIButton!
+    @IBOutlet weak var buttonBuyTicket: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         registerCells()
         setupDataSourcesAndDelegates()
+        setupGestureRecognizers()
     }
 
     func registerCells() {
@@ -24,6 +27,22 @@ class MovieSeatViewController: UIViewController {
     func setupDataSourcesAndDelegates() {
         collectionViewMovieSeats.dataSource = self
         collectionViewMovieSeats.delegate = self
+    }
+    
+    private func setupGestureRecognizers() {
+        let buttonGoBackTapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(didTapGoBack))
+        buttonGoBack.addGestureRecognizer(buttonGoBackTapGestureRecognizer)
+        
+        let buttonBuyTicketTapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(didTapBuyTicket))
+        buttonBuyTicket.addGestureRecognizer(buttonBuyTicketTapGestureRecognizer)
+    }
+    
+    @objc func didTapGoBack() {
+        navigateToScreen(withIdentifier: MovieTimeViewController.identifier)
+    }
+    
+    @objc func didTapBuyTicket() {
+        navigateToScreen(withIdentifier: SnackViewController.identifier)
     }
 }
 
