@@ -13,6 +13,10 @@
 		4F1127E527BD157700CBE96D /* DayCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F1127E327BD157700CBE96D /* DayCollectionViewCell.xib */; };
 		4F1127E827BD171900CBE96D /* TimeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F1127E627BD171900CBE96D /* TimeCollectionViewCell.swift */; };
 		4F1127E927BD171900CBE96D /* TimeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F1127E727BD171900CBE96D /* TimeCollectionViewCell.xib */; };
+		4F41690F27C36B570025C25D /* GenreCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F41690D27C36B570025C25D /* GenreCollectionViewCell.swift */; };
+		4F41691027C36B570025C25D /* GenreCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F41690E27C36B570025C25D /* GenreCollectionViewCell.xib */; };
+		4F41691327C3725E0025C25D /* CastCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F41691127C3725E0025C25D /* CastCollectionViewCell.swift */; };
+		4F41691427C3725E0025C25D /* CastCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F41691227C3725E0025C25D /* CastCollectionViewCell.xib */; };
 		4F5E594D27C3461B00B0206B /* MovieDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F5E594C27C3461B00B0206B /* MovieDetailViewController.swift */; };
 		4FC3601E27C27ECF00296494 /* AuthenticationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FC3601D27C27ECF00296494 /* AuthenticationViewController.swift */; };
 		4FCB6AD727BD0760004CC300 /* ViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FCB6AD627BD0760004CC300 /* ViewExtensions.swift */; };
@@ -48,6 +52,10 @@
 		4F1127E327BD157700CBE96D /* DayCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DayCollectionViewCell.xib; sourceTree = "<group>"; };
 		4F1127E627BD171900CBE96D /* TimeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeCollectionViewCell.swift; sourceTree = "<group>"; };
 		4F1127E727BD171900CBE96D /* TimeCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TimeCollectionViewCell.xib; sourceTree = "<group>"; };
+		4F41690D27C36B570025C25D /* GenreCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenreCollectionViewCell.swift; sourceTree = "<group>"; };
+		4F41690E27C36B570025C25D /* GenreCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GenreCollectionViewCell.xib; sourceTree = "<group>"; };
+		4F41691127C3725E0025C25D /* CastCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CastCollectionViewCell.swift; sourceTree = "<group>"; };
+		4F41691227C3725E0025C25D /* CastCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CastCollectionViewCell.xib; sourceTree = "<group>"; };
 		4F5E594C27C3461B00B0206B /* MovieDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailViewController.swift; sourceTree = "<group>"; };
 		4FC3601D27C27ECF00296494 /* AuthenticationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationViewController.swift; sourceTree = "<group>"; };
 		4FCB6AD627BD0760004CC300 /* ViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtensions.swift; sourceTree = "<group>"; };
@@ -148,6 +156,8 @@
 				4F1127E627BD171900CBE96D /* TimeCollectionViewCell.swift */,
 				4FDE885E27C1EBDE00E43789 /* MovieSeatCollectionViewCell.swift */,
 				4FDE886627C20C6000E43789 /* CardCollectionViewCell.swift */,
+				4F41690D27C36B570025C25D /* GenreCollectionViewCell.swift */,
+				4F41691127C3725E0025C25D /* CastCollectionViewCell.swift */,
 			);
 			path = swifts;
 			sourceTree = "<group>";
@@ -160,6 +170,8 @@
 				4F1127E727BD171900CBE96D /* TimeCollectionViewCell.xib */,
 				4FDE885F27C1EBDE00E43789 /* MovieSeatCollectionViewCell.xib */,
 				4FDE886727C20C6000E43789 /* CardCollectionViewCell.xib */,
+				4F41690E27C36B570025C25D /* GenreCollectionViewCell.xib */,
+				4F41691227C3725E0025C25D /* CastCollectionViewCell.xib */,
 			);
 			path = xibs;
 			sourceTree = "<group>";
@@ -308,8 +320,10 @@
 				4F1127E927BD171900CBE96D /* TimeCollectionViewCell.xib in Resources */,
 				4FEE71B027BCEEF900C8829D /* Assets.xcassets in Resources */,
 				4FDE886927C20C6000E43789 /* CardCollectionViewCell.xib in Resources */,
+				4F41691427C3725E0025C25D /* CastCollectionViewCell.xib in Resources */,
 				4F1127E527BD157700CBE96D /* DayCollectionViewCell.xib in Resources */,
 				4FEE71AE27BCEEF800C8829D /* Main.storyboard in Resources */,
+				4F41691027C36B570025C25D /* GenreCollectionViewCell.xib in Resources */,
 				4FCB6ADE27BD0882004CC300 /* MovieCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -371,6 +385,8 @@
 				4FDE885727C1E5E000E43789 /* MovieSeatVO.swift in Sources */,
 				4FDE885A27C1E6E500E43789 /* AppConstants.swift in Sources */,
 				4FDE886F27C2711900E43789 /* Router.swift in Sources */,
+				4F41690F27C36B570025C25D /* GenreCollectionViewCell.swift in Sources */,
+				4F41691327C3725E0025C25D /* CastCollectionViewCell.swift in Sources */,
 				4FCB6ADD27BD0882004CC300 /* MovieCollectionViewCell.swift in Sources */,
 				4FDE886B27C22E6B00E43789 /* TicketViewController.swift in Sources */,
 				4FDE886527C1FFFF00E43789 /* PaymentViewController.swift in Sources */,
