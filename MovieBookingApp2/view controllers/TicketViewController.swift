@@ -17,7 +17,7 @@ class TicketViewController: UIViewController {
         super.viewDidLoad()
         
         setupGestureRecognizers()
-//        setupShadow()
+        setupShadow()
         setupCornerRadius()
     }
     
@@ -37,14 +37,21 @@ class TicketViewController: UIViewController {
     }
     
     private func setupShadow() {
-//        viewShadow.layer.masksToBounds = false
-        viewShadow.layer.shadowColor = UIColor.black.cgColor
-        viewShadow.layer.shadowOpacity = 1
-        viewShadow.layer.shadowOffset = .zero
-        viewShadow.layer.shadowRadius = 5
+        // if viewShadow don't have background color, shadows are also applied
+        // to it's subbviews
+        viewShadow.layer.backgroundColor = UIColor.white.cgColor
+        viewShadow.clipsToBounds = true
+        viewShadow.layer.cornerRadius = 16
         
-//        viewShadow.layer.shouldRasterize = true
-//        viewShadow.layer.rasterizationScale = UIScreen.main.scale
+        viewShadow.layer.masksToBounds = false
+        viewShadow.layer.shadowColor = UIColor.black.cgColor
+        viewShadow.layer.shadowOpacity = 0.2
+        viewShadow.layer.shadowOffset = .zero
+        viewShadow.layer.shadowRadius = 10
+        
+        // shadow is expensive, so cache it
+        viewShadow.layer.shouldRasterize = true
+        viewShadow.layer.rasterizationScale = UIScreen.main.scale
     }
     
 }
