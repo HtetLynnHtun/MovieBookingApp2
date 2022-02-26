@@ -1967,7 +1967,7 @@
                                 <rect key="frame" x="0.0" y="104" width="414" height="758"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rfw-dw-7Ke">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="635.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="667.5"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="HZg-kX-763">
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="635.5"/>
@@ -2157,7 +2157,7 @@
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
-                                            <constraint firstAttribute="bottom" secondItem="HZg-kX-763" secondAttribute="bottom" id="ayb-RQ-JQC"/>
+                                            <constraint firstAttribute="bottom" secondItem="HZg-kX-763" secondAttribute="bottom" constant="32" id="ayb-RQ-JQC"/>
                                             <constraint firstItem="HZg-kX-763" firstAttribute="leading" secondItem="rfw-dw-7Ke" secondAttribute="leading" id="cAZ-kC-jcO"/>
                                             <constraint firstAttribute="trailing" secondItem="HZg-kX-763" secondAttribute="trailing" id="gf5-VM-dlR"/>
                                             <constraint firstItem="HZg-kX-763" firstAttribute="top" secondItem="rfw-dw-7Ke" secondAttribute="top" id="vYT-Tc-Eqt"/>
