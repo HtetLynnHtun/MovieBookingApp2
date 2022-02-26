@@ -1153,200 +1153,225 @@
                                     <constraint firstItem="G5e-JQ-tTH" firstAttribute="leading" secondItem="tHD-WZ-MBO" secondAttribute="leading" constant="16" id="szb-O1-xdM"/>
                                 </constraints>
                             </view>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="ED4-56-Dra">
-                                <rect key="frame" x="0.0" y="88" width="414" height="601.5"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" contentInsetAdjustmentBehavior="never" translatesAutoresizingMaskIntoConstraints="NO" id="Jcz-Rl-8Bn">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="xJ4-dL-TgW">
-                                        <rect key="frame" x="16" y="0.0" width="382" height="88.5"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MGc-c8-Re7">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="633.5"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Detective Pikachu" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L1q-TH-CS3">
-                                                <rect key="frame" x="0.0" y="0.0" width="382" height="33.5"/>
-                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="28"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Galaxy Cinema - Golden City" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wwJ-qV-xXq">
-                                                <rect key="frame" x="0.0" y="41.5" width="382" height="19.5"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                <color key="textColor" name="movie_seat_taken_color"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wednesday, 10 May, 07:00 PM" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8mU-UW-ENf">
-                                                <rect key="frame" x="0.0" y="69" width="382" height="19.5"/>
-                                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="16"/>
-                                                <color key="textColor" name="movie_seat_taken_color"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                        </subviews>
-                                    </stackView>
-                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="EqH-aT-gj9">
-                                        <rect key="frame" x="16" y="112.5" width="382" height="280"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="280" id="flE-xT-JHm"/>
-                                        </constraints>
-                                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="CcK-6k-u6j">
-                                            <size key="itemSize" width="128" height="128"/>
-                                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                        </collectionViewFlowLayout>
-                                        <cells>
-                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="kyB-ft-vsA">
-                                                <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="C5g-9q-8Bf">
-                                                    <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                </collectionViewCellContentView>
-                                            </collectionViewCell>
-                                        </cells>
-                                    </collectionView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="PD1-JQ-EVj">
-                                        <rect key="frame" x="16" y="416.5" width="382" height="32"/>
-                                        <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="dca-Yk-aee">
-                                                <rect key="frame" x="0.0" y="0.0" width="127.5" height="32"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="ED4-56-Dra">
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="601.5"/>
                                                 <subviews>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Omv-Jh-jUv">
-                                                        <rect key="frame" x="0.0" y="0.0" width="32" height="32"/>
-                                                        <color key="backgroundColor" name="movie_seat_available_color"/>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="xJ4-dL-TgW">
+                                                        <rect key="frame" x="16" y="0.0" width="382" height="88.5"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Detective Pikachu" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L1q-TH-CS3">
+                                                                <rect key="frame" x="0.0" y="0.0" width="382" height="33.5"/>
+                                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="28"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Galaxy Cinema - Golden City" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wwJ-qV-xXq">
+                                                                <rect key="frame" x="0.0" y="41.5" width="382" height="19.5"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                                <color key="textColor" name="movie_seat_taken_color"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wednesday, 10 May, 07:00 PM" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8mU-UW-ENf">
+                                                                <rect key="frame" x="0.0" y="69" width="382" height="19.5"/>
+                                                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="16"/>
+                                                                <color key="textColor" name="movie_seat_taken_color"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="EqH-aT-gj9">
+                                                        <rect key="frame" x="16" y="112.5" width="382" height="280"/>
+                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="height" constant="32" id="D2u-ba-2YX"/>
-                                                            <constraint firstAttribute="width" constant="32" id="Udt-nn-jXu"/>
+                                                            <constraint firstAttribute="height" constant="280" id="flE-xT-JHm"/>
                                                         </constraints>
-                                                        <userDefinedRuntimeAttributes>
-                                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                                <integer key="value" value="16"/>
-                                                            </userDefinedRuntimeAttribute>
-                                                        </userDefinedRuntimeAttributes>
-                                                    </view>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Available" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y4a-xo-q8O">
-                                                        <rect key="frame" x="40" y="0.0" width="87.5" height="32"/>
-                                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="14"/>
-                                                        <nil key="textColor"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                </subviews>
-                                            </stackView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="90n-dx-kDD">
-                                                <rect key="frame" x="127.5" y="0.0" width="127" height="32"/>
-                                                <subviews>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="E1g-8n-34C">
-                                                        <rect key="frame" x="0.0" y="0.0" width="32" height="32"/>
-                                                        <color key="backgroundColor" name="movie_seat_taken_color"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="width" constant="32" id="QUM-Wq-7Xj"/>
-                                                            <constraint firstAttribute="height" constant="32" id="xv1-ft-u2b"/>
-                                                        </constraints>
-                                                        <userDefinedRuntimeAttributes>
-                                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                                <integer key="value" value="16"/>
-                                                            </userDefinedRuntimeAttribute>
-                                                        </userDefinedRuntimeAttributes>
-                                                    </view>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reserved" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zgl-R7-WMS">
-                                                        <rect key="frame" x="40" y="0.0" width="87" height="32"/>
-                                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="14"/>
-                                                        <nil key="textColor"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                </subviews>
-                                            </stackView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="upg-oF-RIw">
-                                                <rect key="frame" x="254.5" y="0.0" width="127.5" height="32"/>
-                                                <subviews>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OEY-37-cma">
-                                                        <rect key="frame" x="0.0" y="0.0" width="32" height="32"/>
+                                                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="CcK-6k-u6j">
+                                                            <size key="itemSize" width="128" height="128"/>
+                                                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                        </collectionViewFlowLayout>
+                                                        <cells>
+                                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="kyB-ft-vsA">
+                                                                <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="C5g-9q-8Bf">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                                                    <autoresizingMask key="autoresizingMask"/>
+                                                                </collectionViewCellContentView>
+                                                            </collectionViewCell>
+                                                        </cells>
+                                                    </collectionView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="PD1-JQ-EVj">
+                                                        <rect key="frame" x="16" y="416.5" width="382" height="32"/>
+                                                        <subviews>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="dca-Yk-aee">
+                                                                <rect key="frame" x="0.0" y="0.0" width="127.5" height="32"/>
+                                                                <subviews>
+                                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Omv-Jh-jUv">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="32" height="32"/>
+                                                                        <color key="backgroundColor" name="movie_seat_available_color"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="height" constant="32" id="D2u-ba-2YX"/>
+                                                                            <constraint firstAttribute="width" constant="32" id="Udt-nn-jXu"/>
+                                                                        </constraints>
+                                                                        <userDefinedRuntimeAttributes>
+                                                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                                <integer key="value" value="16"/>
+                                                                            </userDefinedRuntimeAttribute>
+                                                                        </userDefinedRuntimeAttributes>
+                                                                    </view>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Available" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y4a-xo-q8O">
+                                                                        <rect key="frame" x="40" y="0.0" width="87.5" height="32"/>
+                                                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="14"/>
+                                                                        <nil key="textColor"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                </subviews>
+                                                            </stackView>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="90n-dx-kDD">
+                                                                <rect key="frame" x="127.5" y="0.0" width="127" height="32"/>
+                                                                <subviews>
+                                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="E1g-8n-34C">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="32" height="32"/>
+                                                                        <color key="backgroundColor" name="movie_seat_taken_color"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="width" constant="32" id="QUM-Wq-7Xj"/>
+                                                                            <constraint firstAttribute="height" constant="32" id="xv1-ft-u2b"/>
+                                                                        </constraints>
+                                                                        <userDefinedRuntimeAttributes>
+                                                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                                <integer key="value" value="16"/>
+                                                                            </userDefinedRuntimeAttribute>
+                                                                        </userDefinedRuntimeAttributes>
+                                                                    </view>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reserved" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zgl-R7-WMS">
+                                                                        <rect key="frame" x="40" y="0.0" width="87" height="32"/>
+                                                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="14"/>
+                                                                        <nil key="textColor"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                </subviews>
+                                                            </stackView>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="upg-oF-RIw">
+                                                                <rect key="frame" x="254.5" y="0.0" width="127.5" height="32"/>
+                                                                <subviews>
+                                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OEY-37-cma">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="32" height="32"/>
+                                                                        <color key="backgroundColor" name="primary_color"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="width" constant="32" id="7wd-TU-FNr"/>
+                                                                            <constraint firstAttribute="height" constant="32" id="Qfq-sx-Zkq"/>
+                                                                        </constraints>
+                                                                        <userDefinedRuntimeAttributes>
+                                                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                                <integer key="value" value="16"/>
+                                                                            </userDefinedRuntimeAttribute>
+                                                                        </userDefinedRuntimeAttributes>
+                                                                    </view>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Selection" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B58-Fg-Grq">
+                                                                        <rect key="frame" x="40" y="0.0" width="87.5" height="32"/>
+                                                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="14"/>
+                                                                        <nil key="textColor"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                </subviews>
+                                                            </stackView>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="IKp-aT-EU9">
+                                                        <rect key="frame" x="16" y="472.5" width="382" height="51"/>
+                                                        <subviews>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Uhy-Hn-CCJ">
+                                                                <rect key="frame" x="0.0" y="0.0" width="382" height="21.5"/>
+                                                                <subviews>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tickets" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Cz-Nm-zfp">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="371.5" height="21.5"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                                        <color key="textColor" name="movie_seat_taken_color"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YvQ-lN-Qz2">
+                                                                        <rect key="frame" x="371.5" y="0.0" width="10.5" height="21.5"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                                        <color key="textColor" name="movie_seat_taken_color"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                </subviews>
+                                                            </stackView>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a5J-1f-Esd">
+                                                                <rect key="frame" x="0.0" y="29.5" width="382" height="21.5"/>
+                                                                <subviews>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Seats" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VnO-ua-UFu">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="299" height="21.5"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                                        <color key="textColor" name="movie_seat_taken_color"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="D Row 5/6" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kIn-QV-I0u">
+                                                                        <rect key="frame" x="299" y="0.0" width="83" height="21.5"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                                        <color key="textColor" name="movie_seat_taken_color"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                </subviews>
+                                                            </stackView>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nGC-b7-db0">
+                                                        <rect key="frame" x="16" y="547.5" width="382" height="54"/>
                                                         <color key="backgroundColor" name="primary_color"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="width" constant="32" id="7wd-TU-FNr"/>
-                                                            <constraint firstAttribute="height" constant="32" id="Qfq-sx-Zkq"/>
+                                                            <constraint firstAttribute="height" constant="54" id="llK-fb-z22"/>
                                                         </constraints>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="plain" title="Buy Ticket for $20.00">
+                                                            <fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="16"/>
+                                                            <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </buttonConfiguration>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                                <integer key="value" value="16"/>
+                                                                <integer key="value" value="8"/>
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
-                                                    </view>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Selection" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B58-Fg-Grq">
-                                                        <rect key="frame" x="40" y="0.0" width="87.5" height="32"/>
-                                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="14"/>
-                                                        <nil key="textColor"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
+                                                    </button>
                                                 </subviews>
+                                                <edgeInsets key="layoutMargins" top="0.0" left="16" bottom="0.0" right="16"/>
                                             </stackView>
                                         </subviews>
-                                    </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="IKp-aT-EU9">
-                                        <rect key="frame" x="16" y="472.5" width="382" height="51"/>
-                                        <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Uhy-Hn-CCJ">
-                                                <rect key="frame" x="0.0" y="0.0" width="382" height="21.5"/>
-                                                <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tickets" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Cz-Nm-zfp">
-                                                        <rect key="frame" x="0.0" y="0.0" width="371.5" height="21.5"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                                        <color key="textColor" name="movie_seat_taken_color"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YvQ-lN-Qz2">
-                                                        <rect key="frame" x="371.5" y="0.0" width="10.5" height="21.5"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                                        <color key="textColor" name="movie_seat_taken_color"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                </subviews>
-                                            </stackView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a5J-1f-Esd">
-                                                <rect key="frame" x="0.0" y="29.5" width="382" height="21.5"/>
-                                                <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Seats" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VnO-ua-UFu">
-                                                        <rect key="frame" x="0.0" y="0.0" width="299" height="21.5"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                                        <color key="textColor" name="movie_seat_taken_color"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="D Row 5/6" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kIn-QV-I0u">
-                                                        <rect key="frame" x="299" y="0.0" width="83" height="21.5"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                                        <color key="textColor" name="movie_seat_taken_color"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                </subviews>
-                                            </stackView>
-                                        </subviews>
-                                    </stackView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nGC-b7-db0">
-                                        <rect key="frame" x="16" y="547.5" width="382" height="54"/>
-                                        <color key="backgroundColor" name="primary_color"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="54" id="llK-fb-z22"/>
+                                            <constraint firstAttribute="trailing" secondItem="ED4-56-Dra" secondAttribute="trailing" id="3A9-vD-kAx"/>
+                                            <constraint firstItem="ED4-56-Dra" firstAttribute="top" secondItem="MGc-c8-Re7" secondAttribute="top" id="60B-9I-1ZQ"/>
+                                            <constraint firstItem="ED4-56-Dra" firstAttribute="leading" secondItem="MGc-c8-Re7" secondAttribute="leading" id="7wa-cQ-iZ9"/>
+                                            <constraint firstAttribute="bottom" secondItem="ED4-56-Dra" secondAttribute="bottom" constant="32" id="Aka-ZR-81t"/>
                                         </constraints>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="Buy Ticket for $20.00">
-                                            <fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="16"/>
-                                            <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </buttonConfiguration>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                <integer key="value" value="8"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                    </button>
+                                    </view>
                                 </subviews>
-                                <edgeInsets key="layoutMargins" top="0.0" left="16" bottom="0.0" right="16"/>
-                            </stackView>
+                                <constraints>
+                                    <constraint firstItem="MGc-c8-Re7" firstAttribute="top" secondItem="Jcz-Rl-8Bn" secondAttribute="top" id="IAe-ec-yOU"/>
+                                    <constraint firstItem="MGc-c8-Re7" firstAttribute="centerX" secondItem="Jcz-Rl-8Bn" secondAttribute="centerX" id="RYc-QZ-G9g"/>
+                                    <constraint firstAttribute="trailing" secondItem="MGc-c8-Re7" secondAttribute="trailing" id="fG2-kb-b5j"/>
+                                    <constraint firstAttribute="bottom" secondItem="MGc-c8-Re7" secondAttribute="bottom" id="gsD-4t-IeK"/>
+                                    <constraint firstItem="MGc-c8-Re7" firstAttribute="leading" secondItem="Jcz-Rl-8Bn" secondAttribute="leading" id="xBr-Zk-ac8"/>
+                                </constraints>
+                            </scrollView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="zfc-17-hWY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="zfc-17-hWY" firstAttribute="trailing" secondItem="ED4-56-Dra" secondAttribute="trailing" id="6b4-kl-1yV"/>
-                            <constraint firstItem="ED4-56-Dra" firstAttribute="top" secondItem="tHD-WZ-MBO" secondAttribute="bottom" id="8UK-Oj-CZ7"/>
-                            <constraint firstItem="ED4-56-Dra" firstAttribute="leading" secondItem="zfc-17-hWY" secondAttribute="leading" id="A2T-3V-b14"/>
+                            <constraint firstItem="Jcz-Rl-8Bn" firstAttribute="leading" secondItem="nQ9-JB-e3R" secondAttribute="leading" id="4WB-P1-SHD"/>
+                            <constraint firstItem="Jcz-Rl-8Bn" firstAttribute="top" secondItem="tHD-WZ-MBO" secondAttribute="bottom" id="6Fx-as-p0X"/>
                             <constraint firstItem="tHD-WZ-MBO" firstAttribute="top" secondItem="zfc-17-hWY" secondAttribute="top" id="EhO-bQ-jVu"/>
+                            <constraint firstAttribute="trailing" secondItem="Jcz-Rl-8Bn" secondAttribute="trailing" id="HJv-MW-k1w"/>
                             <constraint firstItem="tHD-WZ-MBO" firstAttribute="leading" secondItem="zfc-17-hWY" secondAttribute="leading" id="KbJ-JJ-GEg"/>
+                            <constraint firstItem="zfc-17-hWY" firstAttribute="bottom" secondItem="Jcz-Rl-8Bn" secondAttribute="bottom" id="LSf-Gx-3QB"/>
                             <constraint firstItem="tHD-WZ-MBO" firstAttribute="trailing" secondItem="zfc-17-hWY" secondAttribute="trailing" id="rNo-9B-ezo"/>
                         </constraints>
                     </view>
