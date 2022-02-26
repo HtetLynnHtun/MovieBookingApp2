@@ -26,12 +26,12 @@ class PaymentViewController: UIViewController {
 
     private func setupCarouselView() {
         let layout = UPCarouselFlowLayout()
-        layout.itemSize.width = 338
+        layout.itemSize.width = view.bounds.width * 0.8
         layout.itemSize.height = 200
         layout.scrollDirection = .horizontal
         layout.sideItemScale = 0.8
         layout.sideItemAlpha = 0.5
-        layout.spacingMode = .overlap(visibleOffset: 20)
+        layout.spacingMode = .overlap(visibleOffset: view.bounds.width * 0.05)
         collectionViewCards.collectionViewLayout = layout
     }
     
