@@ -8,4 +8,8 @@ target 'MovieBookingApp2' do
   # Pods for MovieBookingApp2
   pod 'SideMenu'
   pod "UPCarouselFlowLayout"
+  pod 'Alamofire', '~> 5.5'
+  pod 'RealmSwift', '~>10'
+  
+  pod 'Wormholy', :configurations => ['Debug']
 end
