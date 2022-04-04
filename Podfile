@@ -10,6 +10,7 @@ target 'MovieBookingApp2' do
   pod "UPCarouselFlowLayout"
   pod 'Alamofire', '~> 5.5'
   pod 'RealmSwift', '~>10'
+  pod 'GoogleSignIn'
   
   pod 'Wormholy', :configurations => ['Debug']
 end
