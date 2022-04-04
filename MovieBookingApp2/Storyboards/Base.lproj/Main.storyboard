@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Jii-a5-oyv">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Jii-a5-oyv">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -392,9 +392,13 @@
                     </view>
                     <connections>
                         <outlet property="buttonConfirm" destination="Epx-kN-8cH" id="5WZ-H8-CfP"/>
+                        <outlet property="emailTextField" destination="Nal-5a-9C1" id="bG9-8h-yOk"/>
                         <outlet property="labelLogin" destination="8dE-Tv-jf8" id="Grj-DQ-QPD"/>
                         <outlet property="labelSignIn" destination="ffP-wn-hsr" id="dvU-gI-BC2"/>
                         <outlet property="loginIndicator" destination="CAz-hg-zlP" id="qKQ-xg-a8X"/>
+                        <outlet property="nameTextField" destination="6S4-rr-54M" id="Ac2-WI-yow"/>
+                        <outlet property="passwordTextField" destination="Jna-QW-HKc" id="qId-cF-3m7"/>
+                        <outlet property="phoneTextField" destination="E93-Gn-s5k" id="7kw-tj-vuh"/>
                         <outlet property="signInIndicator" destination="WxW-zV-Jis" id="kAW-OT-NXx"/>
                         <outlet property="stackViewLogin" destination="yXP-oA-h3q" id="NiK-VT-4NI"/>
                         <outlet property="stackViewNameInput" destination="djk-WH-gIU" id="A5B-a5-CBY"/>

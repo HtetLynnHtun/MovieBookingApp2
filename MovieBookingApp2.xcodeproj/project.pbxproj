@@ -23,6 +23,13 @@
 		4F41692127C3CF130025C25D /* PaymentMethodCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F41691F27C3CF130025C25D /* PaymentMethodCollectionViewCell.xib */; };
 		4F41692327C3DB2B0025C25D /* AddNewCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F41692227C3DB2B0025C25D /* AddNewCardViewController.swift */; };
 		4F5E594D27C3461B00B0206B /* MovieDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F5E594C27C3461B00B0206B /* MovieDetailViewController.swift */; };
+		4F9161D227FAD4AD0046FCA2 /* NetworkingAgent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F9161D127FAD4AD0046FCA2 /* NetworkingAgent.swift */; };
+		4F9161D427FAD4D70046FCA2 /* MBAResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F9161D327FAD4D70046FCA2 /* MBAResult.swift */; };
+		4F9161D627FAD5220046FCA2 /* ProfileVO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F9161D527FAD5220046FCA2 /* ProfileVO.swift */; };
+		4F9161D827FAD5A00046FCA2 /* AlamofireAgent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F9161D727FAD5A00046FCA2 /* AlamofireAgent.swift */; };
+		4F9161DA27FAD5D70046FCA2 /* MBAEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F9161D927FAD5D70046FCA2 /* MBAEndpoint.swift */; };
+		4F9161DC27FAD71A0046FCA2 /* ApiResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F9161DB27FAD71A0046FCA2 /* ApiResponse.swift */; };
+		4F9161DE27FADE440046FCA2 /* UserCredentialsVO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F9161DD27FADE440046FCA2 /* UserCredentialsVO.swift */; };
 		4FC3601E27C27ECF00296494 /* AuthenticationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FC3601D27C27ECF00296494 /* AuthenticationViewController.swift */; };
 		4FCB6AD727BD0760004CC300 /* ViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FCB6AD627BD0760004CC300 /* ViewExtensions.swift */; };
 		4FCB6ADD27BD0882004CC300 /* MovieCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FCB6ADB27BD0882004CC300 /* MovieCollectionViewCell.swift */; };
@@ -67,6 +74,13 @@
 		4F41691F27C3CF130025C25D /* PaymentMethodCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PaymentMethodCollectionViewCell.xib; sourceTree = "<group>"; };
 		4F41692227C3DB2B0025C25D /* AddNewCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewCardViewController.swift; sourceTree = "<group>"; };
 		4F5E594C27C3461B00B0206B /* MovieDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailViewController.swift; sourceTree = "<group>"; };
+		4F9161D127FAD4AD0046FCA2 /* NetworkingAgent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingAgent.swift; sourceTree = "<group>"; };
+		4F9161D327FAD4D70046FCA2 /* MBAResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MBAResult.swift; sourceTree = "<group>"; };
+		4F9161D527FAD5220046FCA2 /* ProfileVO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVO.swift; sourceTree = "<group>"; };
+		4F9161D727FAD5A00046FCA2 /* AlamofireAgent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlamofireAgent.swift; sourceTree = "<group>"; };
+		4F9161D927FAD5D70046FCA2 /* MBAEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MBAEndpoint.swift; sourceTree = "<group>"; };
+		4F9161DB27FAD71A0046FCA2 /* ApiResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiResponse.swift; sourceTree = "<group>"; };
+		4F9161DD27FADE440046FCA2 /* UserCredentialsVO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCredentialsVO.swift; sourceTree = "<group>"; };
 		4FC3601D27C27ECF00296494 /* AuthenticationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationViewController.swift; sourceTree = "<group>"; };
 		4FCB6AD627BD0760004CC300 /* ViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtensions.swift; sourceTree = "<group>"; };
 		4FCB6ADB27BD0882004CC300 /* MovieCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -141,6 +155,18 @@
 				4FEE71B127BCEEF900C8829D /* LaunchScreen.storyboard */,
 			);
 			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		4F9161D027FAD4850046FCA2 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				4F9161D727FAD5A00046FCA2 /* AlamofireAgent.swift */,
+				4F9161DB27FAD71A0046FCA2 /* ApiResponse.swift */,
+				4F9161D927FAD5D70046FCA2 /* MBAEndpoint.swift */,
+				4F9161D327FAD4D70046FCA2 /* MBAResult.swift */,
+				4F9161D127FAD4AD0046FCA2 /* NetworkingAgent.swift */,
+			);
+			path = Networking;
 			sourceTree = "<group>";
 		};
 		4FCB6AD427BCEFAC004CC300 /* ViewControllers */ = {
@@ -221,6 +247,8 @@
 			isa = PBXGroup;
 			children = (
 				4FDE885627C1E5E000E43789 /* MovieSeatVO.swift */,
+				4F9161D527FAD5220046FCA2 /* ProfileVO.swift */,
+				4F9161DD27FADE440046FCA2 /* UserCredentialsVO.swift */,
 			);
 			path = vos;
 			sourceTree = "<group>";
@@ -273,6 +301,7 @@
 			children = (
 				4FCB6AD427BCEFAC004CC300 /* ViewControllers */,
 				4FDE885427C1E5A300E43789 /* Data */,
+				4F9161D027FAD4850046FCA2 /* Networking */,
 				4FCB6AD827BD085E004CC300 /* Cells */,
 				4FEC672D27C358D3009F1275 /* Components */,
 				4FDE885B27C1E77E00E43789 /* dummy */,
@@ -410,18 +439,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4F9161DC27FAD71A0046FCA2 /* ApiResponse.swift in Sources */,
 				4FDE885D27C1E79000E43789 /* DummyData.swift in Sources */,
 				4FEE71AB27BCEEF800C8829D /* HomeViewController.swift in Sources */,
 				4FEE71A727BCEEF800C8829D /* AppDelegate.swift in Sources */,
 				4FDE886027C1EBDE00E43789 /* MovieSeatCollectionViewCell.swift in Sources */,
 				4F5E594D27C3461B00B0206B /* MovieDetailViewController.swift in Sources */,
+				4F9161DE27FADE440046FCA2 /* UserCredentialsVO.swift in Sources */,
 				4FDE885727C1E5E000E43789 /* MovieSeatVO.swift in Sources */,
+				4F9161D627FAD5220046FCA2 /* ProfileVO.swift in Sources */,
 				4FDE885A27C1E6E500E43789 /* AppConstants.swift in Sources */,
+				4F9161D827FAD5A00046FCA2 /* AlamofireAgent.swift in Sources */,
+				4F9161D227FAD4AD0046FCA2 /* NetworkingAgent.swift in Sources */,
 				4F41691C27C39C4B0025C25D /* SnackCollectionViewCell.swift in Sources */,
 				4FDE886F27C2711900E43789 /* Router.swift in Sources */,
 				4F41690F27C36B570025C25D /* GenreCollectionViewCell.swift in Sources */,
 				4F41691327C3725E0025C25D /* CastCollectionViewCell.swift in Sources */,
 				4FCB6ADD27BD0882004CC300 /* MovieCollectionViewCell.swift in Sources */,
+				4F9161D427FAD4D70046FCA2 /* MBAResult.swift in Sources */,
 				4FDE886B27C22E6B00E43789 /* TicketViewController.swift in Sources */,
 				4FDE886527C1FFFF00E43789 /* PaymentViewController.swift in Sources */,
 				4F41692027C3CF130025C25D /* PaymentMethodCollectionViewCell.swift in Sources */,
@@ -435,6 +470,7 @@
 				4F1127E827BD171900CBE96D /* TimeCollectionViewCell.swift in Sources */,
 				4F1127E127BD137F00CBE96D /* MovieTimeViewController.swift in Sources */,
 				4FDE886D27C266DC00E43789 /* LandingViewController.swift in Sources */,
+				4F9161DA27FAD5D70046FCA2 /* MBAEndpoint.swift in Sources */,
 				4FEE71A927BCEEF800C8829D /* SceneDelegate.swift in Sources */,
 				4F41692327C3DB2B0025C25D /* AddNewCardViewController.swift in Sources */,
 			);

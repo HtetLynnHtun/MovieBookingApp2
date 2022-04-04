@@ -8,7 +8,7 @@
 import UIKit
 
 class AuthenticationViewController: UIViewController {
-
+    
     @IBOutlet weak var stackViewLogin: UIStackView!
     @IBOutlet weak var stackViewSignIn: UIStackView!
     @IBOutlet weak var labelLogin: UILabel!
@@ -20,6 +20,10 @@ class AuthenticationViewController: UIViewController {
     @IBOutlet weak var viewFacebookSignIn: UIView!
     @IBOutlet weak var viewGoogleSignIn: UIView!
     @IBOutlet weak var buttonConfirm: UIButton!
+    @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var nameTextField: UITextField!
+    @IBOutlet weak var phoneTextField: UITextField!
     
     var isLogin = true {
         didSet {
@@ -50,7 +54,7 @@ class AuthenticationViewController: UIViewController {
         stackViewSignIn.addGestureRecognizer(signInTapGestureRecognizer)
         buttonConfirm.addGestureRecognizer(confirmButtonTapGestureRecognizer)
     }
-
+    
     @objc func didTapLogin() {
         isLogin = true
     }
@@ -60,7 +64,22 @@ class AuthenticationViewController: UIViewController {
     }
     
     @objc func didTapConfirmButton() {
-        navigateToScreen(withIdentifier: HomeViewController.identifier)
+        // TODO: Do validations
+        
+        let credentials = UserCredentialsVO(
+            email: emailTextField.text!,
+            password: passwordTextField.text!,
+            name: nameTextField.text ?? "",
+            phone: phoneTextField.text ?? "",
+            googleAccessToken: "",
+            facebookAccessToken: ""
+        )
+        if (isLogin) {
+            loginInWithEmail(credentials: credentials)
+        } else {
+            signInWithEmail(credentials: credentials)
+        }
+        //        navigateToScreen(withIdentifier: HomeViewController.identifier)
     }
     
     private func setupLoginMode() {
@@ -93,5 +112,28 @@ class AuthenticationViewController: UIViewController {
         viewGoogleSignIn.layer.borderWidth = 0.5
         viewGoogleSignIn.layer.cornerRadius = 8
         viewGoogleSignIn.layer.borderColor = UIColor(named: "movie_seat_taken_color")?.cgColor
+    }
+    
+    // MARK: Model Communications
+    private func loginInWithEmail(credentials: UserCredentialsVO) {
+        AlamofireAgent.shared.loginWithEmail(credentials: credentials) { [weak self] result in
+            switch result {
+            case .success(let profile):
+                print(profile.name)
+            case .failure(let errorMessage):
+                self?.showAlert(message: errorMessage)
+            }
+        }
+    }
+    
+    private func signInWithEmail(credentials: UserCredentialsVO) {
+        AlamofireAgent.shared.signInWithEmail(credentials: credentials) { [weak self] result in
+            switch result {
+            case .success(let profile):
+                print(profile.name)
+            case .failure(let errorMessage):
+                self?.showAlert(message: errorMessage)
+            }
+        }
     }
 }
