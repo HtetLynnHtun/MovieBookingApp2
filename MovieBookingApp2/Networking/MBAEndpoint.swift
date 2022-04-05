@@ -10,7 +10,7 @@ import Alamofire
 
 enum MBAEndpoint: URLConvertible {
     
-    case signInWithEmail
+    case signIn
     case loginWithEmail
     
     func asURL() throws -> URL {
@@ -28,7 +28,7 @@ enum MBAEndpoint: URLConvertible {
     
     private var apiPath: String {
         switch self {
-        case .signInWithEmail:
+        case .signIn:
             return "/register"
         case .loginWithEmail:
             return "/email-login"
