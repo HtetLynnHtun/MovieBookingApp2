@@ -171,8 +171,8 @@ class AuthenticationViewController: UIViewController {
     private func loginWithEmail(credentials: UserCredentialsVO) {
         authModel.loginWithEmail(credentials: credentials) { [weak self] result in
             switch result {
-            case .success(let profile):
-                print(profile.name)
+            case .success(_):
+                self?.navigateToScreen(withIdentifier: HomeViewController.identifier)
             case .failure(let errorMessage):
                 self?.showAlert(message: errorMessage)
             }
@@ -182,8 +182,8 @@ class AuthenticationViewController: UIViewController {
     private func signIn(credentials: UserCredentialsVO) {
         authModel.signIn(credentials: credentials) { [weak self] result in
             switch result {
-            case .success(let profile):
-                print(profile.name)
+            case .success(_):
+                self?.navigateToScreen(withIdentifier: HomeViewController.identifier)
             case .failure(let errorMessage):
                 self?.showAlert(message: errorMessage)
             }
@@ -193,8 +193,8 @@ class AuthenticationViewController: UIViewController {
     private func loginWithGoogle(token: String) {
         authModel.loginWithGoogle(token: token) { [weak self] result in
             switch result {
-            case .success(let profile):
-                print(profile.name)
+            case .success(_):
+                self?.navigateToScreen(withIdentifier: HomeViewController.identifier)
             case .failure(let errorMessage):
                 self?.showAlert(message: errorMessage)
             }
