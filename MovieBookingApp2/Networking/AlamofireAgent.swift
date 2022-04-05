@@ -14,14 +14,14 @@ struct AlamofireAgent: NetworkingAgent {
     
     private init() { }
     
-    func signInWithEmail(credentials: UserCredentialsVO, completion: @escaping (MBAResult<ProfileVO>) -> Void) {
+    func signIn(credentials: UserCredentialsVO, completion: @escaping (MBAResult<ProfileVO>) -> Void) {
         let parameters = credentials.toParameters()
         
-        AF.request(MBAEndpoint.signInWithEmail, method: .post, parameters: parameters)
+        AF.request(MBAEndpoint.signIn, method: .post, parameters: parameters)
             .responseDecodable(of: ApiResponse<ProfileVO>.self) { response in
                 switch response.result {
                 case .success(let apiResponse):
-                    if ((200..<300).contains(apiResponse.code)) {
+                    if (isResponseCodeInSuccessRange(apiResponse.code)) {
                         completion(.success(apiResponse.data!))
                     } else {
                         completion(.failure("A user already existed with that phone number."))
@@ -41,7 +41,27 @@ struct AlamofireAgent: NetworkingAgent {
             .responseDecodable(of: ApiResponse<ProfileVO>.self) { response in
                 switch response.result {
                 case .success(let apiResponse):
-                    if ((200..<300).contains(apiResponse.code)) {
+                    if (isResponseCodeInSuccessRange(apiResponse.code)) {
+                        completion(.success(apiResponse.data!))
+                    } else {
+                        completion(.failure(apiResponse.message))
+                    }
+                case .failure(let error):
+                    if (isNoConnectionError(error: error)) {
+                        completion(.failure("Please connect to the Internet and try again."))
+                    }
+                }
+            }
+    }
+    
+    func loginWithGoogle(token: String, completion: @escaping (MBAResult<ProfileVO>) -> Void) {
+        let parameters = ["access-token": token]
+        
+        AF.request(MBAEndpoint.loginWithGoogle, method: .post, parameters: parameters)
+            .responseDecodable(of: ApiResponse<ProfileVO>.self) { response in
+                switch response.result {
+                case .success(let apiResponse):
+                    if (isResponseCodeInSuccessRange(apiResponse.code)) {
                         completion(.success(apiResponse.data!))
                     } else {
                         completion(.failure(apiResponse.message))
@@ -66,6 +86,10 @@ struct AlamofireAgent: NetworkingAgent {
             }
         }
         return false
+    }
+    
+    private func isResponseCodeInSuccessRange(_ code: Int) -> Bool{
+        return (200..<300).contains(code)
     }
     
 }

@@ -12,8 +12,8 @@ struct UserCredentialsVO {
     let password: String
     let name: String
     let phone: String
-    let googleAccessToken: String
-    let facebookAccessToken: String
+    var googleAccessToken: String
+    var facebookAccessToken: String
     
     /// Cast to form-url-encoded parameters
     func toParameters() -> [String: String] {

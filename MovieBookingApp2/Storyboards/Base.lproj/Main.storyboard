@@ -393,6 +393,8 @@
                     <connections>
                         <outlet property="buttonConfirm" destination="Epx-kN-8cH" id="5WZ-H8-CfP"/>
                         <outlet property="emailTextField" destination="Nal-5a-9C1" id="bG9-8h-yOk"/>
+                        <outlet property="facebookSignInView" destination="oUF-OE-pNj" id="gHs-IS-MEr"/>
+                        <outlet property="googleSignInView" destination="LPH-px-Ooa" id="h3D-qR-4dn"/>
                         <outlet property="labelLogin" destination="8dE-Tv-jf8" id="Grj-DQ-QPD"/>
                         <outlet property="labelSignIn" destination="ffP-wn-hsr" id="dvU-gI-BC2"/>
                         <outlet property="loginIndicator" destination="CAz-hg-zlP" id="qKQ-xg-a8X"/>

@@ -9,6 +9,7 @@ import Foundation
 protocol NetworkingAgent {
     
     // MARK: Authentication endpoints
-    func signInWithEmail(credentials: UserCredentialsVO, completion: @escaping (MBAResult<ProfileVO>) -> Void)
+    func signIn(credentials: UserCredentialsVO, completion: @escaping (MBAResult<ProfileVO>) -> Void)
     func loginWithEmail(credentials: UserCredentialsVO, completion: @escaping (MBAResult<ProfileVO>) -> Void)
+    func loginWithGoogle(token: String, completion: @escaping (MBAResult<ProfileVO>) -> Void)
 }

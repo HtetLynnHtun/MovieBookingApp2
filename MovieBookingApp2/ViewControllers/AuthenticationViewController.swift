@@ -24,6 +24,8 @@ class AuthenticationViewController: UIViewController {
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var phoneTextField: UITextField!
+    @IBOutlet weak var facebookSignInView: UIView!
+    @IBOutlet weak var googleSignInView: UIView!
     
     var isLogin = true {
         didSet {
@@ -46,13 +48,16 @@ class AuthenticationViewController: UIViewController {
         let loginTapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(didTapLogin))
         let signInTapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(didTapSignIn))
         let confirmButtonTapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(didTapConfirmButton))
+        let googleSignInTapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(didTapGoogleSignIn))
         
         stackViewLogin.isUserInteractionEnabled = true
         stackViewSignIn.isUserInteractionEnabled = true
+        googleSignInView.isUserInteractionEnabled = true
         
         stackViewLogin.addGestureRecognizer(loginTapGestureRecognizer)
         stackViewSignIn.addGestureRecognizer(signInTapGestureRecognizer)
         buttonConfirm.addGestureRecognizer(confirmButtonTapGestureRecognizer)
+        googleSignInView.addGestureRecognizer(googleSignInTapGestureRecognizer)
     }
     
     @objc func didTapLogin() {
@@ -75,11 +80,30 @@ class AuthenticationViewController: UIViewController {
             facebookAccessToken: ""
         )
         if (isLogin) {
-            loginInWithEmail(credentials: credentials)
+            loginWithEmail(credentials: credentials)
         } else {
-            signInWithEmail(credentials: credentials)
+            signIn(credentials: credentials)
         }
         //        navigateToScreen(withIdentifier: HomeViewController.identifier)
+    }
+    
+    @objc func didTapGoogleSignIn() {
+        // TODO: Do validations
+        
+        GoogleAuth.shared.start(view: self) { [weak self] response in
+            guard let self = self else { return }
+            print(response.id)
+            if(self.isLogin) {
+                self.loginWithGoogle(token: response.id)
+            } else {
+                var credentials = self.getCredentials()
+                credentials.googleAccessToken = response.id
+                self.signIn(credentials: credentials)
+            }
+        } failure: { error in
+            print(error)
+        }
+
     }
     
     private func setupLoginMode() {
@@ -114,8 +138,19 @@ class AuthenticationViewController: UIViewController {
         viewGoogleSignIn.layer.borderColor = UIColor(named: "movie_seat_taken_color")?.cgColor
     }
     
+    private func getCredentials() -> UserCredentialsVO {
+        return UserCredentialsVO(
+            email: emailTextField.text!,
+            password: passwordTextField.text!,
+            name: nameTextField.text ?? "",
+            phone: phoneTextField.text ?? "",
+            googleAccessToken: "",
+            facebookAccessToken: ""
+        )
+    }
+    
     // MARK: Model Communications
-    private func loginInWithEmail(credentials: UserCredentialsVO) {
+    private func loginWithEmail(credentials: UserCredentialsVO) {
         AlamofireAgent.shared.loginWithEmail(credentials: credentials) { [weak self] result in
             switch result {
             case .success(let profile):
@@ -126,8 +161,19 @@ class AuthenticationViewController: UIViewController {
         }
     }
     
-    private func signInWithEmail(credentials: UserCredentialsVO) {
-        AlamofireAgent.shared.signInWithEmail(credentials: credentials) { [weak self] result in
+    private func signIn(credentials: UserCredentialsVO) {
+        AlamofireAgent.shared.signIn(credentials: credentials) { [weak self] result in
+            switch result {
+            case .success(let profile):
+                print(profile.name)
+            case .failure(let errorMessage):
+                self?.showAlert(message: errorMessage)
+            }
+        }
+    }
+    
+    private func loginWithGoogle(token: String) {
+        AlamofireAgent.shared.loginWithGoogle(token: token) { [weak self] result in
             switch result {
             case .success(let profile):
                 print(profile.name)
