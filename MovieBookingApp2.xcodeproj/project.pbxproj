@@ -31,6 +31,7 @@
 		4F9161DC27FAD71A0046FCA2 /* ApiResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F9161DB27FAD71A0046FCA2 /* ApiResponse.swift */; };
 		4F9161DE27FADE440046FCA2 /* UserCredentialsVO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F9161DD27FADE440046FCA2 /* UserCredentialsVO.swift */; };
 		4FC3601E27C27ECF00296494 /* AuthenticationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FC3601D27C27ECF00296494 /* AuthenticationViewController.swift */; };
+		4FC5ADCF27FBE381008B8B9D /* GoogleAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FC5ADCE27FBE381008B8B9D /* GoogleAuth.swift */; };
 		4FCB6AD727BD0760004CC300 /* ViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FCB6AD627BD0760004CC300 /* ViewExtensions.swift */; };
 		4FCB6ADD27BD0882004CC300 /* MovieCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FCB6ADB27BD0882004CC300 /* MovieCollectionViewCell.swift */; };
 		4FCB6ADE27BD0882004CC300 /* MovieCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4FCB6ADC27BD0882004CC300 /* MovieCollectionViewCell.xib */; };
@@ -82,6 +83,7 @@
 		4F9161DB27FAD71A0046FCA2 /* ApiResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiResponse.swift; sourceTree = "<group>"; };
 		4F9161DD27FADE440046FCA2 /* UserCredentialsVO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCredentialsVO.swift; sourceTree = "<group>"; };
 		4FC3601D27C27ECF00296494 /* AuthenticationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationViewController.swift; sourceTree = "<group>"; };
+		4FC5ADCE27FBE381008B8B9D /* GoogleAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleAuth.swift; sourceTree = "<group>"; };
 		4FCB6AD627BD0760004CC300 /* ViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtensions.swift; sourceTree = "<group>"; };
 		4FCB6ADB27BD0882004CC300 /* MovieCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCollectionViewCell.swift; sourceTree = "<group>"; };
 		4FCB6ADC27BD0882004CC300 /* MovieCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MovieCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -258,6 +260,7 @@
 			children = (
 				4FDE885927C1E6E500E43789 /* AppConstants.swift */,
 				4FDE886E27C2711900E43789 /* Router.swift */,
+				4FC5ADCE27FBE381008B8B9D /* GoogleAuth.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -464,6 +467,7 @@
 				4FDE886827C20C6000E43789 /* CardCollectionViewCell.swift in Sources */,
 				4FCB6AD727BD0760004CC300 /* ViewExtensions.swift in Sources */,
 				4FC3601E27C27ECF00296494 /* AuthenticationViewController.swift in Sources */,
+				4FC5ADCF27FBE381008B8B9D /* GoogleAuth.swift in Sources */,
 				4FDE886327C1ED0E00E43789 /* MovieSeatViewController.swift in Sources */,
 				4F1127E427BD157700CBE96D /* DayCollectionViewCell.swift in Sources */,
 				4F03DFD227C0D1C300177313 /* SnackViewController.swift in Sources */,
