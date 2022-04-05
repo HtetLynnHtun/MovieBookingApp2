@@ -611,8 +611,10 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="avatarImageView" destination="280-J7-kvR" id="nRg-OO-CLA"/>
                         <outlet property="collectionViewComingSoon" destination="ZLV-f0-g28" id="Q7M-Zj-18b"/>
                         <outlet property="collectionViewNowShowing" destination="qjU-5m-83o" id="5L2-dI-iCs"/>
+                        <outlet property="userNameLabel" destination="zBS-lD-Ifr" id="Ob1-iP-leG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

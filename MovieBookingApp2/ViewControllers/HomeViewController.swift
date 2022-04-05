@@ -6,16 +6,22 @@
 //
 
 import UIKit
+import SDWebImage
 
 class HomeViewController: UIViewController {
 
     @IBOutlet weak var collectionViewNowShowing: UICollectionView!
     @IBOutlet weak var collectionViewComingSoon: UICollectionView!
+    @IBOutlet weak var avatarImageView: UIImageView!
+    @IBOutlet weak var userNameLabel: UILabel!
+    
+    private let authModel: AuthModel = AuthModelImpl.shared
     
     override func viewDidLoad() {
         super.viewDidLoad()
         registerCells()
         setupDataSourceAndDelegates()
+        getProfile()
     }
 
     func registerCells() {
@@ -31,8 +37,32 @@ class HomeViewController: UIViewController {
         collectionViewComingSoon.delegate = self
     }
     
+    private func setupAvatarSection() {
+        
+    }
+    
     func onTapMovie() {
         navigateToScreen(withIdentifier: MovieDetailViewController.identifier)
+    }
+    
+    func bindData(_ data: ProfileVO) {
+        let avatarPath = AppConstants.baseImageUrl.appending(data.profileImage)
+        avatarImageView.sd_setImage(with: URL(string: avatarPath))
+        userNameLabel.text = data.name
+    }
+    
+    // MARK: Model Communications
+    func getProfile() {
+        authModel.getProfile { [weak self] result in
+            guard let self = self else { return }
+            
+            switch result {
+            case .success(let profile):
+                self.bindData(profile)
+            case .failure(let errorMessage):
+                self.showAlert(message: errorMessage)
+            }
+        }
     }
 }
 

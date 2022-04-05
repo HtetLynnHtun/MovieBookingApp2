@@ -12,4 +12,6 @@ protocol NetworkingAgent {
     func signIn(credentials: UserCredentialsVO, completion: @escaping (MBAResult<ApiResponse<ProfileVO>>) -> Void)
     func loginWithEmail(credentials: UserCredentialsVO, completion: @escaping (MBAResult<ApiResponse<ProfileVO>>) -> Void)
     func loginWithGoogle(token: String, completion: @escaping (MBAResult<ApiResponse<ProfileVO>>) -> Void)
+    
+    func getProfile(token: String, completion: @escaping (MBAResult<ProfileVO>) -> Void)
 }

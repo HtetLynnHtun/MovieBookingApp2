@@ -28,6 +28,9 @@ class ProfileVO: Object, Codable {
     @Persisted
     var profileImage: String
     
+    @Persisted
+    var cards: List<CardVO>
+    
     enum CodingKeys: String, CodingKey {
         case id
         case name
@@ -35,5 +38,6 @@ class ProfileVO: Object, Codable {
         case phone
         case totalExpense = "total_expense"
         case profileImage = "profile_image"
+        case cards
     }
 }

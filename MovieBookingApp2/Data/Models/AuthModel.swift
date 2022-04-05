@@ -14,6 +14,7 @@ protocol AuthModel {
     func signIn(credentials: UserCredentialsVO, completion: @escaping (MBAResult<ProfileVO>) -> Void)
     func loginWithEmail(credentials: UserCredentialsVO, completion: @escaping (MBAResult<ProfileVO>) -> Void)
     func loginWithGoogle(token: String, completion: @escaping (MBAResult<ProfileVO>) -> Void)
+    func getProfile(completion: @escaping (MBAResult<ProfileVO>) -> Void)
 }
 
 class AuthModelImpl: AuthModel {
@@ -83,6 +84,18 @@ class AuthModelImpl: AuthModel {
                 
                 self.profileRepository.saveProfile(profile)
                 self.saveUserToken(apiResponse.token!)
+                completion(.success(profile))
+                
+            case .failure(let errorMessage):
+                completion(.failure(errorMessage))
+            }
+        }
+    }
+    
+    func getProfile(completion: @escaping (MBAResult<ProfileVO>) -> Void) {
+        networkingAgent.getProfile(token: getUserToken()) { result in
+            switch result {
+            case .success(let profile):
                 completion(.success(profile))
                 
             case .failure(let errorMessage):

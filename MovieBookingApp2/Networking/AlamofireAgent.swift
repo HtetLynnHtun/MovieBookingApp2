@@ -74,6 +74,22 @@ struct AlamofireAgent: NetworkingAgent {
             }
     }
     
+    func getProfile(token: String, completion: @escaping (MBAResult<ProfileVO>) -> Void) {
+        let headers: HTTPHeaders = [.authorization(bearerToken: token)]
+
+        AF.request(MBAEndpoint.profile, headers: headers)
+            .validate(statusCode: 200..<300)
+            .responseDecodable(of: ApiResponse<ProfileVO>.self) { response in
+                switch response.result {
+                case .success(let apiResponse):
+                    completion(.success(apiResponse.data!))
+                case .failure(let error):
+                    completion(.failure(handleError(error)))
+                }
+            }
+    }
+    
+    // MARK: Helper methods
     private func isNoConnectionError(error: AFError) -> Bool {
         if let underlyingError = error.underlyingError {
             if let urlError = underlyingError as? URLError {
@@ -90,6 +106,14 @@ struct AlamofireAgent: NetworkingAgent {
     
     private func isResponseCodeInSuccessRange(_ code: Int) -> Bool{
         return (200..<300).contains(code)
+    }
+    
+    private func handleError(_ error: AFError) -> String {
+        if (isNoConnectionError(error: error)) {
+            return "Please connect to the Internet and try again."
+        } else {
+            return error.localizedDescription
+        }
     }
     
 }
