@@ -14,14 +14,19 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var collectionViewComingSoon: UICollectionView!
     @IBOutlet weak var avatarImageView: UIImageView!
     @IBOutlet weak var userNameLabel: UILabel!
+    private var nowShowingMovies = [MovieVO]()
+    private var commingSoonMovies = [MovieVO]()
     
     private let authModel: AuthModel = AuthModelImpl.shared
+    private let movieModel: MovieModel = MovieModelImpl.shared
     
     override func viewDidLoad() {
         super.viewDidLoad()
         registerCells()
         setupDataSourceAndDelegates()
         getProfile()
+        getNowShowingMovies()
+        getCommingSoonMovies()
     }
 
     func registerCells() {
@@ -46,7 +51,7 @@ class HomeViewController: UIViewController {
     }
     
     func bindData(_ data: ProfileVO) {
-        let avatarPath = AppConstants.baseImageUrl.appending(data.profileImage)
+        let avatarPath = AppConstants.baseAvatarUrl.appending(data.profileImage)
         avatarImageView.sd_setImage(with: URL(string: avatarPath))
         userNameLabel.text = data.name
     }
@@ -64,16 +69,54 @@ class HomeViewController: UIViewController {
             }
         }
     }
+    
+    func getNowShowingMovies() {
+        movieModel.getNowShowingMovies { [weak self] result in
+            guard let self = self else { return }
+            
+            switch result {
+            case .success(let data):
+                self.nowShowingMovies = data
+                self.collectionViewNowShowing.reloadData()
+            case .failure(let errorMessage):
+                self.showAlert(message: errorMessage)
+            }
+        }
+    }
+    
+    func getCommingSoonMovies() {
+        movieModel.getCommingSoonMovies { [weak self] result in
+            guard let self = self else { return }
+            
+            switch result {
+            case .success(let data):
+                self.commingSoonMovies = data
+                self.collectionViewComingSoon.reloadData()
+            case .failure(let errorMessage):
+                self.showAlert(message: errorMessage)
+            }
+        }
+    }
 }
 
 extension HomeViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        if (collectionView == collectionViewNowShowing) {
+            return nowShowingMovies.count
+        } else {
+            return commingSoonMovies.count
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        return collectionViewNowShowing.dequeCell(MovieCollectionViewCell.identifier, indexPath)
+        let cell = collectionViewNowShowing.dequeCell(MovieCollectionViewCell.identifier, indexPath) as MovieCollectionViewCell
+        if (collectionView == collectionViewNowShowing) {
+            cell.data = nowShowingMovies[indexPath.row]
+        } else {
+            cell.data = commingSoonMovies[indexPath.row]
+        }
+        return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {

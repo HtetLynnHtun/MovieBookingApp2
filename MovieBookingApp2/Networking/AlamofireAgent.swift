@@ -89,6 +89,30 @@ struct AlamofireAgent: NetworkingAgent {
             }
     }
     
+    func getNowShowingMovies(completion: @escaping (MBAResult<[MovieVO]>) -> Void) {
+        AF.request(MBAEndpoint.nowShowingMovies)
+            .responseDecodable(of: ApiResponse<[MovieVO]>.self) { response in
+                switch response.result {
+                case .success(let apiResponse):
+                    completion(.success(apiResponse.data!))
+                case .failure(let error):
+                    completion(.failure(handleError(error)))
+                }
+            }
+    }
+    
+    func getCommingSoonMovies(completion: @escaping (MBAResult<[MovieVO]>) -> Void) {
+        AF.request(MBAEndpoint.comingSoonMovies)
+            .responseDecodable(of: ApiResponse<[MovieVO]>.self) { response in
+                switch response.result {
+                case .success(let apiResponse):
+                    completion(.success(apiResponse.data!))
+                case .failure(let error):
+                    completion(.failure(handleError(error)))
+                }
+            }
+    }
+    
     // MARK: Helper methods
     private func isNoConnectionError(error: AFError) -> Bool {
         if let underlyingError = error.underlyingError {

@@ -14,6 +14,8 @@ enum MBAEndpoint: URLConvertible {
     case loginWithEmail
     case loginWithGoogle
     case profile
+    case nowShowingMovies
+    case comingSoonMovies
     
     func asURL() throws -> URL {
         url
@@ -38,6 +40,10 @@ enum MBAEndpoint: URLConvertible {
             return "/google-login"
         case .profile:
             return "/profile"
+        case .nowShowingMovies:
+            return "/movies?status=current"
+        case .comingSoonMovies:
+            return "/movies?status=comingsoon"
         }
     }
 }

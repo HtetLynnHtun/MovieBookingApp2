@@ -13,6 +13,10 @@
 		4F1127E527BD157700CBE96D /* DayCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F1127E327BD157700CBE96D /* DayCollectionViewCell.xib */; };
 		4F1127E827BD171900CBE96D /* TimeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F1127E627BD171900CBE96D /* TimeCollectionViewCell.swift */; };
 		4F1127E927BD171900CBE96D /* TimeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F1127E727BD171900CBE96D /* TimeCollectionViewCell.xib */; };
+		4F348B3027FC8B3500EE19EF /* MovieVO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F348B2F27FC8B3500EE19EF /* MovieVO.swift */; };
+		4F348B3227FC8D8C00EE19EF /* MovieModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F348B3127FC8D8C00EE19EF /* MovieModel.swift */; };
+		4F348B3427FC96F500EE19EF /* MovieRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F348B3327FC96F500EE19EF /* MovieRepository.swift */; };
+		4F348B3627FC9D6000EE19EF /* RealmDb.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F348B3527FC9D6000EE19EF /* RealmDb.swift */; };
 		4F41690F27C36B570025C25D /* GenreCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F41690D27C36B570025C25D /* GenreCollectionViewCell.swift */; };
 		4F41691027C36B570025C25D /* GenreCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F41690E27C36B570025C25D /* GenreCollectionViewCell.xib */; };
 		4F41691327C3725E0025C25D /* CastCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F41691127C3725E0025C25D /* CastCollectionViewCell.swift */; };
@@ -71,6 +75,10 @@
 		4F1127E327BD157700CBE96D /* DayCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DayCollectionViewCell.xib; sourceTree = "<group>"; };
 		4F1127E627BD171900CBE96D /* TimeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeCollectionViewCell.swift; sourceTree = "<group>"; };
 		4F1127E727BD171900CBE96D /* TimeCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TimeCollectionViewCell.xib; sourceTree = "<group>"; };
+		4F348B2F27FC8B3500EE19EF /* MovieVO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieVO.swift; sourceTree = "<group>"; };
+		4F348B3127FC8D8C00EE19EF /* MovieModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieModel.swift; sourceTree = "<group>"; };
+		4F348B3327FC96F500EE19EF /* MovieRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieRepository.swift; sourceTree = "<group>"; };
+		4F348B3527FC9D6000EE19EF /* RealmDb.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmDb.swift; sourceTree = "<group>"; };
 		4F41690D27C36B570025C25D /* GenreCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenreCollectionViewCell.swift; sourceTree = "<group>"; };
 		4F41690E27C36B570025C25D /* GenreCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GenreCollectionViewCell.xib; sourceTree = "<group>"; };
 		4F41691127C3725E0025C25D /* CastCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CastCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -175,6 +183,7 @@
 			isa = PBXGroup;
 			children = (
 				4F5C9FE627FC562D002B9636 /* AuthModel.swift */,
+				4F348B3127FC8D8C00EE19EF /* MovieModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -184,6 +193,8 @@
 			children = (
 				4F5C9FE927FC5C4A002B9636 /* ProfileRepository.swift */,
 				4F5C9FEB27FC5CB1002B9636 /* BaseRepository.swift */,
+				4F348B3327FC96F500EE19EF /* MovieRepository.swift */,
+				4F348B3527FC9D6000EE19EF /* RealmDb.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -283,6 +294,7 @@
 				4F9161D527FAD5220046FCA2 /* ProfileVO.swift */,
 				4F9161DD27FADE440046FCA2 /* UserCredentialsVO.swift */,
 				4F5C9FF227FC5FA5002B9636 /* CardVO.swift */,
+				4F348B2F27FC8B3500EE19EF /* MovieVO.swift */,
 			);
 			path = vos;
 			sourceTree = "<group>";
@@ -485,9 +497,11 @@
 				4F9161DE27FADE440046FCA2 /* UserCredentialsVO.swift in Sources */,
 				4FDE885727C1E5E000E43789 /* MovieSeatVO.swift in Sources */,
 				4F9161D627FAD5220046FCA2 /* ProfileVO.swift in Sources */,
+				4F348B3027FC8B3500EE19EF /* MovieVO.swift in Sources */,
 				4FDE885A27C1E6E500E43789 /* AppConstants.swift in Sources */,
 				4F9161D827FAD5A00046FCA2 /* AlamofireAgent.swift in Sources */,
 				4F9161D227FAD4AD0046FCA2 /* NetworkingAgent.swift in Sources */,
+				4F348B3227FC8D8C00EE19EF /* MovieModel.swift in Sources */,
 				4F5C9FEA27FC5C4A002B9636 /* ProfileRepository.swift in Sources */,
 				4F41691C27C39C4B0025C25D /* SnackCollectionViewCell.swift in Sources */,
 				4FDE886F27C2711900E43789 /* Router.swift in Sources */,
@@ -510,9 +524,11 @@
 				4FDE886327C1ED0E00E43789 /* MovieSeatViewController.swift in Sources */,
 				4F1127E427BD157700CBE96D /* DayCollectionViewCell.swift in Sources */,
 				4F03DFD227C0D1C300177313 /* SnackViewController.swift in Sources */,
+				4F348B3427FC96F500EE19EF /* MovieRepository.swift in Sources */,
 				4F1127E827BD171900CBE96D /* TimeCollectionViewCell.swift in Sources */,
 				4F1127E127BD137F00CBE96D /* MovieTimeViewController.swift in Sources */,
 				4FC5ADD127FBFCAE008B8B9D /* InputValidation.swift in Sources */,
+				4F348B3627FC9D6000EE19EF /* RealmDb.swift in Sources */,
 				4FDE886D27C266DC00E43789 /* LandingViewController.swift in Sources */,
 				4F9161DA27FAD5D70046FCA2 /* MBAEndpoint.swift in Sources */,
 				4FEE71A927BCEEF800C8829D /* SceneDelegate.swift in Sources */,

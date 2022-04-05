@@ -14,4 +14,7 @@ protocol NetworkingAgent {
     func loginWithGoogle(token: String, completion: @escaping (MBAResult<ApiResponse<ProfileVO>>) -> Void)
     
     func getProfile(token: String, completion: @escaping (MBAResult<ProfileVO>) -> Void)
+    
+    func getNowShowingMovies(completion: @escaping (MBAResult<[MovieVO]>) -> Void)
+    func getCommingSoonMovies(completion: @escaping (MBAResult<[MovieVO]>) -> Void)
 }

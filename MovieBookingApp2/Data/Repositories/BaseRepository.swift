@@ -9,5 +9,5 @@ import Foundation
 import RealmSwift
 
 class BaseRepository {
-    let realm = try! Realm()
+    let realm = RealmDB.shared.realm
 }
