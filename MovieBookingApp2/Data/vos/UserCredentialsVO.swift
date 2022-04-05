@@ -10,10 +10,10 @@ import Foundation
 struct UserCredentialsVO {
     let email: String
     let password: String
-    let name: String
-    let phone: String
-    var googleAccessToken: String
-    var facebookAccessToken: String
+    var name: String = ""
+    var phone: String = ""
+    var googleAccessToken: String = ""
+    var facebookAccessToken: String = ""
     
     /// Cast to form-url-encoded parameters
     func toParameters() -> [String: String] {

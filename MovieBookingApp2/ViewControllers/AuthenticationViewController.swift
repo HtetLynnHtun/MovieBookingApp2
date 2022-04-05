@@ -69,16 +69,13 @@ class AuthenticationViewController: UIViewController {
     }
     
     @objc func didTapConfirmButton() {
-        // TODO: Do validations
+        do {
+            try validateUserInputs()
+        } catch {
+            showAlert(message: error.localizedDescription)
+        }
         
-        let credentials = UserCredentialsVO(
-            email: emailTextField.text!,
-            password: passwordTextField.text!,
-            name: nameTextField.text ?? "",
-            phone: phoneTextField.text ?? "",
-            googleAccessToken: "",
-            facebookAccessToken: ""
-        )
+        let credentials = getCredentials()
         if (isLogin) {
             loginWithEmail(credentials: credentials)
         } else {
@@ -88,14 +85,17 @@ class AuthenticationViewController: UIViewController {
     }
     
     @objc func didTapGoogleSignIn() {
-        // TODO: Do validations
-        
         GoogleAuth.shared.start(view: self) { [weak self] response in
             guard let self = self else { return }
             print(response.id)
             if(self.isLogin) {
                 self.loginWithGoogle(token: response.id)
             } else {
+                do {
+                    try self.validateUserInputs()
+                } catch {
+                    self.showAlert(message: error.localizedDescription)
+                }
                 var credentials = self.getCredentials()
                 credentials.googleAccessToken = response.id
                 self.signIn(credentials: credentials)
@@ -147,6 +147,23 @@ class AuthenticationViewController: UIViewController {
             googleAccessToken: "",
             facebookAccessToken: ""
         )
+    }
+    
+    private func validateUserInputs() throws {
+        if (emailTextField.text == nil || !InputValidation.isValidEmail(emailTextField.text!)) {
+            throw "Please enter a valid email address"
+        }
+        if (passwordTextField.text == nil || passwordTextField.text!.isEmpty) {
+            throw "Please enter a password"
+        }
+        if (!isLogin) {
+            if (nameTextField.text == nil || nameTextField.text!.isEmpty) {
+                throw "Please enter a name"
+            }
+            if (phoneTextField.text == nil || phoneTextField.text!.isEmpty) {
+                throw "Please enter a phone number"
+            }
+        }
     }
     
     // MARK: Model Communications
