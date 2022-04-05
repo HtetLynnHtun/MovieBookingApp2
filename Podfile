@@ -11,6 +11,7 @@ target 'MovieBookingApp2' do
   pod 'Alamofire', '~> 5.5'
   pod 'RealmSwift', '~>10'
   pod 'GoogleSignIn'
+  pod 'SDWebImage', '~> 5.0'
   
   pod 'Wormholy', :configurations => ['Debug']
 end
