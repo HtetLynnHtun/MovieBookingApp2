@@ -36,6 +36,7 @@ class AuthenticationViewController: UIViewController {
             }
         }
     }
+    let authModel: AuthModel = AuthModelImpl.shared
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -168,7 +169,7 @@ class AuthenticationViewController: UIViewController {
     
     // MARK: Model Communications
     private func loginWithEmail(credentials: UserCredentialsVO) {
-        AlamofireAgent.shared.loginWithEmail(credentials: credentials) { [weak self] result in
+        authModel.loginWithEmail(credentials: credentials) { [weak self] result in
             switch result {
             case .success(let profile):
                 print(profile.name)
@@ -179,7 +180,7 @@ class AuthenticationViewController: UIViewController {
     }
     
     private func signIn(credentials: UserCredentialsVO) {
-        AlamofireAgent.shared.signIn(credentials: credentials) { [weak self] result in
+        authModel.signIn(credentials: credentials) { [weak self] result in
             switch result {
             case .success(let profile):
                 print(profile.name)
@@ -190,7 +191,7 @@ class AuthenticationViewController: UIViewController {
     }
     
     private func loginWithGoogle(token: String) {
-        AlamofireAgent.shared.loginWithGoogle(token: token) { [weak self] result in
+        authModel.loginWithGoogle(token: token) { [weak self] result in
             switch result {
             case .success(let profile):
                 print(profile.name)

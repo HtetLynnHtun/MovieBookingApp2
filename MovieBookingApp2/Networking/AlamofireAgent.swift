@@ -14,7 +14,7 @@ struct AlamofireAgent: NetworkingAgent {
     
     private init() { }
     
-    func signIn(credentials: UserCredentialsVO, completion: @escaping (MBAResult<ProfileVO>) -> Void) {
+    func signIn(credentials: UserCredentialsVO, completion: @escaping (MBAResult<ApiResponse<ProfileVO>>) -> Void) {
         let parameters = credentials.toParameters()
         
         AF.request(MBAEndpoint.signIn, method: .post, parameters: parameters)
@@ -22,7 +22,7 @@ struct AlamofireAgent: NetworkingAgent {
                 switch response.result {
                 case .success(let apiResponse):
                     if (isResponseCodeInSuccessRange(apiResponse.code)) {
-                        completion(.success(apiResponse.data!))
+                        completion(.success(apiResponse))
                     } else {
                         completion(.failure("A user already existed with that phone number."))
                     }
@@ -34,7 +34,7 @@ struct AlamofireAgent: NetworkingAgent {
             }
     }
     
-    func loginWithEmail(credentials: UserCredentialsVO, completion: @escaping (MBAResult<ProfileVO>) -> Void) {
+    func loginWithEmail(credentials: UserCredentialsVO, completion: @escaping (MBAResult<ApiResponse<ProfileVO>>) -> Void) {
         let parameters = credentials.toParameters()
         
         AF.request(MBAEndpoint.loginWithEmail, method: .post, parameters: parameters)
@@ -42,7 +42,7 @@ struct AlamofireAgent: NetworkingAgent {
                 switch response.result {
                 case .success(let apiResponse):
                     if (isResponseCodeInSuccessRange(apiResponse.code)) {
-                        completion(.success(apiResponse.data!))
+                        completion(.success(apiResponse))
                     } else {
                         completion(.failure(apiResponse.message))
                     }
@@ -54,7 +54,7 @@ struct AlamofireAgent: NetworkingAgent {
             }
     }
     
-    func loginWithGoogle(token: String, completion: @escaping (MBAResult<ProfileVO>) -> Void) {
+    func loginWithGoogle(token: String, completion: @escaping (MBAResult<ApiResponse<ProfileVO>>) -> Void) {
         let parameters = ["access-token": token]
         
         AF.request(MBAEndpoint.loginWithGoogle, method: .post, parameters: parameters)
@@ -62,7 +62,7 @@ struct AlamofireAgent: NetworkingAgent {
                 switch response.result {
                 case .success(let apiResponse):
                     if (isResponseCodeInSuccessRange(apiResponse.code)) {
-                        completion(.success(apiResponse.data!))
+                        completion(.success(apiResponse))
                     } else {
                         completion(.failure(apiResponse.message))
                     }

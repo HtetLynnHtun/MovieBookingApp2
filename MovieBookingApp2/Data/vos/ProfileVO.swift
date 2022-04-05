@@ -6,14 +6,27 @@
 //
 
 import Foundation
+import RealmSwift
 
-struct ProfileVO: Codable {
-    let id: Int
-    let name: String
-    let email: String
-    let phone: String
-    let totalExpense: Int
-    let profileImage: String
+class ProfileVO: Object, Codable {
+    
+    @Persisted(primaryKey: true)
+    var id: Int
+    
+    @Persisted
+    var name: String
+    
+    @Persisted
+    var email: String
+    
+    @Persisted
+    var phone: String
+    
+    @Persisted
+    var totalExpense: Int
+    
+    @Persisted
+    var profileImage: String
     
     enum CodingKeys: String, CodingKey {
         case id

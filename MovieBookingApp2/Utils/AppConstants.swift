@@ -14,4 +14,5 @@ let SEAT_TYPE_EMPTY = "Empty";
 
 struct AppConstants {
     static let baseUrl = "https://tmba.padc.com.mm/api/v1"
+    static let tokenKey = "TOKEN"
 }
