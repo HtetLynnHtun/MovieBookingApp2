@@ -21,6 +21,7 @@ class MovieTimeViewController: UIViewController {
     @IBOutlet weak var collectionViewHeightGCGoldenCity: NSLayoutConstraint!
     @IBOutlet weak var collectionViewHeightGCWestPoint: NSLayoutConstraint!
     
+    var dates = [MyDate]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,6 +33,12 @@ class MovieTimeViewController: UIViewController {
         viewContainerTimes.clipsToBounds = true
         viewContainerTimes.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
         viewContainerTimes.layer.cornerRadius = 16
+        getDates()
+    }
+    
+    func getDates() {
+        dates = DateHelper.next10Days()
+        collectionViewDays.reloadData()
     }
     
     func regsierCells() {
@@ -85,7 +92,7 @@ extension MovieTimeViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if (collectionView == collectionViewDays) {
-            return 10
+            return dates.count
         } else if (collectionView == collectionViewAvailableIn) {
             return 3
         } else {
@@ -95,7 +102,9 @@ extension MovieTimeViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if (collectionView == collectionViewDays) {
-            return collectionViewDays.dequeCell(DayCollectionViewCell.identifier, indexPath)
+            let cell = collectionViewDays.dequeCell(DayCollectionViewCell.identifier, indexPath) as DayCollectionViewCell
+            cell.date = dates[indexPath.row]
+            return cell
         } else {
             let cell = collectionViewAvailableIn.dequeCell(TimeCollectionViewCell.identifier, indexPath)
 //            cell.layer.borderWidth = 1

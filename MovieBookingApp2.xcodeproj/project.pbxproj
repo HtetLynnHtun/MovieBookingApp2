@@ -32,6 +32,7 @@
 		4F5C9FF327FC5FA5002B9636 /* CardVO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F5C9FF227FC5FA5002B9636 /* CardVO.swift */; };
 		4F5E594D27C3461B00B0206B /* MovieDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F5E594C27C3461B00B0206B /* MovieDetailViewController.swift */; };
 		4F8BF4A927FD40CF00B3E55A /* CastVO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F8BF4A827FD40CF00B3E55A /* CastVO.swift */; };
+		4F8BF4AB27FDA14300B3E55A /* DateHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F8BF4AA27FDA14300B3E55A /* DateHelper.swift */; };
 		4F9161D227FAD4AD0046FCA2 /* NetworkingAgent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F9161D127FAD4AD0046FCA2 /* NetworkingAgent.swift */; };
 		4F9161D427FAD4D70046FCA2 /* MBAResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F9161D327FAD4D70046FCA2 /* MBAResult.swift */; };
 		4F9161D627FAD5220046FCA2 /* ProfileVO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F9161D527FAD5220046FCA2 /* ProfileVO.swift */; };
@@ -95,6 +96,7 @@
 		4F5C9FF227FC5FA5002B9636 /* CardVO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardVO.swift; sourceTree = "<group>"; };
 		4F5E594C27C3461B00B0206B /* MovieDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailViewController.swift; sourceTree = "<group>"; };
 		4F8BF4A827FD40CF00B3E55A /* CastVO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CastVO.swift; sourceTree = "<group>"; };
+		4F8BF4AA27FDA14300B3E55A /* DateHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateHelper.swift; sourceTree = "<group>"; };
 		4F9161D127FAD4AD0046FCA2 /* NetworkingAgent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingAgent.swift; sourceTree = "<group>"; };
 		4F9161D327FAD4D70046FCA2 /* MBAResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MBAResult.swift; sourceTree = "<group>"; };
 		4F9161D527FAD5220046FCA2 /* ProfileVO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVO.swift; sourceTree = "<group>"; };
@@ -219,12 +221,12 @@
 				4FDE886C27C266DC00E43789 /* LandingViewController.swift */,
 				4FC3601D27C27ECF00296494 /* AuthenticationViewController.swift */,
 				4FEE71AA27BCEEF800C8829D /* HomeViewController.swift */,
+				4F5E594C27C3461B00B0206B /* MovieDetailViewController.swift */,
 				4F1127E027BD137F00CBE96D /* MovieTimeViewController.swift */,
 				4F03DFD127C0D1C300177313 /* SnackViewController.swift */,
 				4FDE886227C1ED0E00E43789 /* MovieSeatViewController.swift */,
 				4FDE886427C1FFFF00E43789 /* PaymentViewController.swift */,
 				4FDE886A27C22E6B00E43789 /* TicketViewController.swift */,
-				4F5E594C27C3461B00B0206B /* MovieDetailViewController.swift */,
 				4F41692227C3DB2B0025C25D /* AddNewCardViewController.swift */,
 			);
 			path = ViewControllers;
@@ -310,6 +312,7 @@
 				4FC5ADCE27FBE381008B8B9D /* GoogleAuth.swift */,
 				4FC5ADD027FBFCAE008B8B9D /* InputValidation.swift */,
 				4FC5ADD227FBFE1E008B8B9D /* Extensions.swift */,
+				4F8BF4AA27FDA14300B3E55A /* DateHelper.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -513,6 +516,7 @@
 				4F41690F27C36B570025C25D /* GenreCollectionViewCell.swift in Sources */,
 				4F41691327C3725E0025C25D /* CastCollectionViewCell.swift in Sources */,
 				4F5C9FEC27FC5CB1002B9636 /* BaseRepository.swift in Sources */,
+				4F8BF4AB27FDA14300B3E55A /* DateHelper.swift in Sources */,
 				4FCB6ADD27BD0882004CC300 /* MovieCollectionViewCell.swift in Sources */,
 				4F9161D427FAD4D70046FCA2 /* MBAResult.swift in Sources */,
 				4FDE886B27C22E6B00E43789 /* TicketViewController.swift in Sources */,
