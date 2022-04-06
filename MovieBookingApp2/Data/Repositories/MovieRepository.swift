@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import RealmSwift
 
 protocol MovieRepository {
     
@@ -13,7 +14,8 @@ protocol MovieRepository {
     func getNowShowingMovies(completion: @escaping ([MovieVO]) -> Void)
     func saveCommingSoonMovies(data: [MovieVO])
     func getCommingSoonMovies(completion: @escaping ([MovieVO]) -> Void)
-    
+    func saveMovieDetails(data: MovieVO)
+    func getMovieDetails(id: Int, completion: @escaping (MovieVO) -> Void)
 }
 
 class MovieRepositoryImpl: BaseRepository, MovieRepository {
@@ -72,6 +74,31 @@ class MovieRepositoryImpl: BaseRepository, MovieRepository {
         let data: [MovieVO] = self.realm.objects(MovieVO.self)
             .filter { $0.isCommingSoon }
         completion(data)
+    }
+    
+    func saveMovieDetails(data: MovieVO) {
+//        let castObjects = data.casts.map { castVO -> CastVO in
+//            if let savedCast = self.realm.object(ofType: CastVO.self, forPrimaryKey: castVO.id) {
+//                return savedCast
+//            } else {
+//                return castVO
+//            }
+//        }
+        if let savedMovie = self.realm.object(ofType: MovieVO.self, forPrimaryKey: data.id) {
+            data.isNowShowing = savedMovie.isNowShowing
+            data.isCommingSoon = savedMovie.isNowShowing
+        }
+        do {
+            try self.realm.write({
+                self.realm.add(data, update: .modified)
+            })
+        } catch {
+            print(error.localizedDescription)
+        }
+    }
+    
+    func getMovieDetails(id: Int, completion: @escaping (MovieVO) -> Void) {
+        completion(self.realm.object(ofType: MovieVO.self, forPrimaryKey: id)!)
     }
     
 }

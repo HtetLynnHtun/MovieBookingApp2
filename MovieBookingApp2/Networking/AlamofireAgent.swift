@@ -92,6 +92,8 @@ struct AlamofireAgent: NetworkingAgent {
                 case .success(let apiResponse):
                     completion(.success(apiResponse.data!))
                 case .failure(let error):
+                    print("wtbug: =========================")
+                    print(error)
                     completion(.failure(error.localizedDescription))
                 }
             }
@@ -100,6 +102,18 @@ struct AlamofireAgent: NetworkingAgent {
     func getCommingSoonMovies(completion: @escaping (MBAResult<[MovieVO]>) -> Void) {
         AF.request(MBAEndpoint.comingSoonMovies)
             .responseDecodable(of: ApiResponse<[MovieVO]>.self) { response in
+                switch response.result {
+                case .success(let apiResponse):
+                    completion(.success(apiResponse.data!))
+                case .failure(let error):
+                    completion(.failure(error.localizedDescription))
+                }
+            }
+    }
+    
+    func getMovieDetails(id: Int, completion: @escaping (MBAResult<MovieVO>) -> Void) {
+        AF.request(MBAEndpoint.movieDetails(id))
+            .responseDecodable(of: ApiResponse<MovieVO>.self) { response in
                 switch response.result {
                 case .success(let apiResponse):
                     completion(.success(apiResponse.data!))

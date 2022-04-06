@@ -31,12 +31,28 @@ class MovieVO: Object, Codable {
     @Persisted
     var posterPath: String
     
+    @Persisted
+    var overview: String?
+    
+    @Persisted
+    var rating: Double?
+    
+    @Persisted
+    var runtime: Int?
+    
+    @Persisted
+    var casts: List<CastVO>
+    
     enum CodingKeys: String, CodingKey {
         case id
         case originalTitle = "original_title"
         case releaseDate = "release_date"
         case genres
         case posterPath = "poster_path"
+        case overview
+        case rating
+        case runtime
+//        case casts
     }
     
 }

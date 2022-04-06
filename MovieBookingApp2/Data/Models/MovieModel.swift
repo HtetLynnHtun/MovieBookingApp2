@@ -10,6 +10,7 @@ import Foundation
 protocol MovieModel {
     func getNowShowingMovies(completion: @escaping (MBAResult<[MovieVO]>) -> Void)
     func getCommingSoonMovies(completion: @escaping (MBAResult<[MovieVO]>) -> Void)
+    func getMovieDetails(id: Int, completion: @escaping (MBAResult<MovieVO>) -> Void)
 }
 
 class MovieModelImpl: MovieModel {
@@ -45,6 +46,21 @@ class MovieModelImpl: MovieModel {
                 print(errorMessage)
             }
             self.movieRepository.getCommingSoonMovies { data in
+                completion(.success(data))
+            }
+        }
+    }
+    
+    func getMovieDetails(id: Int, completion: @escaping (MBAResult<MovieVO>) -> Void) {
+        networkingAgent.getMovieDetails(id: id) { result in
+            switch result {
+            case .success(let data):
+                self.movieRepository.saveMovieDetails(data: data)
+            
+            case .failure(let errorMessage):
+                print(errorMessage)
+            }
+            self.movieRepository.getMovieDetails(id: id) { data in
                 completion(.success(data))
             }
         }
