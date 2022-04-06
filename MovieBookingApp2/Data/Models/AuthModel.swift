@@ -93,14 +93,8 @@ class AuthModelImpl: AuthModel {
     }
     
     func getProfile(completion: @escaping (MBAResult<ProfileVO>) -> Void) {
-        networkingAgent.getProfile(token: getUserToken()) { result in
-            switch result {
-            case .success(let profile):
-                completion(.success(profile))
-                
-            case .failure(let errorMessage):
-                completion(.failure(errorMessage))
-            }
+        profileRepository.getProfile { result in
+            completion(result)
         }
     }
 }

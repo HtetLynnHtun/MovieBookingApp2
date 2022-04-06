@@ -9,7 +9,7 @@ import Foundation
 
 protocol ProfileRepository {
     func saveProfile(_ profile: ProfileVO)
-    func getProfile(id: Int, completion: @escaping (MBAResult<ProfileVO>) -> Void)
+    func getProfile(completion: @escaping (MBAResult<ProfileVO>) -> Void)
 }
 
 class ProfileRepositoryImpl: BaseRepository, ProfileRepository {
@@ -28,8 +28,8 @@ class ProfileRepositoryImpl: BaseRepository, ProfileRepository {
         }
     }
     
-    func getProfile(id: Int, completion: @escaping (MBAResult<ProfileVO>) -> Void) {
-        completion(.success(self.realm.object(ofType: ProfileVO.self, forPrimaryKey: id)!))
+    func getProfile(completion: @escaping (MBAResult<ProfileVO>) -> Void) {
+        completion(.success(self.realm.objects(ProfileVO.self).first!))
     }
     
 }
