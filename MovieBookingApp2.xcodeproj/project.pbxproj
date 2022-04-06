@@ -31,6 +31,7 @@
 		4F5C9FEC27FC5CB1002B9636 /* BaseRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F5C9FEB27FC5CB1002B9636 /* BaseRepository.swift */; };
 		4F5C9FF327FC5FA5002B9636 /* CardVO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F5C9FF227FC5FA5002B9636 /* CardVO.swift */; };
 		4F5E594D27C3461B00B0206B /* MovieDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F5E594C27C3461B00B0206B /* MovieDetailViewController.swift */; };
+		4F8BF4A927FD40CF00B3E55A /* CastVO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F8BF4A827FD40CF00B3E55A /* CastVO.swift */; };
 		4F9161D227FAD4AD0046FCA2 /* NetworkingAgent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F9161D127FAD4AD0046FCA2 /* NetworkingAgent.swift */; };
 		4F9161D427FAD4D70046FCA2 /* MBAResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F9161D327FAD4D70046FCA2 /* MBAResult.swift */; };
 		4F9161D627FAD5220046FCA2 /* ProfileVO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F9161D527FAD5220046FCA2 /* ProfileVO.swift */; };
@@ -93,6 +94,7 @@
 		4F5C9FEB27FC5CB1002B9636 /* BaseRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseRepository.swift; sourceTree = "<group>"; };
 		4F5C9FF227FC5FA5002B9636 /* CardVO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardVO.swift; sourceTree = "<group>"; };
 		4F5E594C27C3461B00B0206B /* MovieDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailViewController.swift; sourceTree = "<group>"; };
+		4F8BF4A827FD40CF00B3E55A /* CastVO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CastVO.swift; sourceTree = "<group>"; };
 		4F9161D127FAD4AD0046FCA2 /* NetworkingAgent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingAgent.swift; sourceTree = "<group>"; };
 		4F9161D327FAD4D70046FCA2 /* MBAResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MBAResult.swift; sourceTree = "<group>"; };
 		4F9161D527FAD5220046FCA2 /* ProfileVO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVO.swift; sourceTree = "<group>"; };
@@ -202,11 +204,11 @@
 		4F9161D027FAD4850046FCA2 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				4F9161D127FAD4AD0046FCA2 /* NetworkingAgent.swift */,
 				4F9161D727FAD5A00046FCA2 /* AlamofireAgent.swift */,
 				4F9161DB27FAD71A0046FCA2 /* ApiResponse.swift */,
 				4F9161D927FAD5D70046FCA2 /* MBAEndpoint.swift */,
 				4F9161D327FAD4D70046FCA2 /* MBAResult.swift */,
-				4F9161D127FAD4AD0046FCA2 /* NetworkingAgent.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -295,6 +297,7 @@
 				4F9161DD27FADE440046FCA2 /* UserCredentialsVO.swift */,
 				4F5C9FF227FC5FA5002B9636 /* CardVO.swift */,
 				4F348B2F27FC8B3500EE19EF /* MovieVO.swift */,
+				4F8BF4A827FD40CF00B3E55A /* CastVO.swift */,
 			);
 			path = vos;
 			sourceTree = "<group>";
@@ -523,6 +526,7 @@
 				4F5C9FE727FC562D002B9636 /* AuthModel.swift in Sources */,
 				4FDE886327C1ED0E00E43789 /* MovieSeatViewController.swift in Sources */,
 				4F1127E427BD157700CBE96D /* DayCollectionViewCell.swift in Sources */,
+				4F8BF4A927FD40CF00B3E55A /* CastVO.swift in Sources */,
 				4F03DFD227C0D1C300177313 /* SnackViewController.swift in Sources */,
 				4F348B3427FC96F500EE19EF /* MovieRepository.swift in Sources */,
 				4F1127E827BD171900CBE96D /* TimeCollectionViewCell.swift in Sources */,

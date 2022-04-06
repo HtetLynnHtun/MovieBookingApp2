@@ -27,6 +27,12 @@ class HomeViewController: UIViewController {
         getProfile()
         getNowShowingMovies()
         getCommingSoonMovies()
+        
+        
+        let appearance = UINavigationBarAppearance()
+        appearance.configureWithTransparentBackground()
+        navigationItem.standardAppearance = appearance
+
     }
 
     func registerCells() {
@@ -46,8 +52,10 @@ class HomeViewController: UIViewController {
         
     }
     
-    func onTapMovie() {
+    func onTapMovie(id: Int) {
         navigateToScreen(withIdentifier: MovieDetailViewController.identifier)
+//        navigateToMovieDetails(id: id)
+//        dismiss(animated: true)
     }
     
     func bindData(_ data: ProfileVO) {
@@ -119,7 +127,13 @@ extension HomeViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        onTapMovie()
+        var contentId = 0
+        if (collectionView == collectionViewNowShowing) {
+            contentId = nowShowingMovies[indexPath.row].id
+        } else {
+            contentId = commingSoonMovies[indexPath.row].id
+        }
+        onTapMovie(id: contentId)
     }
 }
 

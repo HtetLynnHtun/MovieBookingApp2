@@ -23,7 +23,8 @@ class LandingViewController: UIViewController {
     }
     
     @objc func didTapButton() {
-        navigateToScreen(withIdentifier: AuthenticationViewController.identifier)
+//        navigateToScreen(withIdentifier: AuthenticationViewController.identifier)
+        navigateToAuthScreen()
     }
 
 }

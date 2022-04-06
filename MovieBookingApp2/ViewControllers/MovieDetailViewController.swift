@@ -14,8 +14,17 @@ class MovieDetailViewController: UIViewController {
     @IBOutlet weak var collectionViewCasts: UICollectionView!
     @IBOutlet weak var buttonGoBack: UIButton!
     @IBOutlet weak var buttonGetTicket: UIButton!
+    @IBOutlet weak var posterImageView: UIImageView!
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var runtimeLabel: UILabel!
+    @IBOutlet weak var imdbLabel: UILabel!
+    @IBOutlet weak var summaryLabel: UILabel!
+    @IBOutlet weak var ratingStar: RatingControl!
     
-    var genres = ["Mystery", "Adventure"]
+    var genres = [String]()
+    var contentId = 508947
+    private let movieModel: MovieModel = MovieModelImpl.shared
+//    var bigData = Array.init(repeating: "lea", count: 10000000)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,6 +35,7 @@ class MovieDetailViewController: UIViewController {
         registerCells()
         setupDataSourcesAndDelegates()
         setupGestureRecognizers()
+        getMovieDetails()
     }
     
     private func registerCells() {
@@ -56,7 +66,34 @@ class MovieDetailViewController: UIViewController {
     @objc func didTapGetTicket() {
         navigateToScreen(withIdentifier: MovieTimeViewController.identifier)
     }
+    
+    private func bindData(_ data: MovieVO) {
+        let posterPath = AppConstants.basePosterUrl.appending(data.posterPath)
+        posterImageView.sd_setImage(with: URL(string: posterPath))
+        titleLabel.text = data.originalTitle
+        let runtime = data.runtime ?? 0
+        let hour = runtime / 60
+        let minutes = runtime % 60
+        runtimeLabel.text = "\(hour)hr \(minutes)m"
+        ratingStar.rating = Int((data.rating ?? 0.0) * 0.5)
+        imdbLabel.text = "\(data.rating ?? 0.0)"
+        summaryLabel.text = data.overview ?? ""
+        
+        genres = Array(data.genres)
+        collectionViewGenres.reloadData()
+    }
 
+    private func getMovieDetails() {
+        movieModel.getMovieDetails(id: contentId) { [weak self] result in
+            guard let self = self else { return }
+            switch result {
+            case .success(let data):
+                self.bindData(data)
+            case .failure(let errorMessage):
+                self.showAlert(message: errorMessage)
+            }
+        }
+    }
 }
 
 extension MovieDetailViewController: UICollectionViewDataSource {
