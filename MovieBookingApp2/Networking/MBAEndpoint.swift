@@ -16,6 +16,7 @@ enum MBAEndpoint: URLConvertible {
     case profile
     case nowShowingMovies
     case comingSoonMovies
+    case movieDetails(Int)
     
     func asURL() throws -> URL {
         url
@@ -44,6 +45,8 @@ enum MBAEndpoint: URLConvertible {
             return "/movies?status=current"
         case .comingSoonMovies:
             return "/movies?status=comingsoon"
+        case .movieDetails(let id):
+            return "/movies/\(id)"
         }
     }
 }
