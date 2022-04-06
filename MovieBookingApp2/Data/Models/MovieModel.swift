@@ -25,11 +25,12 @@ class MovieModelImpl: MovieModel {
             switch result {
             case .success(let data):
                 self.movieRepository.saveNowShowingMovies(data: data)
-                self.movieRepository.getNowShowingMovies { data in
-                    completion(.success(data))
-                }
+                
             case .failure(let errorMessage):
-                completion(.failure(errorMessage))
+                print(errorMessage)
+            }
+            self.movieRepository.getNowShowingMovies { data in
+                completion(.success(data))
             }
         }
     }
@@ -39,11 +40,12 @@ class MovieModelImpl: MovieModel {
             switch result {
             case .success(let data):
                 self.movieRepository.saveCommingSoonMovies(data: data)
-                self.movieRepository.getCommingSoonMovies { data in
-                    completion(.success(data))
-                }
+                
             case .failure(let errorMessage):
-                completion(.failure(errorMessage))
+                print(errorMessage)
+            }
+            self.movieRepository.getCommingSoonMovies { data in
+                completion(.success(data))
             }
         }
     }

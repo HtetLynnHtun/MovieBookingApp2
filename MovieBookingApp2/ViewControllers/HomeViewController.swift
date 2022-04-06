@@ -60,7 +60,6 @@ class HomeViewController: UIViewController {
     func getProfile() {
         authModel.getProfile { [weak self] result in
             guard let self = self else { return }
-            
             switch result {
             case .success(let profile):
                 self.bindData(profile)
