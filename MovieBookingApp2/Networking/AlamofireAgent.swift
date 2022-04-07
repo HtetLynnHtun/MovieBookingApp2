@@ -123,6 +123,18 @@ struct AlamofireAgent: NetworkingAgent {
             }
     }
     
+    func getCinemas(completion: @escaping (MBAResult<[CinemaVO]>) -> Void) {
+        AF.request(MBAEndpoint.cinemas)
+            .responseDecodable(of: ApiResponse<[CinemaVO]>.self) { response in
+                switch response.result {
+                case .success(let apiResponse):
+                    completion(.success(apiResponse.data!))
+                case .failure(let error):
+                    completion(.failure(error.localizedDescription))
+                }
+            }
+    }
+    
     // MARK: Helper methods
     private func isNoConnectionError(error: AFError) -> Bool {
         if let underlyingError = error.underlyingError {

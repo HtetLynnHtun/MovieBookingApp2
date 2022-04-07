@@ -8,7 +8,17 @@
 import UIKit
 
 class TimeCollectionViewCell: UICollectionViewCell {
+    
+    @IBOutlet weak var slotLabel: UILabel!
 
+    var data: CinemaVO? {
+        didSet {
+            if let data = data {
+                slotLabel.text = data.name
+            }
+        }
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

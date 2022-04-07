@@ -66,6 +66,9 @@
 		4FEE71AE27BCEEF800C8829D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4FEE71AC27BCEEF800C8829D /* Main.storyboard */; };
 		4FEE71B027BCEEF900C8829D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4FEE71AF27BCEEF900C8829D /* Assets.xcassets */; };
 		4FEE71B327BCEEF900C8829D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4FEE71B127BCEEF900C8829D /* LaunchScreen.storyboard */; };
+		4FFEC87627FF208A005AAFCF /* CinemaVO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFEC87527FF208A005AAFCF /* CinemaVO.swift */; };
+		4FFEC87827FF21B7005AAFCF /* CinemaRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFEC87727FF21B7005AAFCF /* CinemaRepository.swift */; };
+		4FFEC87A27FF22D3005AAFCF /* CinemaModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFEC87927FF22D3005AAFCF /* CinemaModel.swift */; };
 		87279EB4DEC7E1BF7E3BEE1D /* Pods_MovieBookingApp2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 740E6E2A9F36C1CABBB7D128 /* Pods_MovieBookingApp2.framework */; };
 /* End PBXBuildFile section */
 
@@ -132,6 +135,9 @@
 		4FEE71AF27BCEEF900C8829D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4FEE71B227BCEEF900C8829D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4FEE71B427BCEEF900C8829D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4FFEC87527FF208A005AAFCF /* CinemaVO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CinemaVO.swift; sourceTree = "<group>"; };
+		4FFEC87727FF21B7005AAFCF /* CinemaRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CinemaRepository.swift; sourceTree = "<group>"; };
+		4FFEC87927FF22D3005AAFCF /* CinemaModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CinemaModel.swift; sourceTree = "<group>"; };
 		680D74C0D160992A614310E1 /* Pods-MovieBookingApp2.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MovieBookingApp2.release.xcconfig"; path = "Target Support Files/Pods-MovieBookingApp2/Pods-MovieBookingApp2.release.xcconfig"; sourceTree = "<group>"; };
 		740E6E2A9F36C1CABBB7D128 /* Pods_MovieBookingApp2.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MovieBookingApp2.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -188,6 +194,7 @@
 			children = (
 				4F5C9FE627FC562D002B9636 /* AuthModel.swift */,
 				4F348B3127FC8D8C00EE19EF /* MovieModel.swift */,
+				4FFEC87927FF22D3005AAFCF /* CinemaModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -199,6 +206,7 @@
 				4F5C9FEB27FC5CB1002B9636 /* BaseRepository.swift */,
 				4F348B3327FC96F500EE19EF /* MovieRepository.swift */,
 				4F348B3527FC9D6000EE19EF /* RealmDb.swift */,
+				4FFEC87727FF21B7005AAFCF /* CinemaRepository.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -300,6 +308,7 @@
 				4F5C9FF227FC5FA5002B9636 /* CardVO.swift */,
 				4F348B2F27FC8B3500EE19EF /* MovieVO.swift */,
 				4F8BF4A827FD40CF00B3E55A /* CastVO.swift */,
+				4FFEC87527FF208A005AAFCF /* CinemaVO.swift */,
 			);
 			path = vos;
 			sourceTree = "<group>";
@@ -498,6 +507,7 @@
 				4FDE885D27C1E79000E43789 /* DummyData.swift in Sources */,
 				4FEE71AB27BCEEF800C8829D /* HomeViewController.swift in Sources */,
 				4FEE71A727BCEEF800C8829D /* AppDelegate.swift in Sources */,
+				4FFEC87A27FF22D3005AAFCF /* CinemaModel.swift in Sources */,
 				4FDE886027C1EBDE00E43789 /* MovieSeatCollectionViewCell.swift in Sources */,
 				4F5E594D27C3461B00B0206B /* MovieDetailViewController.swift in Sources */,
 				4F9161DE27FADE440046FCA2 /* UserCredentialsVO.swift in Sources */,
@@ -513,6 +523,7 @@
 				4FDE886F27C2711900E43789 /* Router.swift in Sources */,
 				4F5C9FF327FC5FA5002B9636 /* CardVO.swift in Sources */,
 				4FC5ADD327FBFE1E008B8B9D /* Extensions.swift in Sources */,
+				4FFEC87827FF21B7005AAFCF /* CinemaRepository.swift in Sources */,
 				4F41690F27C36B570025C25D /* GenreCollectionViewCell.swift in Sources */,
 				4F41691327C3725E0025C25D /* CastCollectionViewCell.swift in Sources */,
 				4F5C9FEC27FC5CB1002B9636 /* BaseRepository.swift in Sources */,
@@ -521,6 +532,7 @@
 				4F9161D427FAD4D70046FCA2 /* MBAResult.swift in Sources */,
 				4FDE886B27C22E6B00E43789 /* TicketViewController.swift in Sources */,
 				4FDE886527C1FFFF00E43789 /* PaymentViewController.swift in Sources */,
+				4FFEC87627FF208A005AAFCF /* CinemaVO.swift in Sources */,
 				4F41692027C3CF130025C25D /* PaymentMethodCollectionViewCell.swift in Sources */,
 				4FEC672F27C358F2009F1275 /* RatingControl.swift in Sources */,
 				4FDE886827C20C6000E43789 /* CardCollectionViewCell.swift in Sources */,

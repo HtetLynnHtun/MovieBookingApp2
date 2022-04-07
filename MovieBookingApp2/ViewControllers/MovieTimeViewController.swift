@@ -21,7 +21,9 @@ class MovieTimeViewController: UIViewController {
     @IBOutlet weak var collectionViewHeightGCGoldenCity: NSLayoutConstraint!
     @IBOutlet weak var collectionViewHeightGCWestPoint: NSLayoutConstraint!
     
+    private let cinemaModel: CinemaModel = CinemaModelImpl.shared
     var dates = [MyDate]()
+    var cinemas = [CinemaVO]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,6 +36,7 @@ class MovieTimeViewController: UIViewController {
         viewContainerTimes.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
         viewContainerTimes.layer.cornerRadius = 16
         getDates()
+        getCinemas()
     }
     
     func getDates() {
@@ -86,6 +89,20 @@ class MovieTimeViewController: UIViewController {
         navigateToScreen(withIdentifier: MovieSeatViewController.identifier)
     }
 
+    private func getCinemas() {
+        cinemaModel.getCinemas { [weak self] result in
+            guard let self = self else { return }
+            
+            switch result {
+            case .success(let data):
+                self.cinemas = data
+                self.collectionViewAvailableIn.reloadData()
+                
+            case .failure(let errorMessage):
+                self.showAlert(message: errorMessage)
+            }
+        }
+    }
 }
 
 extension MovieTimeViewController: UICollectionViewDataSource {
@@ -94,7 +111,7 @@ extension MovieTimeViewController: UICollectionViewDataSource {
         if (collectionView == collectionViewDays) {
             return dates.count
         } else if (collectionView == collectionViewAvailableIn) {
-            return 3
+            return cinemas.count
         } else {
             return 6
         }
@@ -106,10 +123,8 @@ extension MovieTimeViewController: UICollectionViewDataSource {
             cell.date = dates[indexPath.row]
             return cell
         } else {
-            let cell = collectionViewAvailableIn.dequeCell(TimeCollectionViewCell.identifier, indexPath)
-//            cell.layer.borderWidth = 1
-//            cell.layer.cornerRadius = 4
-            
+            let cell = collectionViewAvailableIn.dequeCell(TimeCollectionViewCell.identifier, indexPath) as TimeCollectionViewCell
+            cell.data = cinemas[indexPath.row]
             return cell
         }
     }
