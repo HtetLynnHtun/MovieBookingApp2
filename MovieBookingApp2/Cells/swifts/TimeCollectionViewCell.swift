@@ -11,10 +11,10 @@ class TimeCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var slotLabel: UILabel!
 
-    var data: CinemaVO? {
+    var data: String? {
         didSet {
             if let data = data {
-                slotLabel.text = data.name
+                slotLabel.text = data
             }
         }
     }
