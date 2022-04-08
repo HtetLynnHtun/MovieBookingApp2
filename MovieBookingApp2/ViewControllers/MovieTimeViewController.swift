@@ -79,6 +79,10 @@ class MovieTimeViewController: UIViewController {
         navigateToScreen(withIdentifier: MovieSeatViewController.identifier)
     }
     
+    private func didSelectDate(selected: MyDate) {
+        print("wtbug: user selected date: \(selected)")
+    }
+    
     private func setupTimeSlotCollectionViews(data: [CinemaDayTimeSlotVO]) {
         for (index, dataVO) in data.enumerated() {
             let stackView = UIStackView()
@@ -177,12 +181,18 @@ extension MovieTimeViewController: UICollectionViewDataSource {
         }
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if (collectionView == collectionViewDays) {
+            didSelectDate(selected: dates[indexPath.row])
+        }
+    }
+    
 }
 
 extension MovieTimeViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         if (collectionView == collectionViewDays) {
-            return CGSize(width: 60, height: 80)
+            return CGSize(width: 40, height: 80)
         } else {
             let width = collectionView.bounds.width / 3
             let height = CGFloat(48)
