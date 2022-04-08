@@ -21,7 +21,6 @@ class MovieTimeViewController: UIViewController {
     private let cinemaModel: CinemaModel = CinemaModelImpl.shared
     var dates = [MyDate]()
     var cinemas = [CinemaVO]()
-    var dayTimeSlots = [CinemaDayTimeSlotVO]()
     var slotDataSources = [CinemaDataDSource]()
     
     override func viewDidLoad() {
@@ -36,7 +35,7 @@ class MovieTimeViewController: UIViewController {
         viewContainerTimes.layer.cornerRadius = 16
         getDates()
         getCinemas()
-        getDayTimeSlots()
+        getDayTimeSlots(for: dates.first!.complete)
     }
     
     func getDates() {
@@ -80,7 +79,14 @@ class MovieTimeViewController: UIViewController {
     }
     
     private func didSelectDate(selected: MyDate) {
-        print("wtbug: user selected date: \(selected)")
+        if (slotDataSources.count > 1) {
+            for _ in 1...slotDataSources.count {
+                self.parentStackView.arrangedSubviews[1].removeFromSuperview()
+            }
+        }
+        slotDataSources.removeAll()
+        getDayTimeSlots(for: selected.complete)
+        print("wtbug: last selected date \(selected.complete)")
     }
     
     private func setupTimeSlotCollectionViews(data: [CinemaDayTimeSlotVO]) {
@@ -142,9 +148,7 @@ class MovieTimeViewController: UIViewController {
         }
     }
     
-    private func getDayTimeSlots() {
-        // TODO: get user selected date
-        let date = "2022-04-8"
+    private func getDayTimeSlots(for date: String) {
         cinemaModel.getDayTimeSlots(for: date) { [weak self] result in
             guard let self = self else { return }
             
@@ -173,6 +177,10 @@ extension MovieTimeViewController: UICollectionViewDataSource {
         if (collectionView == collectionViewDays) {
             let cell = collectionViewDays.dequeCell(DayCollectionViewCell.identifier, indexPath) as DayCollectionViewCell
             cell.date = dates[indexPath.row]
+            
+            if (indexPath.row == 0) {
+                collectionView.selectItem(at: indexPath, animated: true, scrollPosition: .top)
+            }
             return cell
         } else {
             let cell = collectionViewAvailableIn.dequeCell(TimeCollectionViewCell.identifier, indexPath) as TimeCollectionViewCell

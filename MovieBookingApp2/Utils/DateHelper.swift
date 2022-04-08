@@ -20,7 +20,10 @@ class DateHelper {
         return next10Dates.map { date -> MyDate in
             let day = today.component(.day, from: date)
             let short = DateFormatter().shortWeekdaySymbols[today.component(.weekday, from: date) - 1]
-            return MyDate(weekday: short, day: day)
+            let year = today.component(.year, from: date)
+            let month = today.component(.month, from: date)
+            let complete = "\(year)-\(month)-\(day)"
+            return MyDate(weekday: short, day: day, complete: complete)
         }
     }
 }
@@ -28,4 +31,5 @@ class DateHelper {
 struct MyDate {
     let weekday: String
     let day: Int
+    let complete: String
 }

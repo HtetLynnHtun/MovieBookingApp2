@@ -25,5 +25,17 @@ class DayCollectionViewCell: UICollectionViewCell {
         super.awakeFromNib()
         // Initialization code
     }
+    
+    override var isSelected: Bool {
+        didSet {
+            if (isSelected) {
+                weekdayLabel.textColor = .white
+                dayLabel.textColor = .white
+            } else {
+                weekdayLabel.textColor = .systemGray
+                dayLabel.textColor = .systemGray
+            }
+        }
+    }
 
 }
