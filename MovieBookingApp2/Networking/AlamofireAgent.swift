@@ -150,6 +150,20 @@ struct AlamofireAgent: NetworkingAgent {
             }
     }
     
+    func getSeatPlan(of slotId: Int, for date: String, token: String, completion: @escaping (MBAResult<[[SeatVO]]>) -> Void) {
+        let headers: HTTPHeaders = [.authorization(bearerToken: token)]
+        
+        AF.request(MBAEndpoint.seatPlan(slotId, date) , headers: headers)
+            .validate(statusCode: 200..<300)
+            .responseDecodable(of: ApiResponse<[[SeatVO]]>.self) { response in
+                switch response.result {
+                case .success(let apiResponse):
+                    completion(.success(apiResponse.data!))
+                case .failure(let error):
+                    completion(.failure(error.localizedDescription))
+                }
+            }
+    }
     // MARK: Helper methods
     private func isNoConnectionError(error: AFError) -> Bool {
         if let underlyingError = error.underlyingError {

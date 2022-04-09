@@ -1100,10 +1100,10 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MGc-c8-Re7">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="633.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="803.5"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="ED4-56-Dra">
-                                                <rect key="frame" x="0.0" y="0.0" width="414" height="601.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="771.5"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="xJ4-dL-TgW">
                                                         <rect key="frame" x="16" y="0.0" width="382" height="88.5"/>
@@ -1129,10 +1129,10 @@
                                                         </subviews>
                                                     </stackView>
                                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="EqH-aT-gj9">
-                                                        <rect key="frame" x="16" y="112.5" width="382" height="280"/>
+                                                        <rect key="frame" x="16" y="112.5" width="382" height="450"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="height" constant="280" id="flE-xT-JHm"/>
+                                                            <constraint firstAttribute="height" constant="450" id="flE-xT-JHm"/>
                                                         </constraints>
                                                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="CcK-6k-u6j">
                                                             <size key="itemSize" width="128" height="128"/>
@@ -1152,7 +1152,7 @@
                                                         </cells>
                                                     </collectionView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="PD1-JQ-EVj">
-                                                        <rect key="frame" x="16" y="416.5" width="382" height="32"/>
+                                                        <rect key="frame" x="16" y="586.5" width="382" height="32"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="dca-Yk-aee">
                                                                 <rect key="frame" x="0.0" y="0.0" width="127.5" height="32"/>
@@ -1229,7 +1229,7 @@
                                                         </subviews>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="IKp-aT-EU9">
-                                                        <rect key="frame" x="16" y="472.5" width="382" height="51"/>
+                                                        <rect key="frame" x="16" y="642.5" width="382" height="51"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Uhy-Hn-CCJ">
                                                                 <rect key="frame" x="0.0" y="0.0" width="382" height="21.5"/>
@@ -1268,7 +1268,7 @@
                                                         </subviews>
                                                     </stackView>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nGC-b7-db0">
-                                                        <rect key="frame" x="16" y="547.5" width="382" height="54"/>
+                                                        <rect key="frame" x="16" y="717.5" width="382" height="54"/>
                                                         <color key="backgroundColor" name="primary_color"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="54" id="llK-fb-z22"/>
@@ -1322,6 +1322,7 @@
                         <outlet property="buttonBuyTicket" destination="nGC-b7-db0" id="9Qh-Cc-ayY"/>
                         <outlet property="buttonGoBack" destination="G5e-JQ-tTH" id="Tf2-gr-4di"/>
                         <outlet property="collectionViewMovieSeats" destination="EqH-aT-gj9" id="Zj4-WQ-C10"/>
+                        <outlet property="collectionViewSeatsHeight" destination="flE-xT-JHm" id="EOr-3a-06k"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="t1r-b4-Txx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

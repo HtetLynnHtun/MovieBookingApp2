@@ -7,10 +7,10 @@
 
 import Foundation
 
-let SEAT_TYPE_AVAILABLE = "Available";
-let SEAT_TYPE_TAKEN = "Taken";
-let SEAT_TYPE_TEXT = "Text";
-let SEAT_TYPE_EMPTY = "Empty";
+let SEAT_TYPE_AVAILABLE = "available";
+let SEAT_TYPE_TAKEN = "taken";
+let SEAT_TYPE_TEXT = "text";
+let SEAT_TYPE_EMPTY = "space";
 
 struct AppConstants {
     static let baseUrl = "https://tmba.padc.com.mm/api/v1"

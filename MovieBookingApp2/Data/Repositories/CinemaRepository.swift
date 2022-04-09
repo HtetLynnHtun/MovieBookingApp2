@@ -12,6 +12,8 @@ protocol CinemaRepository {
     func getCinemas(completion: @escaping ([CinemaVO]) -> Void)
     func saveDayTimeSlots(for date: String, data: [CinemaDayTimeSlotVO])
     func getDayTimeSlots(for date: String, completion: @escaping ([CinemaDayTimeSlotVO]) -> Void)
+    func saveSeatPlan(of slotId: Int, for date: String, data: [[SeatVO]])
+    func getSeatPlan(of slotId: Int, for date: String, completion: @escaping (SeatPlanVO) -> Void)
 }
 
 class CinemaRepositoryImpl: BaseRepository, CinemaRepository {
@@ -52,5 +54,27 @@ class CinemaRepositoryImpl: BaseRepository, CinemaRepository {
         let data: [CinemaDayTimeSlotVO] = self.realm.objects(CinemaDayTimeSlotVO.self)
             .filter { $0.date == date }
         completion(data)
+    }
+    
+    func saveSeatPlan(of slotId: Int, for date: String, data: [[SeatVO]]) {
+        let seats: [SeatVO] = Array(data.joined())
+        let seatPlan = SeatPlanVO()
+        
+        do {
+            try self.realm.write({
+                seatPlan.id = "\(slotId)/\(date)"
+                // remove existing seatVO in realm (need cascading delete)
+                self.realm.delete(seatPlan.seats)
+                seatPlan.seats.append(objectsIn: seats)
+                self.realm.add(seatPlan, update: .modified)
+            })
+        } catch {
+            print(error.localizedDescription)
+        }
+    }
+    
+    func getSeatPlan(of slotId: Int, for date: String, completion: @escaping (SeatPlanVO) -> Void) {
+        let id = "\(slotId)/\(date)"
+        completion(self.realm.object(ofType: SeatPlanVO.self, forPrimaryKey: id)!)
     }
 }

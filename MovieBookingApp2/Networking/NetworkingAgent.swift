@@ -21,4 +21,5 @@ protocol NetworkingAgent {
     
     func getCinemas(completion: @escaping (MBAResult<[CinemaVO]>) -> Void)
     func getCinemaDayTimeSlots(token: String, for date: String, completion: @escaping (MBAResult<[CinemaDayTimeSlotVO]>) -> Void)
+    func getSeatPlan(of slotId: Int, for date: String, token: String, completion: @escaping (MBAResult<[[SeatVO]]>) -> Void)
 }

@@ -47,7 +47,7 @@
 		4FCB6AD727BD0760004CC300 /* ViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FCB6AD627BD0760004CC300 /* ViewExtensions.swift */; };
 		4FCB6ADD27BD0882004CC300 /* MovieCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FCB6ADB27BD0882004CC300 /* MovieCollectionViewCell.swift */; };
 		4FCB6ADE27BD0882004CC300 /* MovieCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4FCB6ADC27BD0882004CC300 /* MovieCollectionViewCell.xib */; };
-		4FDE885727C1E5E000E43789 /* MovieSeatVO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FDE885627C1E5E000E43789 /* MovieSeatVO.swift */; };
+		4FDE885727C1E5E000E43789 /* SeatVO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FDE885627C1E5E000E43789 /* SeatVO.swift */; };
 		4FDE885A27C1E6E500E43789 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FDE885927C1E6E500E43789 /* AppConstants.swift */; };
 		4FDE885D27C1E79000E43789 /* DummyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FDE885C27C1E79000E43789 /* DummyData.swift */; };
 		4FDE886027C1EBDE00E43789 /* MovieSeatCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FDE885E27C1EBDE00E43789 /* MovieSeatCollectionViewCell.swift */; };
@@ -66,6 +66,7 @@
 		4FEE71AE27BCEEF800C8829D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4FEE71AC27BCEEF800C8829D /* Main.storyboard */; };
 		4FEE71B027BCEEF900C8829D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4FEE71AF27BCEEF900C8829D /* Assets.xcassets */; };
 		4FEE71B327BCEEF900C8829D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4FEE71B127BCEEF900C8829D /* LaunchScreen.storyboard */; };
+		4FF4BF902801596A00FAB437 /* SeatPlanVO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF4BF8F2801596A00FAB437 /* SeatPlanVO.swift */; };
 		4FFEC87627FF208A005AAFCF /* CinemaVO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFEC87527FF208A005AAFCF /* CinemaVO.swift */; };
 		4FFEC87827FF21B7005AAFCF /* CinemaRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFEC87727FF21B7005AAFCF /* CinemaRepository.swift */; };
 		4FFEC87A27FF22D3005AAFCF /* CinemaModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFEC87927FF22D3005AAFCF /* CinemaModel.swift */; };
@@ -116,7 +117,7 @@
 		4FCB6AD627BD0760004CC300 /* ViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtensions.swift; sourceTree = "<group>"; };
 		4FCB6ADB27BD0882004CC300 /* MovieCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCollectionViewCell.swift; sourceTree = "<group>"; };
 		4FCB6ADC27BD0882004CC300 /* MovieCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MovieCollectionViewCell.xib; sourceTree = "<group>"; };
-		4FDE885627C1E5E000E43789 /* MovieSeatVO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieSeatVO.swift; sourceTree = "<group>"; };
+		4FDE885627C1E5E000E43789 /* SeatVO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeatVO.swift; sourceTree = "<group>"; };
 		4FDE885927C1E6E500E43789 /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
 		4FDE885C27C1E79000E43789 /* DummyData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyData.swift; sourceTree = "<group>"; };
 		4FDE885E27C1EBDE00E43789 /* MovieSeatCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieSeatCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -137,6 +138,7 @@
 		4FEE71AF27BCEEF900C8829D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4FEE71B227BCEEF900C8829D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4FEE71B427BCEEF900C8829D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4FF4BF8F2801596A00FAB437 /* SeatPlanVO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeatPlanVO.swift; sourceTree = "<group>"; };
 		4FFEC87527FF208A005AAFCF /* CinemaVO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CinemaVO.swift; sourceTree = "<group>"; };
 		4FFEC87727FF21B7005AAFCF /* CinemaRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CinemaRepository.swift; sourceTree = "<group>"; };
 		4FFEC87927FF22D3005AAFCF /* CinemaModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CinemaModel.swift; sourceTree = "<group>"; };
@@ -235,8 +237,8 @@
 				4FEE71AA27BCEEF800C8829D /* HomeViewController.swift */,
 				4F5E594C27C3461B00B0206B /* MovieDetailViewController.swift */,
 				4F1127E027BD137F00CBE96D /* MovieTimeViewController.swift */,
-				4F03DFD127C0D1C300177313 /* SnackViewController.swift */,
 				4FDE886227C1ED0E00E43789 /* MovieSeatViewController.swift */,
+				4F03DFD127C0D1C300177313 /* SnackViewController.swift */,
 				4FDE886427C1FFFF00E43789 /* PaymentViewController.swift */,
 				4FDE886A27C22E6B00E43789 /* TicketViewController.swift */,
 				4F41692227C3DB2B0025C25D /* AddNewCardViewController.swift */,
@@ -306,7 +308,7 @@
 		4FDE885527C1E5AB00E43789 /* vos */ = {
 			isa = PBXGroup;
 			children = (
-				4FDE885627C1E5E000E43789 /* MovieSeatVO.swift */,
+				4FDE885627C1E5E000E43789 /* SeatVO.swift */,
 				4F9161D527FAD5220046FCA2 /* ProfileVO.swift */,
 				4F9161DD27FADE440046FCA2 /* UserCredentialsVO.swift */,
 				4F5C9FF227FC5FA5002B9636 /* CardVO.swift */,
@@ -315,6 +317,7 @@
 				4FFEC87527FF208A005AAFCF /* CinemaVO.swift */,
 				4FFEC87B27FF2BD0005AAFCF /* CinemaDayTimeSlotVO.swift */,
 				4FFEC87D27FF2BE5005AAFCF /* TimeSlotVO.swift */,
+				4FF4BF8F2801596A00FAB437 /* SeatPlanVO.swift */,
 			);
 			path = vos;
 			sourceTree = "<group>";
@@ -518,7 +521,7 @@
 				4FDE886027C1EBDE00E43789 /* MovieSeatCollectionViewCell.swift in Sources */,
 				4F5E594D27C3461B00B0206B /* MovieDetailViewController.swift in Sources */,
 				4F9161DE27FADE440046FCA2 /* UserCredentialsVO.swift in Sources */,
-				4FDE885727C1E5E000E43789 /* MovieSeatVO.swift in Sources */,
+				4FDE885727C1E5E000E43789 /* SeatVO.swift in Sources */,
 				4F9161D627FAD5220046FCA2 /* ProfileVO.swift in Sources */,
 				4F348B3027FC8B3500EE19EF /* MovieVO.swift in Sources */,
 				4FDE885A27C1E6E500E43789 /* AppConstants.swift in Sources */,
@@ -532,6 +535,7 @@
 				4FC5ADD327FBFE1E008B8B9D /* Extensions.swift in Sources */,
 				4FFEC87827FF21B7005AAFCF /* CinemaRepository.swift in Sources */,
 				4F41690F27C36B570025C25D /* GenreCollectionViewCell.swift in Sources */,
+				4FF4BF902801596A00FAB437 /* SeatPlanVO.swift in Sources */,
 				4F41691327C3725E0025C25D /* CastCollectionViewCell.swift in Sources */,
 				4F5C9FEC27FC5CB1002B9636 /* BaseRepository.swift in Sources */,
 				4F8BF4AB27FDA14300B3E55A /* DateHelper.swift in Sources */,
