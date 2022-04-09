@@ -52,6 +52,7 @@
             </constraints>
             <size key="customSize" width="185" height="54"/>
             <connections>
+                <outlet property="containerView" destination="Juu-NM-fLa" id="zQI-DI-n6q"/>
                 <outlet property="slotLabel" destination="Ojb-Rp-U64" id="TO0-Gc-sNu"/>
             </connections>
             <point key="canvasLocation" x="235.50724637681162" y="145.3125"/>

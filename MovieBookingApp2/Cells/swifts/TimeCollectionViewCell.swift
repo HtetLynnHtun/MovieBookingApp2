@@ -10,6 +10,7 @@ import UIKit
 class TimeCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var slotLabel: UILabel!
+    @IBOutlet weak var containerView: UIView!
 
     var data: String? {
         didSet {

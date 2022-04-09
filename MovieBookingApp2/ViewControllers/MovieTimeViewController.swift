@@ -89,6 +89,10 @@ class MovieTimeViewController: UIViewController {
         print("wtbug: last selected date \(selected.complete)")
     }
     
+    private func didSelectCinema(id: Int) {
+        print("wtbug: Cinema id: \(id) is selected")
+    }
+    
     private func setupTimeSlotCollectionViews(data: [CinemaDayTimeSlotVO]) {
         for (index, dataVO) in data.enumerated() {
             let stackView = UIStackView()
@@ -192,6 +196,8 @@ extension MovieTimeViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if (collectionView == collectionViewDays) {
             didSelectDate(selected: dates[indexPath.row])
+        } else {
+            didSelectCinema(id: cinemas[indexPath.row].id)
         }
     }
     
