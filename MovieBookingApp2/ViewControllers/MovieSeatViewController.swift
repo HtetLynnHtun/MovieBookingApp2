@@ -13,6 +13,8 @@ class MovieSeatViewController: UIViewController {
     @IBOutlet weak var buttonGoBack: UIButton!
     @IBOutlet weak var buttonBuyTicket: UIButton!
     @IBOutlet weak var collectionViewSeatsHeight: NSLayoutConstraint!
+    @IBOutlet weak var ticketCountLabel: UILabel!
+    @IBOutlet weak var selectedSeatsLabel: UILabel!
     
     private var cinemaModel: CinemaModel = CinemaModelImpl.shared
     private var seats = [SeatVO]()
@@ -30,6 +32,7 @@ class MovieSeatViewController: UIViewController {
     }
     
     func setupDataSourcesAndDelegates() {
+        collectionViewMovieSeats.allowsMultipleSelection = true
         collectionViewMovieSeats.dataSource = self
         collectionViewMovieSeats.delegate = self
     }
@@ -57,19 +60,32 @@ class MovieSeatViewController: UIViewController {
         selectedSeats.forEach { seat in
             print("wtbug: \(seat.seatName)")
         }
-//        navigateToScreen(withIdentifier: SnackViewController.identifier)
+        navigateToScreen(withIdentifier: SnackViewController.identifier)
     }
     
-    private func toggleSelected(seatName: String) {
-        if let seat = seats.first(where: { $0.seatName == seatName}) {
-            print("wtbug: seat \(seatName) is tapped")
+    private func toggleSelected(id: UUID) {
+        if let seat = seats.first(where: { $0.id == id}) {
             seat.isSelected = !seat.isSelected
-            collectionViewMovieSeats.reloadData()
-            print("wtbug: =====================")
-            seats.forEach { seat in
-                print("wtbug: \(seat.seatName) -> \(seat.type) || \(seat.isSelected)")
-            }
+            
+            let selectedSeats = seats.filter { $0.isSelected }
+            updateTicketCountLabel(selectedSeats)
+            updateSelectedSeatsLabel(selectedSeats)
+            updateBuyButtonTitle(selectedSeats)
         }
+    }
+    
+    private func updateTicketCountLabel(_ selectedSeats: [SeatVO]) {
+        ticketCountLabel.text = String(selectedSeats.count)
+    }
+    
+    private func updateSelectedSeatsLabel(_ selectedSeats: [SeatVO]) {
+        selectedSeatsLabel.text = selectedSeats.map { $0.seatName }.joined(separator: ",")
+    }
+    
+    private func updateBuyButtonTitle(_ selectedSeats: [SeatVO]) {
+        let totalTicketPrice = selectedSeats.reduce(0.0) { $0 + $1.price}
+        let title = "Buy Ticket for $\(totalTicketPrice)"
+        buttonBuyTicket.setTitle(title, for: .normal)
     }
     
     // MARK: Model Communications
@@ -99,12 +115,26 @@ extension MovieSeatViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeCell(MovieSeatCollectionViewCell.identifier, indexPath) as MovieSeatCollectionViewCell
-        cell.data = seats[indexPath.row]
-        cell.onTap = toggleSelected
+        let seat = seats[indexPath.row]
+        cell.data = seat
+        if (!seat.isAvailable()) {
+            cell.isUserInteractionEnabled = false
+        }
+        
         return cell;
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        toggleSelected(id: seats[indexPath.row].id)
+    }
     
+    func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
+        toggleSelected(id: seats[indexPath.row].id)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
+        return !(collectionView.cellForItem(at: indexPath)?.isSelected ?? false)
+    }
 }
 
 extension MovieSeatViewController: UICollectionViewDelegateFlowLayout {

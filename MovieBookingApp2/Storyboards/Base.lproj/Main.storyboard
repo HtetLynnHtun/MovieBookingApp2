@@ -1100,10 +1100,10 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MGc-c8-Re7">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="803.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="832"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="ED4-56-Dra">
-                                                <rect key="frame" x="0.0" y="0.0" width="414" height="771.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="800"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="xJ4-dL-TgW">
                                                         <rect key="frame" x="16" y="0.0" width="382" height="88.5"/>
@@ -1229,19 +1229,19 @@
                                                         </subviews>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="IKp-aT-EU9">
-                                                        <rect key="frame" x="16" y="642.5" width="382" height="51"/>
+                                                        <rect key="frame" x="16" y="642.5" width="382" height="79.5"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Uhy-Hn-CCJ">
                                                                 <rect key="frame" x="0.0" y="0.0" width="382" height="21.5"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tickets" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Cz-Nm-zfp">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="371.5" height="21.5"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="371" height="21.5"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                                         <color key="textColor" name="movie_seat_taken_color"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YvQ-lN-Qz2">
-                                                                        <rect key="frame" x="371.5" y="0.0" width="10.5" height="21.5"/>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YvQ-lN-Qz2">
+                                                                        <rect key="frame" x="371" y="0.0" width="11" height="21.5"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                                         <color key="textColor" name="movie_seat_taken_color"/>
                                                                         <nil key="highlightedColor"/>
@@ -1249,16 +1249,16 @@
                                                                 </subviews>
                                                             </stackView>
                                                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a5J-1f-Esd">
-                                                                <rect key="frame" x="0.0" y="29.5" width="382" height="21.5"/>
+                                                                <rect key="frame" x="0.0" y="29.5" width="382" height="50"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Seats" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VnO-ua-UFu">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="299" height="21.5"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="332" height="50"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                                         <color key="textColor" name="movie_seat_taken_color"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="D Row 5/6" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kIn-QV-I0u">
-                                                                        <rect key="frame" x="299" y="0.0" width="83" height="21.5"/>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kIn-QV-I0u">
+                                                                        <rect key="frame" x="332" y="0.0" width="50" height="50"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                                         <color key="textColor" name="movie_seat_taken_color"/>
                                                                         <nil key="highlightedColor"/>
@@ -1268,13 +1268,13 @@
                                                         </subviews>
                                                     </stackView>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nGC-b7-db0">
-                                                        <rect key="frame" x="16" y="717.5" width="382" height="54"/>
+                                                        <rect key="frame" x="16" y="746" width="382" height="54"/>
                                                         <color key="backgroundColor" name="primary_color"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="54" id="llK-fb-z22"/>
                                                         </constraints>
                                                         <state key="normal" title="Button"/>
-                                                        <buttonConfiguration key="configuration" style="plain" title="Buy Ticket for $20.00">
+                                                        <buttonConfiguration key="configuration" style="plain" title="Buy Ticket for $0.0">
                                                             <fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="16"/>
                                                             <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </buttonConfiguration>
@@ -1323,6 +1323,8 @@
                         <outlet property="buttonGoBack" destination="G5e-JQ-tTH" id="Tf2-gr-4di"/>
                         <outlet property="collectionViewMovieSeats" destination="EqH-aT-gj9" id="Zj4-WQ-C10"/>
                         <outlet property="collectionViewSeatsHeight" destination="flE-xT-JHm" id="EOr-3a-06k"/>
+                        <outlet property="selectedSeatsLabel" destination="kIn-QV-I0u" id="NIM-nJ-wut"/>
+                        <outlet property="ticketCountLabel" destination="YvQ-lN-Qz2" id="cCm-5X-q5h"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="t1r-b4-Txx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
