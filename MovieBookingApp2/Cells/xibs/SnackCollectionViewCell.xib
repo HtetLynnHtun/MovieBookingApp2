@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -64,6 +64,9 @@
                                                 <buttonConfiguration key="configuration" style="plain" title="-">
                                                     <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="onTapMinus:" destination="gTV-IL-0wX" eventType="touchUpInside" id="RSp-vq-ZWr"/>
+                                                </connections>
                                             </button>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ceu-hd-uq5">
                                                 <rect key="frame" x="40" y="0.0" width="40.5" height="50"/>
@@ -87,6 +90,9 @@
                                                 <buttonConfiguration key="configuration" style="plain" title="+">
                                                     <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="onTapPlus:" destination="gTV-IL-0wX" eventType="touchUpInside" id="u2r-zB-CZm"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -124,6 +130,10 @@
             </constraints>
             <size key="customSize" width="404" height="73"/>
             <connections>
+                <outlet property="snackCountLabel" destination="tIr-q8-SOg" id="9EE-UH-IJ4"/>
+                <outlet property="snackDescriptionLabel" destination="Uso-Jn-dl9" id="Ltd-eC-WXw"/>
+                <outlet property="snackNameLabel" destination="gLe-E6-GAV" id="lbs-q7-YHn"/>
+                <outlet property="snackPriceLabel" destination="z8u-Yt-JRT" id="40Y-4k-10j"/>
                 <outlet property="stackViewButtons" destination="DV2-my-vW5" id="h2g-0B-67v"/>
                 <outlet property="viewSnackCount" destination="Ceu-hd-uq5" id="3Sg-Yf-qKB"/>
             </connections>

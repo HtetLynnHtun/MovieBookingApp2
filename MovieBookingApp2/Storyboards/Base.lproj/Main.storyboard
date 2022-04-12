@@ -1428,7 +1428,7 @@
                                                             </stackView>
                                                         </subviews>
                                                     </stackView>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sub total: 40$" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4o5-xV-O1Y">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sub total: 0$" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4o5-xV-O1Y">
                                                         <rect key="frame" x="16" y="385" width="382" height="21.5"/>
                                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
                                                         <color key="textColor" systemColor="systemGreenColor"/>
@@ -1529,6 +1529,7 @@
                         <outlet property="collectionViewSnacks" destination="KgF-8r-3ZU" id="j33-FQ-MIb"/>
                         <outlet property="paymentMethodCollectionViewHeight" destination="lgZ-p7-yNZ" id="OB6-H1-r5r"/>
                         <outlet property="snackCollectionViewHeight" destination="WCA-lY-1gZ" id="1QW-Je-4QN"/>
+                        <outlet property="subTotalLabel" destination="4o5-xV-O1Y" id="REh-Ed-Gra"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EDG-hy-Hu4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
