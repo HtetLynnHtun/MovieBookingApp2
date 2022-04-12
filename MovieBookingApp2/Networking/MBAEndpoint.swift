@@ -22,6 +22,7 @@ enum MBAEndpoint: URLConvertible {
     case seatPlan(Int, String)
     case snackList
     case paymentMethods
+    case createCard
     
     func asURL() throws -> URL {
         url
@@ -62,6 +63,8 @@ enum MBAEndpoint: URLConvertible {
             return "/snacks"
         case .paymentMethods:
             return "/payment-methods"
+        case .createCard:
+            return "/card"
         }
     }
 }

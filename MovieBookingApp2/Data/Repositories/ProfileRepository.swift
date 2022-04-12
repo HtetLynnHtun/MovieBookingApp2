@@ -21,7 +21,7 @@ class ProfileRepositoryImpl: BaseRepository, ProfileRepository {
     func saveProfile(_ profile: ProfileVO) {
         do {
             try self.realm.write({
-                self.realm.add(profile)
+                self.realm.add(profile, update: .modified)
             })
         } catch {
             print(error.localizedDescription)

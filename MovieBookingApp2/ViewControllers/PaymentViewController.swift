@@ -15,11 +15,15 @@ class PaymentViewController: UIViewController {
     @IBOutlet weak var buttonConfirm: UIButton!
     @IBOutlet weak var buttonAddNewCard: UIButton!
     
+    private var authModel: AuthModel = AuthModelImpl.shared
+    private var cards = [CardVO]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionViewCards.dataSource = self
         collectionViewCards.registerCell(CardCollectionViewCell.identifier)
         
+        getCards()
         setupCarouselView()
         setupGestureRecognizers()
     }
@@ -57,15 +61,33 @@ class PaymentViewController: UIViewController {
     @objc func didTapAddNewCard() {
         navigateToScreen(withIdentifier: AddNewCardViewController.identifier)
     }
+    
+    //
+    // MARK: - Model Communications
+    //
+    private func getCards() {
+        authModel.getProfile { [weak self] result in
+            guard let self = self else { return }
+            
+            switch result {
+            case .success(let profileVO):
+                self.cards = Array(profileVO.cards)
+                self.collectionViewCards.reloadData()
+            case .failure(let errorMessage):
+                self.showAlert(message: errorMessage)
+            }
+        }
+    }
 }
 
 extension PaymentViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 3
+        return cards.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeCell(CardCollectionViewCell.identifier, indexPath)
+        let cell = collectionView.dequeCell(CardCollectionViewCell.identifier, indexPath) as CardCollectionViewCell
+        cell.data = cards[indexPath.row]
         cell.layer.cornerRadius = 8
         
         return cell

@@ -25,6 +25,17 @@ class CardVO: Object, Codable {
     @Persisted
     var cardType: String
     
+    var cvc = 0
+    
+    func toParameters() -> [String: Any] {
+        return [
+            "card_holder": cardHolder,
+            "card_number": cardNumber,
+            "expiration_date": expirationDate,
+            "cvc": cvc
+        ]
+    }
+    
     enum CodingKeys: String, CodingKey {
         case id
         case cardHolder = "card_holder"

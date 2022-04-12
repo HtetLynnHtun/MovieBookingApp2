@@ -195,6 +195,27 @@ struct AlamofireAgent: NetworkingAgent {
             }
     }
     
+    func createCard(token: String, card: CardVO, completion: @escaping (MBAResult<[CardVO]>) -> Void) {
+        let headers: HTTPHeaders = [.authorization(bearerToken: token)]
+        let parameters = card.toParameters()
+        
+        AF.request(MBAEndpoint.createCard,
+                   method: .post,
+                   parameters: parameters,
+                   headers: headers)
+        .validate(statusCode: 200..<300)
+        .responseDecodable(of: ApiResponse<[CardVO]>.self) { response in
+            switch response.result {
+            case .success(let apiResponse):
+                completion(.success(apiResponse.data!))
+            case .failure(let error):
+                if (isNoConnectionError(error: error)) {
+                    completion(.failure("Please connect to the Internet and try again."))
+                }
+            }
+        }
+    }
+    
     // MARK: Helper methods
     private func isNoConnectionError(error: AFError) -> Bool {
         if let underlyingError = error.underlyingError {

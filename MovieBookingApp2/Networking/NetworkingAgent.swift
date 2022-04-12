@@ -25,4 +25,5 @@ protocol NetworkingAgent {
     
     func getSnacks(token: String, completion: @escaping (MBAResult<[SnackVO]>) -> Void)
     func getPaymentMethods(token: String, completion: @escaping (MBAResult<[PaymentMethodVO]>) -> Void)
+    func createCard(token: String, card: CardVO, completion: @escaping (MBAResult<[CardVO]>) -> Void)
 }

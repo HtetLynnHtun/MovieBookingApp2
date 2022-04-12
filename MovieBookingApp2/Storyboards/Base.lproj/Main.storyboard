@@ -1900,6 +1900,10 @@
                     <connections>
                         <outlet property="buttonConfirm" destination="rWq-w0-WbP" id="Hfd-VQ-dCJ"/>
                         <outlet property="buttonGoBack" destination="ytD-LQ-PPI" id="rya-iv-QDk"/>
+                        <outlet property="cardHolderTextField" destination="Zqg-y7-5Pv" id="Ffk-5H-6t7"/>
+                        <outlet property="cardNumberTextField" destination="ud5-A5-aa9" id="t2j-2g-BVp"/>
+                        <outlet property="cvcTextField" destination="4DE-9l-xqT" id="wJI-yX-eWf"/>
+                        <outlet property="expirationTextField" destination="e34-WC-YdC" id="sMV-UU-dKs"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qpo-nc-wSq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
