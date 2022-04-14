@@ -77,15 +77,6 @@ class MovieRepositoryImpl: BaseRepository, MovieRepository {
     }
     
     func saveMovieDetails(data: MovieVO) {
-//        let castObjects = data.casts.map { castVO -> CastVO in
-//            if let savedCast = self.realm.object(ofType: CastVO.self, forPrimaryKey: castVO.id) {
-//                return savedCast
-//            } else {
-//                return castVO
-//            }
-//        }
-        print("wtf: =========== cast data =============")
-        data.casts.forEach { print($0.id) }
         if let savedMovie = self.realm.object(ofType: MovieVO.self, forPrimaryKey: data.id) {
             data.isNowShowing = savedMovie.isNowShowing
             data.isCommingSoon = savedMovie.isNowShowing
