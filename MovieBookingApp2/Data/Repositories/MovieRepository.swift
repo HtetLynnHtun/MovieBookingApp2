@@ -84,6 +84,8 @@ class MovieRepositoryImpl: BaseRepository, MovieRepository {
 //                return castVO
 //            }
 //        }
+        print("wtf: =========== cast data =============")
+        data.casts.forEach { print($0.id) }
         if let savedMovie = self.realm.object(ofType: MovieVO.self, forPrimaryKey: data.id) {
             data.isNowShowing = savedMovie.isNowShowing
             data.isCommingSoon = savedMovie.isNowShowing

@@ -14,7 +14,7 @@ class CastVO: Object, Codable {
     var id: Int
     
     @Persisted
-    var profilePath: String
+    var profilePath: String?
     
     enum CodingKeys: String, CodingKey {
         case id

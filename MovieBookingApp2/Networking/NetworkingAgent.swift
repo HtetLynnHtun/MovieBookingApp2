@@ -15,8 +15,8 @@ protocol NetworkingAgent {
     
     func getProfile(token: String, completion: @escaping (MBAResult<ProfileVO>) -> Void)
     
-    func getNowShowingMovies(completion: @escaping (MBAResult<[MovieVO]>) -> Void)
-    func getCommingSoonMovies(completion: @escaping (MBAResult<[MovieVO]>) -> Void)
+    func getNowShowingMovies(completion: @escaping (MBAResult<[FilmVO]>) -> Void)
+    func getCommingSoonMovies(completion: @escaping (MBAResult<[FilmVO]>) -> Void)
     func getMovieDetails(id: Int, completion: @escaping (MBAResult<MovieVO>) -> Void)
     
     func getCinemas(completion: @escaping (MBAResult<[CinemaVO]>) -> Void)

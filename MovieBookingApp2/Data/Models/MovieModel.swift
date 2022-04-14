@@ -25,7 +25,8 @@ class MovieModelImpl: MovieModel {
         networkingAgent.getNowShowingMovies { result in
             switch result {
             case .success(let data):
-                self.movieRepository.saveNowShowingMovies(data: data)
+                let movieVOs = data.map { $0.toMovieVO() }
+                self.movieRepository.saveNowShowingMovies(data: movieVOs)
                 
             case .failure(let errorMessage):
                 print(errorMessage)
@@ -40,7 +41,8 @@ class MovieModelImpl: MovieModel {
         networkingAgent.getCommingSoonMovies { result in
             switch result {
             case .success(let data):
-                self.movieRepository.saveCommingSoonMovies(data: data)
+                let movieVOs = data.map { $0.toMovieVO() }
+                self.movieRepository.saveCommingSoonMovies(data: movieVOs)
                 
             case .failure(let errorMessage):
                 print(errorMessage)

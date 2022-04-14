@@ -52,7 +52,7 @@ class MovieVO: Object, Codable {
         case overview
         case rating
         case runtime
-//        case casts
+        case casts
     }
     
 }

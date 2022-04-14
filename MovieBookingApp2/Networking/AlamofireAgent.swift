@@ -85,9 +85,9 @@ struct AlamofireAgent: NetworkingAgent {
             }
     }
     
-    func getNowShowingMovies(completion: @escaping (MBAResult<[MovieVO]>) -> Void) {
+    func getNowShowingMovies(completion: @escaping (MBAResult<[FilmVO]>) -> Void) {
         AF.request(MBAEndpoint.nowShowingMovies)
-            .responseDecodable(of: ApiResponse<[MovieVO]>.self) { response in
+            .responseDecodable(of: ApiResponse<[FilmVO]>.self) { response in
                 switch response.result {
                 case .success(let apiResponse):
                     completion(.success(apiResponse.data!))
@@ -99,9 +99,9 @@ struct AlamofireAgent: NetworkingAgent {
             }
     }
     
-    func getCommingSoonMovies(completion: @escaping (MBAResult<[MovieVO]>) -> Void) {
+    func getCommingSoonMovies(completion: @escaping (MBAResult<[FilmVO]>) -> Void) {
         AF.request(MBAEndpoint.comingSoonMovies)
-            .responseDecodable(of: ApiResponse<[MovieVO]>.self) { response in
+            .responseDecodable(of: ApiResponse<[FilmVO]>.self) { response in
                 switch response.result {
                 case .success(let apiResponse):
                     completion(.success(apiResponse.data!))
@@ -118,6 +118,7 @@ struct AlamofireAgent: NetworkingAgent {
                 case .success(let apiResponse):
                     completion(.success(apiResponse.data!))
                 case .failure(let error):
+                    print(error)
                     completion(.failure(error.localizedDescription))
                 }
             }
