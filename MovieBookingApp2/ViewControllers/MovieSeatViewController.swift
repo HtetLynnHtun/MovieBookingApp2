@@ -17,6 +17,7 @@ class MovieSeatViewController: UIViewController {
     @IBOutlet weak var selectedSeatsLabel: UILabel!
     
     private var cinemaModel: CinemaModel = CinemaModelImpl.shared
+    var courier: CourierVO!
     private var seats = [SeatVO]()
     
     override func viewDidLoad() {

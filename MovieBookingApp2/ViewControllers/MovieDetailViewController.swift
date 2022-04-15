@@ -12,7 +12,6 @@ class MovieDetailViewController: UIViewController {
     @IBOutlet weak var viewCornerOverlay: UIView!
     @IBOutlet weak var collectionViewGenres: UICollectionView!
     @IBOutlet weak var collectionViewCasts: UICollectionView!
-    @IBOutlet weak var buttonGoBack: UIButton!
     @IBOutlet weak var buttonGetTicket: UIButton!
     @IBOutlet weak var posterImageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
@@ -22,12 +21,19 @@ class MovieDetailViewController: UIViewController {
     @IBOutlet weak var ratingStar: RatingControl!
     
     var genres = [String]()
-    var contentId = 508947
+    var courier: CourierVO!
+    
     private let movieModel: MovieModel = MovieModelImpl.shared
-//    var bigData = Array.init(repeating: "lea", count: 10000000)
+    var bigData = Array.init(repeating: "lea", count: 10000000)
+    
+    deinit {
+        print("Detail VC is deinited")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        navigationController?.navigationBar.tintColor = .white
 
         viewCornerOverlay.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
         viewCornerOverlay.layer.cornerRadius = 32
@@ -52,19 +58,12 @@ class MovieDetailViewController: UIViewController {
     }
     
     private func setupGestureRecognizers() {
-        let buttonGoBackTapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(didTapGoBack))
-        buttonGoBack.addGestureRecognizer(buttonGoBackTapGestureRecognizer)
-        
         let buttonGetTicketTapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(didTapGetTicket))
         buttonGetTicket.addGestureRecognizer(buttonGetTicketTapGestureRecognizer)
     }
     
-    @objc func didTapGoBack() {
-        navigateToScreen(withIdentifier: HomeViewController.identifier)
-    }
-    
     @objc func didTapGetTicket() {
-        navigateToScreen(withIdentifier: MovieTimeViewController.identifier)
+        navigateToMovieTime(courier)
     }
     
     private func bindData(_ data: MovieVO) {
@@ -84,7 +83,7 @@ class MovieDetailViewController: UIViewController {
     }
 
     private func getMovieDetails() {
-        movieModel.getMovieDetails(id: contentId) { [weak self] result in
+        movieModel.getMovieDetails(id: courier.movieId) { [weak self] result in
             guard let self = self else { return }
             switch result {
             case .success(let data):

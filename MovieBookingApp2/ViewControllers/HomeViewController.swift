@@ -16,6 +16,7 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var userNameLabel: UILabel!
     private var nowShowingMovies = [MovieVO]()
     private var commingSoonMovies = [MovieVO]()
+    private var courier = CourierVO()
     
     private let authModel: AuthModel = AuthModelImpl.shared
     private let movieModel: MovieModel = MovieModelImpl.shared
@@ -27,12 +28,14 @@ class HomeViewController: UIViewController {
         getProfile()
         getNowShowingMovies()
         getCommingSoonMovies()
-        
-        
-        let appearance = UINavigationBarAppearance()
-        appearance.configureWithTransparentBackground()
-        navigationItem.standardAppearance = appearance
-
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        navigationController?.setNavigationBarHidden(true, animated: false)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        navigationController?.setNavigationBarHidden(false, animated: false)
     }
 
     func registerCells() {
@@ -53,8 +56,9 @@ class HomeViewController: UIViewController {
     }
     
     func onTapMovie(id: Int) {
-        navigateToScreen(withIdentifier: MovieDetailViewController.identifier)
-//        navigateToMovieDetails(id: id)
+//        navigateToScreen(withIdentifier: MovieDetailViewController.identifier)
+        courier.movieId = id
+        navigateToMovieDetails(courier)
 //        dismiss(animated: true)
     }
     

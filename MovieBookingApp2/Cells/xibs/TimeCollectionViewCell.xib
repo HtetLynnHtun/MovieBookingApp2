@@ -32,14 +32,6 @@
                             <constraint firstItem="Ojb-Rp-U64" firstAttribute="centerX" secondItem="Juu-NM-fLa" secondAttribute="centerX" id="DZR-n5-Qxn"/>
                             <constraint firstItem="Ojb-Rp-U64" firstAttribute="centerY" secondItem="Juu-NM-fLa" secondAttribute="centerY" id="elZ-xq-co0"/>
                         </constraints>
-                        <userDefinedRuntimeAttributes>
-                            <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
-                                <integer key="value" value="1"/>
-                            </userDefinedRuntimeAttribute>
-                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                <integer key="value" value="4"/>
-                            </userDefinedRuntimeAttribute>
-                        </userDefinedRuntimeAttributes>
                     </view>
                 </subviews>
             </view>

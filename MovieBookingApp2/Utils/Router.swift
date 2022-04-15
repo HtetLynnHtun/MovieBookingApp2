@@ -19,13 +19,13 @@ extension UIViewController {
     func navigateToAuthScreen() {
         let vc = UIStoryboard.mainStoryBoard().instantiateViewController(withIdentifier: AuthenticationViewController.identifier)
         vc.modalPresentationStyle = .fullScreen
-        present(vc, animated: true)
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     func navigateToHomeScreen() {
         let vc = UIStoryboard.mainStoryBoard().instantiateViewController(withIdentifier: HomeViewController.identifier)
         vc.modalPresentationStyle = .fullScreen
-        present(vc, animated: true)
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     func navigateToScreen(withIdentifier identifier: String) {
@@ -36,18 +36,26 @@ extension UIViewController {
         present(vc, animated: true)
     }
     
-    func navigateToMovieDetails(id: Int) {
+    func navigateToMovieDetails(_ courier: CourierVO) {
         let mainStoryBoard = UIStoryboard(name: "Main", bundle: nil)
         let vc = mainStoryBoard.instantiateViewController(withIdentifier: MovieDetailViewController.identifier) as! MovieDetailViewController
         vc.modalPresentationStyle = .fullScreen
-        vc.contentId = id
-        present(vc, animated: true)
+        vc.courier = courier
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
-    func navigateToMovieTime() {
+    func navigateToMovieTime(_ courier: CourierVO) {
         let mainStoryBoard = UIStoryboard(name: "Main", bundle: nil)
         let vc = mainStoryBoard.instantiateViewController(withIdentifier: MovieTimeViewController.identifier) as! MovieTimeViewController
         vc.modalPresentationStyle = .fullScreen
-        present(vc, animated: true)
+        vc.courier = courier
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    func navigateToMovieSeat(_ courier: CourierVO) {
+        let vc = UIStoryboard.mainStoryBoard().instantiateViewController(withIdentifier: MovieSeatViewController.identifier) as! MovieSeatViewController
+        vc.modalPresentationStyle = .fullScreen
+        vc.courier = courier
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 }

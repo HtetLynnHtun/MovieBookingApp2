@@ -19,13 +19,18 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let _ = (scene as? UIWindowScene) else { return }
         
         let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        var initialViewController: UIViewController!
+        var vc: UIViewController!
+        
         if (authModel.isUserAlreadyLoggedIn()) {
-            initialViewController  = mainStoryboard.instantiateViewController(withIdentifier: HomeViewController.identifier) as UIViewController
+            vc = mainStoryboard.instantiateViewController(withIdentifier: HomeViewController.identifier)
         } else {
-            initialViewController = mainStoryboard.instantiateViewController(withIdentifier: LandingViewController.identifier) as UIViewController
+            vc = mainStoryboard.instantiateViewController(withIdentifier: LandingViewController.identifier)
         }
-        self.window?.rootViewController = initialViewController
+        
+        if let rootVC = window?.rootViewController as? UINavigationController {
+            rootVC.setViewControllers([vc], animated: false)
+        }
+        
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

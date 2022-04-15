@@ -12,19 +12,26 @@ class MovieTimeViewController: UIViewController {
     @IBOutlet weak var parentStackView: UIStackView!
     @IBOutlet weak var collectionViewDays: UICollectionView!
     @IBOutlet weak var collectionViewAvailableIn: UICollectionView!
+    @IBOutlet weak var collectionViewTimeSlots: UICollectionView!
     @IBOutlet weak var viewContainerTimes: UIView!
-    @IBOutlet weak var buttonGoBack: UIButton!
     @IBOutlet weak var buttonNext: UIButton!
+    @IBOutlet weak var collectionViewHeightTimeSlots: NSLayoutConstraint!
     
     @IBOutlet weak var collectionViewHeightAvailableIn: NSLayoutConstraint!
     
     private let cinemaModel: CinemaModel = CinemaModelImpl.shared
+    var courier: CourierVO!
+    var selectedDate = ""
+    var selectedCinemaID = 0
+    var selectedSlotID = 0
     var dates = [MyDate]()
     var cinemas = [CinemaVO]()
-    var slotDataSources = [CinemaDataDSource]()
+    var slotsData = [CinemaDayTimeSlotVO]()
+//    var slotDataSources = [CinemaDataDSource]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         regsierCells()
         setupDataSourcesAndDelegates()
         setupHeightsForCollectionViews()
@@ -38,14 +45,24 @@ class MovieTimeViewController: UIViewController {
         getDayTimeSlots(for: dates.first!.complete)
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        navigationController?.navigationBar.backgroundColor = UIColor(named: "primary_color")
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        navigationController?.navigationBar.backgroundColor = .clear
+    }
+    
     func getDates() {
         dates = DateHelper.next10Days()
+        selectedDate = dates.first!.complete
         collectionViewDays.reloadData()
     }
     
     func regsierCells() {
         collectionViewDays.registerCell(DayCollectionViewCell.identifier)
         collectionViewAvailableIn.registerCell(TimeCollectionViewCell.identifier)
+        collectionViewTimeSlots.registerCell(TimeCollectionViewCell.identifier)
     }
     
     func setupDataSourcesAndDelegates() {
@@ -54,86 +71,40 @@ class MovieTimeViewController: UIViewController {
         
         collectionViewAvailableIn.dataSource = self
         collectionViewAvailableIn.delegate = self
+        
+        collectionViewTimeSlots.dataSource = self
+        collectionViewTimeSlots.delegate = self
     }
     
     func setupHeightsForCollectionViews() {
         collectionViewHeightAvailableIn.constant = 56
-        
+        collectionViewHeightTimeSlots.constant = CGFloat((56 + 80) * slotsData.count)
         self.view.layoutIfNeeded()
     }
     
     private func setupGestureRecognizers() {
-        let buttonGoBackTapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(didTapGoBack))
-        buttonGoBack.addGestureRecognizer(buttonGoBackTapGestureRecognizer)
-        
         let buttonNextTapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(didTapNext))
         buttonNext.addGestureRecognizer(buttonNextTapGestureRecognizer)
     }
     
-    @objc func didTapGoBack() {
-        navigateToScreen(withIdentifier: MovieDetailViewController.identifier)
-    }
-    
     @objc func didTapNext() {
-        navigateToScreen(withIdentifier: MovieSeatViewController.identifier)
+        courier.bookingDate = selectedDate
+        courier.cinemaID = selectedCinemaID
+        courier.cinemaDayTimeSlotID = selectedSlotID
+        navigateToMovieSeat(courier)
     }
     
     private func didSelectDate(selected: MyDate) {
-        if (slotDataSources.count > 1) {
-            for _ in 1...slotDataSources.count {
-                self.parentStackView.arrangedSubviews[1].removeFromSuperview()
-            }
-        }
-        slotDataSources.removeAll()
+        selectedDate = selected.complete
         getDayTimeSlots(for: selected.complete)
-        print("wtbug: last selected date \(selected.complete)")
     }
     
     private func didSelectCinema(id: Int) {
-        print("wtbug: Cinema id: \(id) is selected")
+        selectedCinemaID = id
     }
     
-    private func setupTimeSlotCollectionViews(data: [CinemaDayTimeSlotVO]) {
-        for (index, dataVO) in data.enumerated() {
-            let stackView = UIStackView()
-            stackView.axis = .vertical
-            
-            let dataSource = CinemaDataDSource()
-            dataSource.data = Array(dataVO.timeslots)
-            // need to retain dataSource object because [dataSource] is released
-            self.slotDataSources.append(dataSource)
-            
-            stackView.addArrangedSubview(createTimeSlotTitle(dataVO.cinemaName))
-            stackView.addArrangedSubview(createTimeSlotCollectionView(dataSource: self.slotDataSources[index]))
-            self.parentStackView.removeArrangedSubview(buttonNext)
-            self.parentStackView.addArrangedSubview(stackView)
-            self.parentStackView.addArrangedSubview(buttonNext)
-        }
-    }
-    
-    private func createTimeSlotTitle(_ cinemaName: String) -> UILabel {
-        let titleLabel = UILabel()
-        titleLabel.font = UIFont.systemFont(ofSize: 20, weight: .semibold)
-        titleLabel.text = cinemaName
-        return titleLabel
-    }
-    
-    private func createTimeSlotCollectionView(dataSource: CinemaDataDSource) -> UICollectionView {
-        let layout = UICollectionViewFlowLayout()
-        layout.scrollDirection = .horizontal
-        let collectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: layout)
-        collectionView.dataSource = dataSource
-        collectionView.delegate = self
-        
-        // Calculate row count
-        var row = dataSource.data.count / 3
-        if (dataSource.data.count % 3 != 0) {
-            row += 1
-        }
-        collectionView.heightAnchor.constraint(equalToConstant: CGFloat(56 * row)).isActive = true
-
-        
-        return collectionView
+    private func didSelectSlot(id: Int) {
+        selectedSlotID = id
     }
     
     // MARK: Model communications
@@ -158,7 +129,9 @@ class MovieTimeViewController: UIViewController {
             
             switch result {
             case .success(let data):
-                self.setupTimeSlotCollectionViews(data: data)
+                self.slotsData = data
+                self.setupHeightsForCollectionViews()
+                self.collectionViewTimeSlots.reloadData()
                 
             case .failure(let errorMessage):
                 self.showAlert(message: errorMessage)
@@ -169,11 +142,23 @@ class MovieTimeViewController: UIViewController {
 
 extension MovieTimeViewController: UICollectionViewDataSource {
     
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        if (collectionView == collectionViewTimeSlots) {
+            return slotsData.count
+        }
+        return 1
+    }
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if (collectionView == collectionViewDays) {
             return dates.count
-        } else {
+        } else if (collectionView == collectionViewAvailableIn) {
             return cinemas.count
+        } else {
+            guard slotsData.count > 0 else {
+                return 0
+            }
+            return slotsData[section].timeslots.count
         }
     }
     
@@ -186,18 +171,40 @@ extension MovieTimeViewController: UICollectionViewDataSource {
                 collectionView.selectItem(at: indexPath, animated: true, scrollPosition: .top)
             }
             return cell
-        } else {
+        } else if (collectionView == collectionViewAvailableIn) {
             let cell = collectionViewAvailableIn.dequeCell(TimeCollectionViewCell.identifier, indexPath) as TimeCollectionViewCell
             cell.data = cinemas[indexPath.row].name
             return cell
+        } else {
+            let cell = collectionViewTimeSlots.dequeCell(TimeCollectionViewCell.identifier, indexPath) as TimeCollectionViewCell
+            cell.data = slotsData[indexPath.section].timeslots[indexPath.row].startTime
+            return cell
+        }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        switch kind {
+        case UICollectionView.elementKindSectionHeader:
+            let headerView = collectionView.dequeueReusableSupplementaryView(
+                ofKind: kind,
+                withReuseIdentifier: String(describing: TimeSlotHeaderView.self),
+                for: indexPath
+            ) as! TimeSlotHeaderView
+            headerView.cinemaNameLabel.text = slotsData[indexPath.section].cinemaName
+            
+            return headerView
+        default:
+            assert(false, "Invalid element kind")
         }
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if (collectionView == collectionViewDays) {
             didSelectDate(selected: dates[indexPath.row])
-        } else {
+        } else if (collectionView == collectionViewAvailableIn) {
             didSelectCinema(id: cinemas[indexPath.row].id)
+        } else {
+            didSelectSlot(id: slotsData[indexPath.section].timeslots[indexPath.row].id)
         }
     }
     
@@ -213,21 +220,4 @@ extension MovieTimeViewController: UICollectionViewDelegateFlowLayout {
             return CGSize(width: width, height: height)
         }
     }
-}
-
-class CinemaDataDSource: NSObject, UICollectionViewDataSource {
-    
-    var data = [TimeSlotVO]()
-    
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return data.count
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        collectionView.registerCell(TimeCollectionViewCell.identifier)
-        let cell = collectionView.dequeCell(TimeCollectionViewCell.identifier, indexPath) as TimeCollectionViewCell
-        cell.data = data[indexPath.row].startTime
-        return cell
-    }
-    
 }

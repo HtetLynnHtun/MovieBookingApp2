@@ -6,3 +6,11 @@
 //
 
 import Foundation
+
+struct CourierVO {
+    
+    var movieId = 0
+    var bookingDate = ""
+    var cinemaID = 0
+    var cinemaDayTimeSlotID = 0
+}

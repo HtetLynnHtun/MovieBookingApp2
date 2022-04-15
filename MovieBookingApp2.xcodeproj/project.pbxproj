@@ -31,6 +31,9 @@
 		4F5C9FEC27FC5CB1002B9636 /* BaseRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F5C9FEB27FC5CB1002B9636 /* BaseRepository.swift */; };
 		4F5C9FF327FC5FA5002B9636 /* CardVO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F5C9FF227FC5FA5002B9636 /* CardVO.swift */; };
 		4F5E594D27C3461B00B0206B /* MovieDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F5E594C27C3461B00B0206B /* MovieDetailViewController.swift */; };
+		4F782CFE2807E57900C939FB /* CourierVO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F782CFD2807E57900C939FB /* CourierVO.swift */; };
+		4F782D002807F3CB00C939FB /* FilmVO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F782CFF2807F3CB00C939FB /* FilmVO.swift */; };
+		4F782D2A28093D6B00C939FB /* TimeSlotHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F782D2928093D6B00C939FB /* TimeSlotHeaderView.swift */; };
 		4F8BF4A927FD40CF00B3E55A /* CastVO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F8BF4A827FD40CF00B3E55A /* CastVO.swift */; };
 		4F8BF4AB27FDA14300B3E55A /* DateHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F8BF4AA27FDA14300B3E55A /* DateHelper.swift */; };
 		4F9161D227FAD4AD0046FCA2 /* NetworkingAgent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F9161D127FAD4AD0046FCA2 /* NetworkingAgent.swift */; };
@@ -107,6 +110,9 @@
 		4F5C9FEB27FC5CB1002B9636 /* BaseRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseRepository.swift; sourceTree = "<group>"; };
 		4F5C9FF227FC5FA5002B9636 /* CardVO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardVO.swift; sourceTree = "<group>"; };
 		4F5E594C27C3461B00B0206B /* MovieDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailViewController.swift; sourceTree = "<group>"; };
+		4F782CFD2807E57900C939FB /* CourierVO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourierVO.swift; sourceTree = "<group>"; };
+		4F782CFF2807F3CB00C939FB /* FilmVO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmVO.swift; sourceTree = "<group>"; };
+		4F782D2928093D6B00C939FB /* TimeSlotHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeSlotHeaderView.swift; sourceTree = "<group>"; };
 		4F8BF4A827FD40CF00B3E55A /* CastVO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CastVO.swift; sourceTree = "<group>"; };
 		4F8BF4AA27FDA14300B3E55A /* DateHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateHelper.swift; sourceTree = "<group>"; };
 		4F9161D127FAD4AD0046FCA2 /* NetworkingAgent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingAgent.swift; sourceTree = "<group>"; };
@@ -275,6 +281,7 @@
 			children = (
 				4FCB6AD927BD0866004CC300 /* swifts */,
 				4FCB6ADA27BD086E004CC300 /* xibs */,
+				4F782D2928093D6B00C939FB /* TimeSlotHeaderView.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -324,6 +331,7 @@
 		4FDE885527C1E5AB00E43789 /* vos */ = {
 			isa = PBXGroup;
 			children = (
+				4F782CFD2807E57900C939FB /* CourierVO.swift */,
 				4FDE885627C1E5E000E43789 /* SeatVO.swift */,
 				4F9161D527FAD5220046FCA2 /* ProfileVO.swift */,
 				4F9161DD27FADE440046FCA2 /* UserCredentialsVO.swift */,
@@ -336,6 +344,7 @@
 				4FF4BF8F2801596A00FAB437 /* SeatPlanVO.swift */,
 				4FF4BF912801D4AF00FAB437 /* SnackVO.swift */,
 				4FAF01EB28052ABC0000C459 /* PaymentMethodVO.swift */,
+				4F782CFF2807F3CB00C939FB /* FilmVO.swift */,
 			);
 			path = vos;
 			sourceTree = "<group>";
@@ -574,12 +583,15 @@
 				4FDE886827C20C6000E43789 /* CardCollectionViewCell.swift in Sources */,
 				4FCB6AD727BD0760004CC300 /* ViewExtensions.swift in Sources */,
 				4FC3601E27C27ECF00296494 /* AuthenticationViewController.swift in Sources */,
+				4F782CFE2807E57900C939FB /* CourierVO.swift in Sources */,
 				4FC5ADCF27FBE381008B8B9D /* GoogleAuth.swift in Sources */,
 				4F5C9FE727FC562D002B9636 /* AuthModel.swift in Sources */,
 				4FDE886327C1ED0E00E43789 /* MovieSeatViewController.swift in Sources */,
 				4F1127E427BD157700CBE96D /* DayCollectionViewCell.swift in Sources */,
+				4F782D002807F3CB00C939FB /* FilmVO.swift in Sources */,
 				4F8BF4A927FD40CF00B3E55A /* CastVO.swift in Sources */,
 				4F03DFD227C0D1C300177313 /* SnackViewController.swift in Sources */,
+				4F782D2A28093D6B00C939FB /* TimeSlotHeaderView.swift in Sources */,
 				4F348B3427FC96F500EE19EF /* MovieRepository.swift in Sources */,
 				4F1127E827BD171900CBE96D /* TimeCollectionViewCell.swift in Sources */,
 				4F1127E127BD137F00CBE96D /* MovieTimeViewController.swift in Sources */,
