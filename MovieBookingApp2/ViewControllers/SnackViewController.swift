@@ -11,7 +11,6 @@ class SnackViewController: UIViewController {
 
     @IBOutlet weak var collectionViewSnacks: UICollectionView!
     @IBOutlet weak var collectionViewPaymentMethods: UICollectionView!
-    @IBOutlet weak var buttonGoBack: UIButton!
     @IBOutlet weak var buttonPay: UIButton!
     @IBOutlet weak var subTotalLabel: UILabel!
     
@@ -23,14 +22,33 @@ class SnackViewController: UIViewController {
     private var snacks = [SnackVO]()
     private var paymentMethods = [PaymentMethodVO]()
     
+    var courier: CourierVO!
+    var ticketCost = 0.0
+    var snackCost = 0.0 {
+        didSet {
+            subTotalLabel.text = "Sub total: \(snackCost)$"
+            buttonPay.setTitle("Pay $\(ticketCost + snackCost)", for: .normal)
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        initView()
         registerCells()
         setupDataSourcesAndDelegates()
         getSnacks()
         getPaymentMethods()
         setupGestureRecognizers()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        navigationController?.navigationBar.tintColor = .black
+    }
+    
+    private func initView() {
+        ticketCost = courier.ticketCost
+        buttonPay.setTitle("Pay $\(ticketCost)", for: .normal)
     }
     
     private func setupCollectionViewHeights() {
@@ -60,25 +78,17 @@ class SnackViewController: UIViewController {
     }
     
     private func setupGestureRecognizers() {
-        let buttonGoBackTapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(didTapGoBack))
-        buttonGoBack.addGestureRecognizer(buttonGoBackTapGestureRecognizer)
-        
         let buttonPayTapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(didTapPay))
         buttonPay.addGestureRecognizer(buttonPayTapGestureRecognizer)
     }
     
-    @objc func didTapGoBack() {
-        navigateToScreen(withIdentifier: MovieSeatViewController.identifier)
-    }
-    
     @objc func didTapPay() {
-        navigateToScreen(withIdentifier: PaymentViewController.identifier)
+        courier.totalPrice = ticketCost + snackCost
+        navigateToPayment(courier)
     }
     
     private func updateSubTotal() {
-        let subTotal = snacks.reduce(0) { $0 + (Double($1.count) * $1.price)}
-        subTotalLabel.text = "Sub total: \(subTotal)$"
-        updateButtonPayLabel(subTotal)
+        snackCost = snacks.reduce(0) { $0 + (Double($1.count) * $1.price)}
     }
     
     private func updateButtonPayLabel(_ subTotal: Double) {

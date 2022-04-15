@@ -58,4 +58,18 @@ extension UIViewController {
         vc.courier = courier
         self.navigationController?.pushViewController(vc, animated: true)
     }
+    
+    func navigateToSnackPage(_ courier: CourierVO) {
+        let vc = UIStoryboard.mainStoryBoard().instantiateViewController(withIdentifier: SnackViewController.identifier) as! SnackViewController
+        vc.modalPresentationStyle = .fullScreen
+        vc.courier = courier
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    func navigateToPayment(_ courier: CourierVO) {
+        let vc = UIStoryboard.mainStoryBoard().instantiateViewController(withIdentifier: PaymentViewController.identifier) as! PaymentViewController
+        vc.modalPresentationStyle = .fullScreen
+        vc.courier = courier
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
 }

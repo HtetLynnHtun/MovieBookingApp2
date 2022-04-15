@@ -21,9 +21,11 @@ class MovieTimeViewController: UIViewController {
     
     private let cinemaModel: CinemaModel = CinemaModelImpl.shared
     var courier: CourierVO!
-    var selectedDate = ""
+    var selectedDate: MyDate!
     var selectedCinemaID = 0
+    var selectedCinemaName = ""
     var selectedSlotID = 0
+    var selectedTime = ""
     var dates = [MyDate]()
     var cinemas = [CinemaVO]()
     var slotsData = [CinemaDayTimeSlotVO]()
@@ -47,6 +49,7 @@ class MovieTimeViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.navigationBar.backgroundColor = UIColor(named: "primary_color")
+        navigationController?.navigationBar.tintColor = .white
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -55,7 +58,7 @@ class MovieTimeViewController: UIViewController {
     
     func getDates() {
         dates = DateHelper.next10Days()
-        selectedDate = dates.first!.complete
+        selectedDate = dates.first!
         collectionViewDays.reloadData()
     }
     
@@ -88,23 +91,29 @@ class MovieTimeViewController: UIViewController {
     }
     
     @objc func didTapNext() {
-        courier.bookingDate = selectedDate
+        courier.bookingDate = selectedDate.complete
         courier.cinemaID = selectedCinemaID
         courier.cinemaDayTimeSlotID = selectedSlotID
+        
+        courier.readableDate = selectedDate.readableDate
+        courier.cinemaName = selectedCinemaName
+        courier.time = selectedTime
         navigateToMovieSeat(courier)
     }
     
     private func didSelectDate(selected: MyDate) {
-        selectedDate = selected.complete
+        selectedDate = selected
         getDayTimeSlots(for: selected.complete)
     }
     
-    private func didSelectCinema(id: Int) {
+    private func didSelectCinema(id: Int, name: String) {
         selectedCinemaID = id
+        selectedCinemaName = name
     }
     
-    private func didSelectSlot(id: Int) {
+    private func didSelectSlot(id: Int, time: String) {
         selectedSlotID = id
+        selectedTime = time
     }
     
     // MARK: Model communications
@@ -202,9 +211,11 @@ extension MovieTimeViewController: UICollectionViewDataSource {
         if (collectionView == collectionViewDays) {
             didSelectDate(selected: dates[indexPath.row])
         } else if (collectionView == collectionViewAvailableIn) {
-            didSelectCinema(id: cinemas[indexPath.row].id)
+            let cinema = cinemas[indexPath.row]
+            didSelectCinema(id: cinema.id, name: cinema.name)
         } else {
-            didSelectSlot(id: slotsData[indexPath.section].timeslots[indexPath.row].id)
+            let timeSlot = slotsData[indexPath.section].timeslots[indexPath.row]
+            didSelectSlot(id: timeSlot.id, time: timeSlot.startTime)
         }
     }
     

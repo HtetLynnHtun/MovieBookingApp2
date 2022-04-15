@@ -13,4 +13,14 @@ struct CourierVO {
     var bookingDate = ""
     var cinemaID = 0
     var cinemaDayTimeSlotID = 0
+    var row = ""
+    var seatNumber = ""
+    var totalPrice = 0.0
+    
+    // Just for presentation
+    var movieName = ""
+    var cinemaName = ""
+    var readableDate = ""
+    var time = ""
+    var ticketCost = 0.0
 }

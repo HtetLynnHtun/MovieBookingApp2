@@ -63,6 +63,7 @@ class MovieDetailViewController: UIViewController {
     }
     
     @objc func didTapGetTicket() {
+        courier.movieName = titleLabel.text!
         navigateToMovieTime(courier)
     }
     

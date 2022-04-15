@@ -52,9 +52,9 @@ class SnackCollectionViewCell: UICollectionViewCell {
             let data = data,
             data.count > 0 {
             data.count -= 1
+            updateCounter()
+            updateSubTotal()
         }
-        updateCounter()
-        updateSubTotal()
     }
     
     private func updateCounter() {

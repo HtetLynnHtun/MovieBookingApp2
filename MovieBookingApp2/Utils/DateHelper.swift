@@ -23,7 +23,11 @@ class DateHelper {
             let year = today.component(.year, from: date)
             let month = today.component(.month, from: date)
             let complete = "\(year)-\(month)-\(day)"
-            return MyDate(weekday: short, day: day, complete: complete)
+            
+            let long = DateFormatter().weekdaySymbols[today.component(.weekday, from: date) - 1]
+            let monthString = DateFormatter().shortMonthSymbols[today.component(.month, from: date) - 1]
+            let readableDate = "\(long), \(day) \(monthString)"
+            return MyDate(weekday: short, day: day, complete: complete, readableDate: readableDate)
         }
     }
 }
@@ -32,4 +36,5 @@ struct MyDate {
     let weekday: String
     let day: Int
     let complete: String
+    let readableDate: String
 }

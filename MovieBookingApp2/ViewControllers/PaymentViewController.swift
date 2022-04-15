@@ -16,10 +16,13 @@ class PaymentViewController: UIViewController {
     @IBOutlet weak var buttonAddNewCard: UIButton!
     
     private var authModel: AuthModel = AuthModelImpl.shared
+    var courier: CourierVO!
     private var cards = [CardVO]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        print("wtbug: \(courier!)")
         collectionViewCards.dataSource = self
         collectionViewCards.registerCell(CardCollectionViewCell.identifier)
         

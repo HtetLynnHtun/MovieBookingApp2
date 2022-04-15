@@ -10,22 +10,37 @@ import UIKit
 class MovieSeatViewController: UIViewController {
 
     @IBOutlet weak var collectionViewMovieSeats: UICollectionView!
-    @IBOutlet weak var buttonGoBack: UIButton!
     @IBOutlet weak var buttonBuyTicket: UIButton!
     @IBOutlet weak var collectionViewSeatsHeight: NSLayoutConstraint!
     @IBOutlet weak var ticketCountLabel: UILabel!
     @IBOutlet weak var selectedSeatsLabel: UILabel!
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var cinemaNameLabel: UILabel!
+    @IBOutlet weak var dateTimeLabel: UILabel!
     
     private var cinemaModel: CinemaModel = CinemaModelImpl.shared
     var courier: CourierVO!
+    var selectedSeats = [SeatVO]()
     private var seats = [SeatVO]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        initView()
         registerCells()
         setupDataSourcesAndDelegates()
         setupGestureRecognizers()
         getSeatPlan()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        navigationController?.navigationBar.tintColor = .black
+    }
+    
+    private func initView() {
+        titleLabel.text = courier.movieName
+        cinemaNameLabel.text = courier.cinemaName
+        dateTimeLabel.text = "\(courier.readableDate), \(courier.time)"
     }
 
     func registerCells() {
@@ -39,9 +54,6 @@ class MovieSeatViewController: UIViewController {
     }
     
     private func setupGestureRecognizers() {
-        let buttonGoBackTapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(didTapGoBack))
-        buttonGoBack.addGestureRecognizer(buttonGoBackTapGestureRecognizer)
-        
         let buttonBuyTicketTapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(didTapBuyTicket))
         buttonBuyTicket.addGestureRecognizer(buttonBuyTicketTapGestureRecognizer)
     }
@@ -51,39 +63,34 @@ class MovieSeatViewController: UIViewController {
         view.layoutIfNeeded()
     }
     
-    @objc func didTapGoBack() {
-        navigateToScreen(withIdentifier: MovieTimeViewController.identifier)
-    }
-    
     @objc func didTapBuyTicket() {
-        let selectedSeats = seats.filter { $0.isSelected }
-        print("wtbug: selected seats")
-        selectedSeats.forEach { seat in
-            print("wtbug: \(seat.seatName)")
-        }
-        navigateToScreen(withIdentifier: SnackViewController.identifier)
+        let seatNumber = selectedSeats.map { $0.seatName }
+        courier.row = Set(seatNumber.map { String($0.prefix(1)) }).joined(separator: ",")
+        courier.seatNumber = seatNumber.joined(separator: ",")
+        courier.ticketCost = selectedSeats.reduce(0.0) { $0 + $1.price }
+        navigateToSnackPage(courier)
     }
     
     private func toggleSelected(id: UUID) {
         if let seat = seats.first(where: { $0.id == id}) {
             seat.isSelected = !seat.isSelected
             
-            let selectedSeats = seats.filter { $0.isSelected }
-            updateTicketCountLabel(selectedSeats)
-            updateSelectedSeatsLabel(selectedSeats)
-            updateBuyButtonTitle(selectedSeats)
+            selectedSeats = seats.filter { $0.isSelected }
+            updateTicketCountLabel()
+            updateSelectedSeatsLabel()
+            updateBuyButtonTitle()
         }
     }
     
-    private func updateTicketCountLabel(_ selectedSeats: [SeatVO]) {
+    private func updateTicketCountLabel() {
         ticketCountLabel.text = String(selectedSeats.count)
     }
     
-    private func updateSelectedSeatsLabel(_ selectedSeats: [SeatVO]) {
+    private func updateSelectedSeatsLabel() {
         selectedSeatsLabel.text = selectedSeats.map { $0.seatName }.joined(separator: ",")
     }
     
-    private func updateBuyButtonTitle(_ selectedSeats: [SeatVO]) {
+    private func updateBuyButtonTitle() {
         let totalTicketPrice = selectedSeats.reduce(0.0) { $0 + $1.price}
         let title = "Buy Ticket for $\(totalTicketPrice)"
         buttonBuyTicket.setTitle(title, for: .normal)
@@ -91,9 +98,8 @@ class MovieSeatViewController: UIViewController {
     
     // MARK: Model Communications
     private func getSeatPlan() {
-        // TODO: Replace harcoded value
-        let slotId = 1
-        let date = "2021-6-29"
+        let slotId = courier.cinemaDayTimeSlotID
+        let date = courier.bookingDate
         cinemaModel.getSeatPlan(of: slotId, for: date) { [weak self] result in
             guard let self = self else { return }
             
