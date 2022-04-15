@@ -217,6 +217,25 @@ struct AlamofireAgent: NetworkingAgent {
         }
     }
     
+    func checkout(token: String, courier: CourierVO, completion: @escaping (MBAResult<CheckoutVO>) -> Void) {
+        let headers: HTTPHeaders = [.authorization(bearerToken: token)]
+        
+        AF.request(MBAEndpoint.checkout,
+                   method: .post,
+                   parameters: courier,
+                   encoder: .json,
+                   headers: headers)
+        .validate(statusCode: 200..<300)
+        .responseDecodable(of: ApiResponse<CheckoutVO>.self) { response in
+            switch response.result {
+            case .success(let apiResponse):
+                completion(.success(apiResponse.data!))
+            case .failure(let error):
+                completion(.failure(handleError(error)))
+            }
+        }
+    }
+    
     // MARK: Helper methods
     private func isNoConnectionError(error: AFError) -> Bool {
         if let underlyingError = error.underlyingError {

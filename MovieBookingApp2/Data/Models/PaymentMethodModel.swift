@@ -10,6 +10,7 @@ import Foundation
 protocol PaymentMethodModel {
     func getPaymentMethods(completion: @escaping (MBAResult<[PaymentMethodVO]>) -> Void)
     func createCard(card: CardVO, completion: @escaping (MBAResult<Bool>) -> Void)
+    func checkout(courier: CourierVO, completion: @escaping (MBAResult<CheckoutVO>) -> Void)
 }
 
 class PaymentMethodModelImpl: PaymentMethodModel {
@@ -46,6 +47,17 @@ class PaymentMethodModelImpl: PaymentMethodModel {
                         completion(.failure("Failed to create card"))
                     }
                 }
+            case .failure(let errorMessage):
+                completion(.failure(errorMessage))
+            }
+        }
+    }
+    
+    func checkout(courier: CourierVO, completion: @escaping (MBAResult<CheckoutVO>) -> Void) {
+        networkingAgent.checkout(token: authModel.getUserToken(), courier: courier) { result in
+            switch result {
+            case .success(let data):
+                completion(.success(data))
             case .failure(let errorMessage):
                 completion(.failure(errorMessage))
             }

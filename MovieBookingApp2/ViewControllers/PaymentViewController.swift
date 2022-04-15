@@ -11,24 +11,42 @@ import UPCarouselFlowLayout
 class PaymentViewController: UIViewController {
 
     @IBOutlet weak var collectionViewCards: UICollectionView!
-    @IBOutlet weak var buttonGoBack: UIButton!
     @IBOutlet weak var buttonConfirm: UIButton!
     @IBOutlet weak var buttonAddNewCard: UIButton!
+    @IBOutlet weak var paymentAmountLabel: UILabel!
     
     private var authModel: AuthModel = AuthModelImpl.shared
+    private var paymentMethodModel: PaymentMethodModel = PaymentMethodModelImpl.shared
     var courier: CourierVO!
     private var cards = [CardVO]()
+    private var selectedCardIndex = 0 {
+        didSet {
+            courier.cardId = cards[selectedCardIndex].id
+            print("wtbug: selectedCardIndex: \(selectedCardIndex)")
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        initView()
         print("wtbug: \(courier!)")
         collectionViewCards.dataSource = self
+        collectionViewCards.delegate = self
         collectionViewCards.registerCell(CardCollectionViewCell.identifier)
         
-        getCards()
         setupCarouselView()
         setupGestureRecognizers()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        navigationController?.navigationBar.tintColor = .black
+        getCards()
+        print("wtbug: selectedCardIndex \(selectedCardIndex)")
+    }
+    
+    private func initView() {
+        paymentAmountLabel.text = "$ \(courier.totalPrice)"
     }
 
     private func setupCarouselView() {
@@ -43,9 +61,6 @@ class PaymentViewController: UIViewController {
     }
     
     private func setupGestureRecognizers() {
-        let buttonGoBackTapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(didTapGoBack))
-        buttonGoBack.addGestureRecognizer(buttonGoBackTapGestureRecognizer)
-        
         let buttonConfirmTapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(didTapConfirm))
         buttonConfirm.addGestureRecognizer(buttonConfirmTapGestureRecognizer)
         
@@ -53,16 +68,25 @@ class PaymentViewController: UIViewController {
         buttonAddNewCard.addGestureRecognizer(buttonAddNewCardTapGestureRecognizer)
     }
     
-    @objc func didTapGoBack() {
-        navigateToScreen(withIdentifier: SnackViewController.identifier)
-    }
-    
     @objc func didTapConfirm() {
-        navigateToScreen(withIdentifier: TicketViewController.identifier)
+        paymentMethodModel.checkout(courier: courier) { [weak self] result in
+            guard let self = self else { return }
+            
+            switch result {
+            case .success(let checkoutVO):
+                self.courier.bookingNo = checkoutVO.bookingNo
+                self.courier.qrCode = checkoutVO.qrCode
+                self.navigateToTicket(self.courier)
+            case .failure(let errorMessage):
+                self.showAlert(message: errorMessage)
+            }
+        }
+        print("wtbug: \(courier!)")
+//        navigateToScreen(withIdentifier: TicketViewController.identifier)
     }
     
     @objc func didTapAddNewCard() {
-        navigateToScreen(withIdentifier: AddNewCardViewController.identifier)
+        navigateToAddNewCard()
     }
     
     //
@@ -96,5 +120,16 @@ extension PaymentViewController: UICollectionViewDataSource {
         return cell
     }
     
+    
+}
+
+extension PaymentViewController: UICollectionViewDelegateFlowLayout {
+    
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        let layout = collectionViewCards.collectionViewLayout as! UPCarouselFlowLayout
+        let pageSide = layout.itemSize.width
+        let offset = scrollView.contentOffset.x
+        selectedCardIndex = Int(floor((offset - pageSide / 2) / pageSide) + 1)
+    }
     
 }

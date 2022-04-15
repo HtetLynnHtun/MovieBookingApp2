@@ -9,7 +9,6 @@ import UIKit
 
 class AddNewCardViewController: UIViewController {
     
-    @IBOutlet weak var buttonGoBack: UIButton!
     @IBOutlet weak var buttonConfirm: UIButton!
     @IBOutlet weak var cardNumberTextField: UITextField!
     @IBOutlet weak var cardHolderTextField: UITextField!
@@ -25,15 +24,8 @@ class AddNewCardViewController: UIViewController {
     }
 
     private func setupGestureRecognizers() {
-        let buttonGoBackTapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(didTapGoBack))
-        buttonGoBack.addGestureRecognizer(buttonGoBackTapGestureRecognizer)
-        
         let buttonConfirmTapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(didTapConfirm))
         buttonConfirm.addGestureRecognizer(buttonConfirmTapGestureRecognizer)
-    }
-    
-    @objc func didTapGoBack() {
-        navigateToScreen(withIdentifier: PaymentViewController.identifier)
     }
     
     @objc func didTapConfirm() {
@@ -51,7 +43,7 @@ class AddNewCardViewController: UIViewController {
                 
                 switch result {
                 case .success(_):
-                    self.navigateToScreen(withIdentifier: PaymentViewController.identifier)
+                    self.navigationController?.popViewController(animated: true)
                 case .failure(let errorMessage):
                     self.showAlert(message: errorMessage)
                 }

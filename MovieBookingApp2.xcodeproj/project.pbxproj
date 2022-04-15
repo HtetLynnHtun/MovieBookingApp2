@@ -43,6 +43,7 @@
 		4F9161DA27FAD5D70046FCA2 /* MBAEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F9161D927FAD5D70046FCA2 /* MBAEndpoint.swift */; };
 		4F9161DC27FAD71A0046FCA2 /* ApiResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F9161DB27FAD71A0046FCA2 /* ApiResponse.swift */; };
 		4F9161DE27FADE440046FCA2 /* UserCredentialsVO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F9161DD27FADE440046FCA2 /* UserCredentialsVO.swift */; };
+		4F92F5F52809C6B00048C953 /* CheckoutVO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F92F5F42809C6B00048C953 /* CheckoutVO.swift */; };
 		4FAF01EC28052ABC0000C459 /* PaymentMethodVO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FAF01EB28052ABC0000C459 /* PaymentMethodVO.swift */; };
 		4FAF01EE28052BDF0000C459 /* PaymentMethodModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FAF01ED28052BDF0000C459 /* PaymentMethodModel.swift */; };
 		4FAF01F028052F310000C459 /* PaymentMethodRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FAF01EF28052F310000C459 /* PaymentMethodRepository.swift */; };
@@ -122,6 +123,7 @@
 		4F9161D927FAD5D70046FCA2 /* MBAEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MBAEndpoint.swift; sourceTree = "<group>"; };
 		4F9161DB27FAD71A0046FCA2 /* ApiResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiResponse.swift; sourceTree = "<group>"; };
 		4F9161DD27FADE440046FCA2 /* UserCredentialsVO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCredentialsVO.swift; sourceTree = "<group>"; };
+		4F92F5F42809C6B00048C953 /* CheckoutVO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutVO.swift; sourceTree = "<group>"; };
 		4FAF01EB28052ABC0000C459 /* PaymentMethodVO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentMethodVO.swift; sourceTree = "<group>"; };
 		4FAF01ED28052BDF0000C459 /* PaymentMethodModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentMethodModel.swift; sourceTree = "<group>"; };
 		4FAF01EF28052F310000C459 /* PaymentMethodRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentMethodRepository.swift; sourceTree = "<group>"; };
@@ -345,6 +347,7 @@
 				4FF4BF912801D4AF00FAB437 /* SnackVO.swift */,
 				4FAF01EB28052ABC0000C459 /* PaymentMethodVO.swift */,
 				4F782CFF2807F3CB00C939FB /* FilmVO.swift */,
+				4F92F5F42809C6B00048C953 /* CheckoutVO.swift */,
 			);
 			path = vos;
 			sourceTree = "<group>";
@@ -587,6 +590,7 @@
 				4FC5ADCF27FBE381008B8B9D /* GoogleAuth.swift in Sources */,
 				4F5C9FE727FC562D002B9636 /* AuthModel.swift in Sources */,
 				4FDE886327C1ED0E00E43789 /* MovieSeatViewController.swift in Sources */,
+				4F92F5F52809C6B00048C953 /* CheckoutVO.swift in Sources */,
 				4F1127E427BD157700CBE96D /* DayCollectionViewCell.swift in Sources */,
 				4F782D002807F3CB00C939FB /* FilmVO.swift in Sources */,
 				4F8BF4A927FD40CF00B3E55A /* CastVO.swift in Sources */,

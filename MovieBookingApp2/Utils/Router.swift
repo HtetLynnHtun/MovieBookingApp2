@@ -72,4 +72,17 @@ extension UIViewController {
         vc.courier = courier
         self.navigationController?.pushViewController(vc, animated: true)
     }
+    
+    func navigateToAddNewCard() {
+        let vc = UIStoryboard.mainStoryBoard().instantiateViewController(withIdentifier: AddNewCardViewController.identifier) as! AddNewCardViewController
+        vc.modalPresentationStyle = .fullScreen
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    func navigateToTicket(_ courier: CourierVO) {
+        let vc = UIStoryboard.mainStoryBoard().instantiateViewController(withIdentifier: TicketViewController.identifier) as! TicketViewController
+        vc.modalPresentationStyle = .fullScreen
+        vc.courier = courier
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
 }

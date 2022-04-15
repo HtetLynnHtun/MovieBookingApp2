@@ -84,6 +84,14 @@ class SnackViewController: UIViewController {
     
     @objc func didTapPay() {
         courier.totalPrice = ticketCost + snackCost
+        snacks.filter { $0.count > 0 }
+            .forEach { snackVO in
+                let snackMap = [
+                    "id": snackVO.id,
+                    "quantity": snackVO.count,
+                ]
+                courier.snacks.append(snackMap)
+            }
         navigateToPayment(courier)
     }
     

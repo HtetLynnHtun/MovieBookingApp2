@@ -10,24 +10,38 @@ import UIKit
 class TicketViewController: UIViewController {
 
     @IBOutlet weak var imageViewPoster: UIImageView!
-    @IBOutlet weak var buttonClose: UIButton!
     @IBOutlet weak var viewShadow: UIView!
+    @IBOutlet weak var movieNameLabel: UILabel!
+    @IBOutlet weak var runtimeLabel: UILabel!
+    @IBOutlet weak var bookingNoLabel: UILabel!
+    @IBOutlet weak var showTimeDateLabel: UILabel!
+    @IBOutlet weak var cinemaNameLabel: UILabel!
+    @IBOutlet weak var ticketCountLabel: UILabel!
+    @IBOutlet weak var rowLabel: UILabel!
+    @IBOutlet weak var seatsLabel: UILabel!
+    @IBOutlet weak var priceLabel: UILabel!
+    
+    var courier: CourierVO!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setupGestureRecognizers()
+        let goHomeButton = UIBarButtonItem(title: "X", style: .plain, target: self, action: #selector(didTapGoHome))
+        goHomeButton.setTitleTextAttributes([.font: UIFont.systemFont(ofSize: 24, weight: .bold)], for: .normal)
+        navigationItem.leftBarButtonItem = goHomeButton
+        
+        initView()
         setupShadow()
         setupCornerRadius()
     }
     
-    private func setupGestureRecognizers() {
-        let buttonCloseTapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(didTapClose))
-        buttonClose.addGestureRecognizer(buttonCloseTapGestureRecognizer)
+    private func initView() {
+        movieNameLabel.text = courier.movieName
+        bookingNoLabel.text = courier.bookingNo
     }
     
-    @objc func didTapClose() {
-        navigateToScreen(withIdentifier: HomeViewController.identifier)
+    @objc private func didTapGoHome() {
+        navigationController?.popToRootViewController(animated: true)
     }
     
     private func setupCornerRadius() {

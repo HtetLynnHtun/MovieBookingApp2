@@ -23,6 +23,7 @@ enum MBAEndpoint: URLConvertible {
     case snackList
     case paymentMethods
     case createCard
+    case checkout
     
     func asURL() throws -> URL {
         url
@@ -65,6 +66,8 @@ enum MBAEndpoint: URLConvertible {
             return "/payment-methods"
         case .createCard:
             return "/card"
+        case .checkout:
+            return "/checkout"
         }
     }
 }
