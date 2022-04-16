@@ -1833,10 +1833,10 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rfw-dw-7Ke">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="667.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="1055.5"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="HZg-kX-763">
-                                                <rect key="frame" x="0.0" y="0.0" width="414" height="635.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="1023.5"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Awesome!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zO7-tT-igw">
                                                         <rect key="frame" x="28" y="0.0" width="358" height="24"/>
@@ -1851,28 +1851,31 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QV2-QN-48I" userLabel="Shadow View">
-                                                        <rect key="frame" x="28" y="59.5" width="358" height="576"/>
+                                                        <rect key="frame" x="28" y="59.5" width="358" height="964"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="g0s-nK-8sM">
-                                                                <rect key="frame" x="0.0" y="0.0" width="358" height="560"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="358" height="948"/>
                                                                 <subviews>
                                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="GdM-2L-Rle">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="358" height="313"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="358" height="569"/>
                                                                         <subviews>
                                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pikachu_poster" translatesAutoresizingMaskIntoConstraints="NO" id="rj5-qM-8hu">
-                                                                                <rect key="frame" x="0.0" y="0.0" width="358" height="244"/>
+                                                                                <rect key="frame" x="0.0" y="0.0" width="358" height="200"/>
+                                                                                <constraints>
+                                                                                    <constraint firstAttribute="height" constant="200" id="YZG-nN-enc"/>
+                                                                                </constraints>
                                                                             </imageView>
                                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="vLi-l3-4ep">
-                                                                                <rect key="frame" x="0.0" y="244" width="358" height="69"/>
+                                                                                <rect key="frame" x="0.0" y="200" width="358" height="369"/>
                                                                                 <subviews>
                                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Detective Pikachu" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7be-4r-baf">
-                                                                                        <rect key="frame" x="12" y="12" width="334" height="21.5"/>
+                                                                                        <rect key="frame" x="12" y="12" width="334" height="321.5"/>
                                                                                         <fontDescription key="fontDescription" type="system" weight="light" pointSize="18"/>
                                                                                         <nil key="textColor"/>
                                                                                         <nil key="highlightedColor"/>
                                                                                     </label>
                                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="105m - IMAX" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ndl-bH-iDL">
-                                                                                        <rect key="frame" x="12" y="37.5" width="334" height="19.5"/>
+                                                                                        <rect key="frame" x="12" y="337.5" width="334" height="19.5"/>
                                                                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                                                         <color key="textColor" name="movie_seat_taken_color"/>
                                                                                         <nil key="highlightedColor"/>
@@ -1883,7 +1886,7 @@
                                                                         </subviews>
                                                                     </stackView>
                                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="4SD-Po-oCK">
-                                                                        <rect key="frame" x="0.0" y="345" width="358" height="215"/>
+                                                                        <rect key="frame" x="0.0" y="601" width="358" height="215"/>
                                                                         <subviews>
                                                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="Ad9-CJ-D6d">
                                                                                 <rect key="frame" x="12" y="0.0" width="334" height="17"/>
@@ -2007,7 +2010,16 @@
                                                                         </subviews>
                                                                         <edgeInsets key="layoutMargins" top="0.0" left="12" bottom="0.0" right="12"/>
                                                                     </stackView>
+                                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ijp-Wm-ikf">
+                                                                        <rect key="frame" x="0.0" y="848" width="358" height="100"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="height" constant="100" id="Gzv-zL-GtD"/>
+                                                                        </constraints>
+                                                                    </imageView>
                                                                 </subviews>
+                                                                <constraints>
+                                                                    <constraint firstItem="ijp-Wm-ikf" firstAttribute="centerX" secondItem="g0s-nK-8sM" secondAttribute="centerX" id="lZ7-zR-qi9"/>
+                                                                </constraints>
                                                             </stackView>
                                                         </subviews>
                                                         <constraints>
@@ -2054,6 +2066,7 @@
                         <outlet property="imageViewPoster" destination="rj5-qM-8hu" id="Cdv-2e-qHp"/>
                         <outlet property="movieNameLabel" destination="7be-4r-baf" id="ndB-0J-3Yc"/>
                         <outlet property="priceLabel" destination="kWc-rA-XNW" id="kbt-H7-Qct"/>
+                        <outlet property="qrCodeImageView" destination="ijp-Wm-ikf" id="aJC-jw-mZV"/>
                         <outlet property="rowLabel" destination="Kjo-Sb-W4N" id="wEL-Dg-2hq"/>
                         <outlet property="runtimeLabel" destination="ndl-bH-iDL" id="wNF-3l-2v2"/>
                         <outlet property="seatsLabel" destination="6rD-IR-bVg" id="bSu-Su-xbv"/>

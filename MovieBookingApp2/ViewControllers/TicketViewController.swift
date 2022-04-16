@@ -20,6 +20,7 @@ class TicketViewController: UIViewController {
     @IBOutlet weak var rowLabel: UILabel!
     @IBOutlet weak var seatsLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
+    @IBOutlet weak var qrCodeImageView: UIImageView!
     
     var courier: CourierVO!
     
@@ -47,6 +48,8 @@ class TicketViewController: UIViewController {
         rowLabel.text = courier.row
         seatsLabel.text = courier.seatNumber.split(separator: ",").map { $0.suffix(1) }.joined(separator: ",")
         priceLabel.text = "$\(courier.totalPrice)"
+        let qrImagePath = "https://tmba.padc.com.mm/\(courier.qrCode)".addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
+        qrCodeImageView.sd_setImage(with: URL(string: qrImagePath))
     }
     
     @objc private func didTapGoHome() {
