@@ -44,6 +44,7 @@
 		4F9161DC27FAD71A0046FCA2 /* ApiResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F9161DB27FAD71A0046FCA2 /* ApiResponse.swift */; };
 		4F9161DE27FADE440046FCA2 /* UserCredentialsVO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F9161DD27FADE440046FCA2 /* UserCredentialsVO.swift */; };
 		4F92F5F52809C6B00048C953 /* CheckoutVO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F92F5F42809C6B00048C953 /* CheckoutVO.swift */; };
+		4F92F5F9280A83150048C953 /* SideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F92F5F8280A83150048C953 /* SideMenuViewController.swift */; };
 		4FAF01EC28052ABC0000C459 /* PaymentMethodVO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FAF01EB28052ABC0000C459 /* PaymentMethodVO.swift */; };
 		4FAF01EE28052BDF0000C459 /* PaymentMethodModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FAF01ED28052BDF0000C459 /* PaymentMethodModel.swift */; };
 		4FAF01F028052F310000C459 /* PaymentMethodRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FAF01EF28052F310000C459 /* PaymentMethodRepository.swift */; };
@@ -124,6 +125,7 @@
 		4F9161DB27FAD71A0046FCA2 /* ApiResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiResponse.swift; sourceTree = "<group>"; };
 		4F9161DD27FADE440046FCA2 /* UserCredentialsVO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCredentialsVO.swift; sourceTree = "<group>"; };
 		4F92F5F42809C6B00048C953 /* CheckoutVO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutVO.swift; sourceTree = "<group>"; };
+		4F92F5F8280A83150048C953 /* SideMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuViewController.swift; sourceTree = "<group>"; };
 		4FAF01EB28052ABC0000C459 /* PaymentMethodVO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentMethodVO.swift; sourceTree = "<group>"; };
 		4FAF01ED28052BDF0000C459 /* PaymentMethodModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentMethodModel.swift; sourceTree = "<group>"; };
 		4FAF01EF28052F310000C459 /* PaymentMethodRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentMethodRepository.swift; sourceTree = "<group>"; };
@@ -266,6 +268,7 @@
 				4FDE886427C1FFFF00E43789 /* PaymentViewController.swift */,
 				4FDE886A27C22E6B00E43789 /* TicketViewController.swift */,
 				4F41692227C3DB2B0025C25D /* AddNewCardViewController.swift */,
+				4F92F5F8280A83150048C953 /* SideMenuViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -558,6 +561,7 @@
 				4FDE885A27C1E6E500E43789 /* AppConstants.swift in Sources */,
 				4F9161D827FAD5A00046FCA2 /* AlamofireAgent.swift in Sources */,
 				4F9161D227FAD4AD0046FCA2 /* NetworkingAgent.swift in Sources */,
+				4F92F5F9280A83150048C953 /* SideMenuViewController.swift in Sources */,
 				4F348B3227FC8D8C00EE19EF /* MovieModel.swift in Sources */,
 				4F5C9FEA27FC5C4A002B9636 /* ProfileRepository.swift in Sources */,
 				4F41691C27C39C4B0025C25D /* SnackCollectionViewCell.swift in Sources */,

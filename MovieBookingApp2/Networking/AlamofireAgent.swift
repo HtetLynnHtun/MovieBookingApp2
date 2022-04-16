@@ -68,6 +68,26 @@ struct AlamofireAgent: NetworkingAgent {
             }
     }
     
+    func logout(token: String, completion: @escaping (MBAResult<ApiResponse<Bool>>) -> Void) {
+        let headers: HTTPHeaders = [.authorization(bearerToken: token)]
+        
+        AF.request(MBAEndpoint.logout, method: .post, headers: headers)
+            .validate(statusCode: 200..<300)
+            .responseDecodable(of: ApiResponse<Bool>.self) { response in
+                switch response.result {
+                case .success(let apiResponse):
+                    if (isResponseCodeInSuccessRange(apiResponse.code)) {
+                        print("wtbug: logout: succes code in range")
+                        completion(.success(apiResponse))
+                    } else {
+                        completion(.failure(apiResponse.message))
+                    }
+                case .failure(let error):
+                    completion(.failure(handleError(error)))
+                }
+            }
+    }
+    
     func getProfile(token: String, completion: @escaping (MBAResult<ProfileVO>) -> Void) {
         let headers: HTTPHeaders = [.authorization(bearerToken: token)]
 

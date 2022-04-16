@@ -13,6 +13,7 @@ enum MBAEndpoint: URLConvertible {
     case signIn
     case loginWithEmail
     case loginWithGoogle
+    case logout
     case profile
     case nowShowingMovies
     case comingSoonMovies
@@ -46,6 +47,8 @@ enum MBAEndpoint: URLConvertible {
             return "/email-login"
         case .loginWithGoogle:
             return "/google-login"
+        case .logout:
+            return "/logout"
         case .profile:
             return "/profile"
         case .nowShowingMovies:

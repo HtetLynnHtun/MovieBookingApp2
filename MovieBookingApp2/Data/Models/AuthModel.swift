@@ -10,10 +10,12 @@ import Foundation
 protocol AuthModel {
     func isUserAlreadyLoggedIn() -> Bool
     func saveUserToken(_ token: String)
+    func deleteUserToken()
     func getUserToken() -> String
     func signIn(credentials: UserCredentialsVO, completion: @escaping (MBAResult<ProfileVO>) -> Void)
     func loginWithEmail(credentials: UserCredentialsVO, completion: @escaping (MBAResult<ProfileVO>) -> Void)
     func loginWithGoogle(token: String, completion: @escaping (MBAResult<ProfileVO>) -> Void)
+    func logout(completion: @escaping (MBAResult<Bool>) -> Void)
     func getProfile(completion: @escaping (MBAResult<ProfileVO>) -> Void)
 }
 
@@ -36,6 +38,10 @@ class AuthModelImpl: AuthModel {
     
     func saveUserToken(_ token: String) {
         defaults.set(token, forKey: AppConstants.tokenKey)
+    }
+    
+    func deleteUserToken() {
+        defaults.removeObject(forKey: AppConstants.tokenKey)
     }
     
     func getUserToken() -> String {
@@ -86,6 +92,18 @@ class AuthModelImpl: AuthModel {
                 self.saveUserToken(apiResponse.token!)
                 completion(.success(profile))
                 
+            case .failure(let errorMessage):
+                completion(.failure(errorMessage))
+            }
+        }
+    }
+    
+    func logout(completion: @escaping (MBAResult<Bool>) -> Void) {
+        networkingAgent.logout(token: getUserToken()) { result in
+            switch result {
+            case .success(_):
+                self.deleteUserToken()
+                completion(.success(true))
             case .failure(let errorMessage):
                 completion(.failure(errorMessage))
             }
