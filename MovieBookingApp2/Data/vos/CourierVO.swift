@@ -39,6 +39,8 @@ struct CourierVO: CustomStringConvertible, Codable {
     var ticketCost = 0.0
     var bookingNo = ""
     var qrCode = ""
+    var runtime = ""
+    var posterPath = ""
     
     var description: String {
         return """

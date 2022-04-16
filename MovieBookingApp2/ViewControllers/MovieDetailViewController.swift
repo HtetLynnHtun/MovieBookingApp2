@@ -63,7 +63,6 @@ class MovieDetailViewController: UIViewController {
     }
     
     @objc func didTapGetTicket() {
-        courier.movieName = titleLabel.text!
         navigateToMovieTime(courier)
     }
     
@@ -88,6 +87,9 @@ class MovieDetailViewController: UIViewController {
             guard let self = self else { return }
             switch result {
             case .success(let data):
+                self.courier.movieName = data.originalTitle
+                self.courier.runtime = "\(data.runtime ?? 0)"
+                self.courier.posterPath = data.posterPath
                 self.bindData(data)
             case .failure(let errorMessage):
                 self.showAlert(message: errorMessage)

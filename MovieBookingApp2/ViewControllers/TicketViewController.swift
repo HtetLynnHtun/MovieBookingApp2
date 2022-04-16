@@ -36,8 +36,17 @@ class TicketViewController: UIViewController {
     }
     
     private func initView() {
+        let posterPath = AppConstants.basePosterUrl.appending(courier.posterPath)
+        imageViewPoster.sd_setImage(with: URL(string: posterPath))
         movieNameLabel.text = courier.movieName
         bookingNoLabel.text = courier.bookingNo
+        runtimeLabel.text = "\(courier.runtime)m - IMAX"
+        showTimeDateLabel.text = "\(courier.time) \(courier.readableDate)"
+        cinemaNameLabel.text = courier.cinemaName
+        ticketCountLabel.text = "\(courier.seatNumber.split(separator: ",").count)"
+        rowLabel.text = courier.row
+        seatsLabel.text = courier.seatNumber.split(separator: ",").map { $0.suffix(1) }.joined(separator: ",")
+        priceLabel.text = "$\(courier.totalPrice)"
     }
     
     @objc private func didTapGoHome() {

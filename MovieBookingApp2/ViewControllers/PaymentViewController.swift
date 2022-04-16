@@ -99,6 +99,7 @@ class PaymentViewController: UIViewController {
             switch result {
             case .success(let profileVO):
                 self.cards = Array(profileVO.cards)
+                self.courier.cardId = self.cards[0].id
                 self.collectionViewCards.reloadData()
             case .failure(let errorMessage):
                 self.showAlert(message: errorMessage)
