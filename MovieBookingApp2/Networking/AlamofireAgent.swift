@@ -63,9 +63,7 @@ struct AlamofireAgent: NetworkingAgent {
                         completion(.failure(apiResponse.message))
                     }
                 case .failure(let error):
-                    if (isNoConnectionError(error: error)) {
-                        completion(.failure("Please connect to the Internet and try again."))
-                    }
+                    completion(.failure(handleError(error)))
                 }
             }
     }
@@ -92,8 +90,6 @@ struct AlamofireAgent: NetworkingAgent {
                 case .success(let apiResponse):
                     completion(.success(apiResponse.data!))
                 case .failure(let error):
-                    print("wtbug: =========================")
-                    print(error)
                     completion(.failure(error.localizedDescription))
                 }
             }
@@ -118,7 +114,6 @@ struct AlamofireAgent: NetworkingAgent {
                 case .success(let apiResponse):
                     completion(.success(apiResponse.data!))
                 case .failure(let error):
-                    print(error)
                     completion(.failure(error.localizedDescription))
                 }
             }
@@ -210,9 +205,7 @@ struct AlamofireAgent: NetworkingAgent {
             case .success(let apiResponse):
                 completion(.success(apiResponse.data!))
             case .failure(let error):
-                if (isNoConnectionError(error: error)) {
-                    completion(.failure("Please connect to the Internet and try again."))
-                }
+                completion(.failure(handleError(error)))
             }
         }
     }
