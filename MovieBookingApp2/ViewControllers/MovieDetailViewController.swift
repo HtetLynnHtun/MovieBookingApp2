@@ -24,11 +24,6 @@ class MovieDetailViewController: UIViewController {
     var courier: CourierVO!
     
     private let movieModel: MovieModel = MovieModelImpl.shared
-    var bigData = Array.init(repeating: "lea", count: 10000000)
-    
-    deinit {
-        print("Detail VC is deinited")
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

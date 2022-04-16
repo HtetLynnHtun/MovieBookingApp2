@@ -29,7 +29,6 @@ class MovieTimeViewController: UIViewController {
     var dates = [MyDate]()
     var cinemas = [CinemaVO]()
     var slotsData = [CinemaDayTimeSlotVO]()
-//    var slotDataSources = [CinemaDataDSource]()
     
     override func viewDidLoad() {
         super.viewDidLoad()

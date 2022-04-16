@@ -22,7 +22,6 @@ class PaymentViewController: UIViewController {
     private var selectedCardIndex = 0 {
         didSet {
             courier.cardId = cards[selectedCardIndex].id
-            print("wtbug: selectedCardIndex: \(selectedCardIndex)")
         }
     }
     
@@ -42,7 +41,6 @@ class PaymentViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.navigationBar.tintColor = .black
         getCards()
-        print("wtbug: selectedCardIndex \(selectedCardIndex)")
     }
     
     private func initView() {
@@ -82,7 +80,6 @@ class PaymentViewController: UIViewController {
             }
         }
         print("wtbug: \(courier!)")
-//        navigateToScreen(withIdentifier: TicketViewController.identifier)
     }
     
     @objc func didTapAddNewCard() {

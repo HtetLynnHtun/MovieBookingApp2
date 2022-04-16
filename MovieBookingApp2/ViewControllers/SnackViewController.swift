@@ -52,7 +52,6 @@ class SnackViewController: UIViewController {
     }
     
     private func setupCollectionViewHeights() {
-        // snack count will be dynamic
         let snackCount = snacks.count
         let snackCellHeight = 70
         let snackSpacing = 16

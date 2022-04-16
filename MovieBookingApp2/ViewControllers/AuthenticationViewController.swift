@@ -82,7 +82,6 @@ class AuthenticationViewController: UIViewController {
         } else {
             signIn(credentials: credentials)
         }
-        //        navigateToScreen(withIdentifier: HomeViewController.identifier)
     }
     
     @objc func didTapGoogleSignIn() {
@@ -194,7 +193,6 @@ class AuthenticationViewController: UIViewController {
         authModel.loginWithGoogle(token: token) { [weak self] result in
             switch result {
             case .success(_):
-//                self?.navigateToScreen(withIdentifier: HomeViewController.identifier)
                 self?.navigateToHomeScreen()
             case .failure(let errorMessage):
                 self?.showAlert(message: errorMessage)

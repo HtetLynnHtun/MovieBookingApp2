@@ -56,10 +56,8 @@ class HomeViewController: UIViewController {
     }
     
     func onTapMovie(id: Int) {
-//        navigateToScreen(withIdentifier: MovieDetailViewController.identifier)
         courier.movieId = id
         navigateToMovieDetails(courier)
-//        dismiss(animated: true)
     }
     
     func bindData(_ data: ProfileVO) {
