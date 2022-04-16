@@ -53,7 +53,8 @@ class TicketViewController: UIViewController {
     }
     
     @objc private func didTapGoHome() {
-        navigationController?.popToRootViewController(animated: true)
+        let homeVC = self.navigationController?.viewControllers.filter { $0 is HomeViewController }.first
+        self.navigationController?.popToViewController(homeVC!, animated: false)
     }
     
     private func setupCornerRadius() {
