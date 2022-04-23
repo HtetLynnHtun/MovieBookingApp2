@@ -2112,7 +2112,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="pNS-Rl-vWY">
-                                        <rect key="frame" x="32" y="104" width="350" height="48"/>
+                                        <rect key="frame" x="32" y="48" width="350" height="48"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dummy_profile" translatesAutoresizingMaskIntoConstraints="NO" id="LYW-ec-2Yr">
                                                 <rect key="frame" x="0.0" y="0.0" width="48" height="48"/>
@@ -2158,7 +2158,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="uOp-M4-2Lw">
-                                        <rect key="frame" x="32" y="200" width="350" height="594"/>
+                                        <rect key="frame" x="32" y="144" width="350" height="650"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="EpM-FC-KV9">
                                                 <rect key="frame" x="0.0" y="0.0" width="350" height="32"/>
@@ -2256,11 +2256,11 @@
                                                 </subviews>
                                             </stackView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mjr-Gc-iJZ">
-                                                <rect key="frame" x="0.0" y="320" width="350" height="210"/>
+                                                <rect key="frame" x="0.0" y="320" width="350" height="266"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </view>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="u0L-SG-HRG">
-                                                <rect key="frame" x="0.0" y="562" width="350" height="32"/>
+                                                <rect key="frame" x="0.0" y="618" width="350" height="32"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chevron.forward.square" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="mL2-GF-WU3">
                                                         <rect key="frame" x="0.0" y="1" width="32" height="29.5"/>
@@ -2326,11 +2326,11 @@
         <!--Navigation Controller-->
         <scene sceneID="7qu-rw-Jxe">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Z8Z-dd-Dfb" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="Z8Z-dd-Dfb" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="3v5-Te-GEX"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="wTH-Zt-2Ea">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                        <rect key="frame" x="0.0" y="-54" width="0.0" height="0.0"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
