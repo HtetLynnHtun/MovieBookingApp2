@@ -12,6 +12,8 @@ protocol AuthModel {
     func saveUserToken(_ token: String)
     func deleteUserToken()
     func getUserToken() -> String
+    func saveUserID(_ id: Int)
+    func getUserID() -> Int
     func signIn(credentials: UserCredentialsVO, completion: @escaping (MBAResult<ProfileVO>) -> Void)
     func loginWithEmail(credentials: UserCredentialsVO, completion: @escaping (MBAResult<ProfileVO>) -> Void)
     func loginWithGoogle(token: String, completion: @escaping (MBAResult<ProfileVO>) -> Void)
@@ -48,6 +50,14 @@ class AuthModelImpl: AuthModel {
         return defaults.string(forKey: AppConstants.tokenKey)!
     }
     
+    func saveUserID(_ id: Int) {
+        defaults.set(id, forKey: AppConstants.userIDKey)
+    }
+    
+    func getUserID() -> Int {
+        return defaults.integer(forKey: AppConstants.userIDKey)
+    }
+    
     func signIn(credentials: UserCredentialsVO, completion: @escaping (MBAResult<ProfileVO>) -> Void) {
         networkingAgent.signIn(credentials: credentials) { [weak self] result in
             guard let self = self else { return }
@@ -58,6 +68,7 @@ class AuthModelImpl: AuthModel {
                 
                 self.profileRepository.saveProfile(profile)
                 self.saveUserToken(apiResponse.token!)
+                self.saveUserID(profile.id)
                 completion(.success(profile))
                 
             case .failure(let errorMessage):
@@ -74,6 +85,7 @@ class AuthModelImpl: AuthModel {
                 
                 self.profileRepository.saveProfile(profile)
                 self.saveUserToken(apiResponse.token!)
+                self.saveUserID(profile.id)
                 completion(.success(profile))
                 
             case .failure(let errorMessage):
@@ -90,6 +102,7 @@ class AuthModelImpl: AuthModel {
                 
                 self.profileRepository.saveProfile(profile)
                 self.saveUserToken(apiResponse.token!)
+                self.saveUserID(profile.id)
                 completion(.success(profile))
                 
             case .failure(let errorMessage):
@@ -119,7 +132,7 @@ class AuthModelImpl: AuthModel {
                 print(errorMessage)
             }
         }
-        self.profileRepository.getProfile { result in
+        self.profileRepository.getProfile(id: getUserID()) { result in
             completion(result)
         }
     }

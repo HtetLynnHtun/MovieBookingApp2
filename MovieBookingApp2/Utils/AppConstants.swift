@@ -17,4 +17,5 @@ struct AppConstants {
     static let baseAvatarUrl = "https://tmba.padc.com.mm"
     static let basePosterUrl = "https://image.tmdb.org/t/p/w500"
     static let tokenKey = "TOKEN"
+    static let userIDKey = "USER_ID"
 }

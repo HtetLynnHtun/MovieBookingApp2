@@ -12,8 +12,20 @@
 				<string>com.googleusercontent.apps.1022496941903-pob60acdom7o7non4k0s2tarimg6v6q6</string>
 			</array>
 		</dict>
+        <dict>
+            <key>CFBundleURLSchemes</key>
+            <array>
+                <string>1198512547561737</string>
+            </array>
+        </dict>
 	</array>
-	<key>UIApplicationSceneManifest</key>
+    <key>FacebookAppID</key>
+    <string>1198512547561737</string>
+    <key>FacebookClientToken</key>
+    <string>88f82e264c730a44e9f265db2afa90df</string>
+    <key>FacebookDisplayName</key>
+    <string>Movie Booking</string>
+    <key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
 		<false/>

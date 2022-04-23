@@ -36,7 +36,7 @@ class PaymentMethodRepositoryImpl: BaseRepository, PaymentMethodRepository {
     }
     
     func updateCards(_ data: [CardVO], completion: @escaping (Bool) -> Void) {
-        profileRepository.getProfile { result in
+        profileRepository.getProfile(id: AuthModelImpl.shared.getUserID()) { result in
             switch result {
             case .success(let profileVO):
                 do {

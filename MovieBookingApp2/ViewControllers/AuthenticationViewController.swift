@@ -87,7 +87,6 @@ class AuthenticationViewController: UIViewController {
     @objc func didTapGoogleSignIn() {
         GoogleAuth.shared.start(view: self) { [weak self] response in
             guard let self = self else { return }
-            print(response.id)
             if(self.isLogin) {
                 self.loginWithGoogle(token: response.id)
             } else {
@@ -171,7 +170,7 @@ class AuthenticationViewController: UIViewController {
         authModel.loginWithEmail(credentials: credentials) { [weak self] result in
             switch result {
             case .success(_):
-                self?.navigateToScreen(withIdentifier: HomeViewController.identifier)
+                self?.navigateToHomeScreen()
             case .failure(let errorMessage):
                 self?.showAlert(message: errorMessage)
             }
@@ -182,7 +181,7 @@ class AuthenticationViewController: UIViewController {
         authModel.signIn(credentials: credentials) { [weak self] result in
             switch result {
             case .success(_):
-                self?.navigateToScreen(withIdentifier: HomeViewController.identifier)
+                self?.navigateToHomeScreen()
             case .failure(let errorMessage):
                 self?.showAlert(message: errorMessage)
             }

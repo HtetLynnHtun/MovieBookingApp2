@@ -74,6 +74,7 @@
 		4FEE71AE27BCEEF800C8829D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4FEE71AC27BCEEF800C8829D /* Main.storyboard */; };
 		4FEE71B027BCEEF900C8829D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4FEE71AF27BCEEF900C8829D /* Assets.xcassets */; };
 		4FEE71B327BCEEF900C8829D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4FEE71B127BCEEF900C8829D /* LaunchScreen.storyboard */; };
+		4FEE942C280AACDC00AAD402 /* FacebookLogin in Frameworks */ = {isa = PBXBuildFile; productRef = 4FEE942B280AACDC00AAD402 /* FacebookLogin */; };
 		4FF4BF902801596A00FAB437 /* SeatPlanVO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF4BF8F2801596A00FAB437 /* SeatPlanVO.swift */; };
 		4FF4BF922801D4AF00FAB437 /* SnackVO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF4BF912801D4AF00FAB437 /* SnackVO.swift */; };
 		4FF4BF942801D6B900FAB437 /* SnackRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF4BF932801D6B900FAB437 /* SnackRepository.swift */; };
@@ -175,6 +176,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4FEE942C280AACDC00AAD402 /* FacebookLogin in Frameworks */,
 				87279EB4DEC7E1BF7E3BEE1D /* Pods_MovieBookingApp2.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -439,6 +441,9 @@
 			dependencies = (
 			);
 			name = MovieBookingApp2;
+			packageProductDependencies = (
+				4FEE942B280AACDC00AAD402 /* FacebookLogin */,
+			);
 			productName = MovieBookingApp2;
 			productReference = 4FEE71A327BCEEF800C8829D /* MovieBookingApp2.app */;
 			productType = "com.apple.product-type.application";
@@ -467,6 +472,9 @@
 				Base,
 			);
 			mainGroup = 4FEE719A27BCEEF800C8829D;
+			packageReferences = (
+				4FEE942A280AACDC00AAD402 /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */,
+			);
 			productRefGroup = 4FEE71A427BCEEF800C8829D /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -830,6 +838,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		4FEE942A280AACDC00AAD402 /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/facebook/facebook-ios-sdk";
+			requirement = {
+				kind = exactVersion;
+				version = 13.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		4FEE942B280AACDC00AAD402 /* FacebookLogin */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4FEE942A280AACDC00AAD402 /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */;
+			productName = FacebookLogin;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 4FEE719B27BCEEF800C8829D /* Project object */;
 }
