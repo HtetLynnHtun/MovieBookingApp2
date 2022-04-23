@@ -21,6 +21,7 @@ class MovieDetailViewController: UIViewController {
     @IBOutlet weak var ratingStar: RatingControl!
     
     var genres = [String]()
+    var casts = [CastVO]()
     var courier: CourierVO!
     
     private let movieModel: MovieModel = MovieModelImpl.shared
@@ -75,6 +76,9 @@ class MovieDetailViewController: UIViewController {
         
         genres = Array(data.genres)
         collectionViewGenres.reloadData()
+        
+        casts = Array(data.casts)
+        collectionViewCasts.reloadData()
     }
 
     private func getMovieDetails() {
@@ -96,7 +100,7 @@ class MovieDetailViewController: UIViewController {
 extension MovieDetailViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if (collectionView == collectionViewCasts) {
-            return 10
+            return casts.count
         } else {
             return genres.count
         }
@@ -104,8 +108,9 @@ extension MovieDetailViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if (collectionView == collectionViewCasts) {
-            let cell = collectionView.dequeCell(CastCollectionViewCell.identifier, indexPath)
+            let cell = collectionView.dequeCell(CastCollectionViewCell.identifier, indexPath) as CastCollectionViewCell
             cell.layer.cornerRadius = 35.5
+            cell.data = casts[indexPath.row]
             
             return cell
         } else {
