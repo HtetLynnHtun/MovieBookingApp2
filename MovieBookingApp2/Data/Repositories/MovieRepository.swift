@@ -79,7 +79,7 @@ class MovieRepositoryImpl: BaseRepository, MovieRepository {
     func saveMovieDetails(data: MovieVO) {
         if let savedMovie = self.realm.object(ofType: MovieVO.self, forPrimaryKey: data.id) {
             data.isNowShowing = savedMovie.isNowShowing
-            data.isCommingSoon = savedMovie.isNowShowing
+            data.isCommingSoon = savedMovie.isCommingSoon
         }
         do {
             try self.realm.write({
