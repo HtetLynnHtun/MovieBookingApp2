@@ -72,15 +72,14 @@ class AuthenticationViewController: UIViewController {
     @objc func didTapConfirmButton() {
         do {
             try validateUserInputs()
+            let credentials = getCredentials()
+            if (isLogin) {
+                loginWithEmail(credentials: credentials)
+            } else {
+                signIn(credentials: credentials)
+            }
         } catch {
             showAlert(message: error.localizedDescription)
-        }
-        
-        let credentials = getCredentials()
-        if (isLogin) {
-            loginWithEmail(credentials: credentials)
-        } else {
-            signIn(credentials: credentials)
         }
     }
     
@@ -92,12 +91,12 @@ class AuthenticationViewController: UIViewController {
             } else {
                 do {
                     try self.validateUserInputs()
+                    var credentials = self.getCredentials()
+                    credentials.googleAccessToken = response.id
+                    self.signIn(credentials: credentials)
                 } catch {
                     self.showAlert(message: error.localizedDescription)
                 }
-                var credentials = self.getCredentials()
-                credentials.googleAccessToken = response.id
-                self.signIn(credentials: credentials)
             }
         } failure: { error in
             print(error)
