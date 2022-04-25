@@ -24,8 +24,7 @@ extension UIViewController {
     
     func navigateToHomeScreen() {
         let vc = UIStoryboard.mainStoryBoard().instantiateViewController(withIdentifier: HomeViewController.identifier)
-        vc.modalPresentationStyle = .fullScreen
-        self.navigationController?.pushViewController(vc, animated: true)
+        self.navigationController?.setViewControllers([vc], animated: true)
     }
     
     func navigateToScreen(withIdentifier identifier: String) {
